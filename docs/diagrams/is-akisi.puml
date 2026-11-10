@@ -1,0 +1,58 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam shadowing false
+skinparam ArrowColor #555555
+skinparam ActivityBorderColor #555555
+skinparam ActivityDiamondBorderColor #555555
+skinparam ActivityDiamondBackgroundColor #FFFFFF
+skinparam NoteBackgroundColor #FFFFFF
+skinparam NoteBorderColor #999999
+skinparam ActivityFontSize 13
+skinparam ActivityBackgroundColor #FFFFFF
+skinparam LegendBackgroundColor #FFFFFF
+skinparam LegendBorderColor #BBBBBB
+
+title Kampüs Ağı Dijital İkizi — Projenin İş Akışı
+
+start
+#C8E6C9:Proje araştırması
+(konu, benzer çalışmalar, literatür);
+#C8E6C9:Gereksinim analizi
+(kapsam, kullanım durumları, UML);
+repeat
+  #C8E6C9:Sentetik ağ modelleme
+  (binalar, K1–K9 kuralları, cihaz ve bağlantılar);
+  #C8E6C9:Doğrulama
+  (23 otomatik test, hata enjeksiyonu);
+repeat while (Bütün testler geçti mi?) is (hayır) not (evet)
+#BBDEFB:Mimari tasarım
+(bağlam ve mimari diyagramları);
+#BBDEFB:Danışmana sunum;
+note right
+  <b>Şu an buradayız</b>
+  (10 Kasım 2026)
+end note
+repeat
+  fork
+    :Backend ve
+    telemetri simülatörü;
+  fork again
+    :Web arayüzü ve
+    3B görünüm;
+  end fork
+  :Arıza ve kapasite senaryoları,
+  uyarılar;
+  :Batfish–FRR deneyleri;
+  :Test ve entegrasyon;
+repeat while (Başarı ölçütleri sağlandı mı?) is (hayır) not (evet)
+:Bitirme raporu ve sunum;
+:Teslim (31 Aralık 2026);
+stop
+
+legend right
+  <color:#81C784>██</color> Tamamlandı
+  <color:#64B5F6>██</color> Sürüyor
+  <color:#BBBBBB>██</color> Planlanan
+  Kaynak taraması tüm süreç boyunca sürer.
+endlegend
+@enduml
