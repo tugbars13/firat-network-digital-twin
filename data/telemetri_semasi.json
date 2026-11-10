@@ -1,0 +1,89 @@
+{
+ "aciklama": "Sentetik telemetri kayıt şeması. Tüm değerler simülasyon verisidir.",
+ "alanlar": [
+  {
+   "ad": "timestamp",
+   "tur": "string (ISO 8601)",
+   "birim": "",
+   "aciklama": "Ölçüm zamanı"
+  },
+  {
+   "ad": "scenario",
+   "tur": "string",
+   "birim": "",
+   "aciklama": "normal | yogun | hat_kopmasi | cihaz_arizasi"
+  },
+  {
+   "ad": "device_id",
+   "tur": "string",
+   "birim": "",
+   "aciklama": "devices.csv içindeki cihaz kimliği"
+  },
+  {
+   "ad": "interface_id",
+   "tur": "string",
+   "birim": "",
+   "aciklama": "<device_id>:<link_id>; arayüz, links.csv içindeki bağlantının o cihazdaki ucudur"
+  },
+  {
+   "ad": "latency_ms",
+   "tur": "number | boş",
+   "birim": "ms",
+   "aralik": [
+    0,
+    50
+   ],
+   "aciklama": "Hat çalışmıyorsa boş"
+  },
+  {
+   "ad": "bandwidth_usage_mbps",
+   "tur": "number",
+   "birim": "Mbps",
+   "aralik": [
+    0,
+    "bandwidth_gbps×1000"
+   ],
+   "aciklama": "Hat üzerinden geçen trafik"
+  },
+  {
+   "ad": "packet_loss_percent",
+   "tur": "number",
+   "birim": "%",
+   "aralik": [
+    0,
+    100
+   ],
+   "aciklama": "Doluluk %80'i aşınca artar; hat çalışmıyorsa 100"
+  },
+  {
+   "ad": "cpu_usage_percent",
+   "tur": "number",
+   "birim": "%",
+   "aralik": [
+    0,
+    95
+   ]
+  },
+  {
+   "ad": "memory_usage_percent",
+   "tur": "number",
+   "birim": "%",
+   "aralik": [
+    0,
+    90
+   ]
+  },
+  {
+   "ad": "link_status",
+   "tur": "string",
+   "birim": "",
+   "aciklama": "up | down"
+  },
+  {
+   "ad": "synthetic_data",
+   "tur": "boolean",
+   "birim": "",
+   "aciklama": "Her zaman true"
+  }
+ ]
+}

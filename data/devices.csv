@@ -1,0 +1,734 @@
+device_id,device_name,device_type,building_id,region,layer,management_ip,status,synthetic_data,role,floor
+BIDB-CS01,Çekirdek switch'i 1,CORE,BIDB,Çekirdek,Çekirdek,10.0.0.1,up,True,core,
+BIDB-CS02,Çekirdek switch'i 2,CORE,BIDB,Çekirdek,Çekirdek,10.0.0.2,up,True,core,
+MUH-DS01,Batı bölgesi dağıtım switch'i,DISTRIBUTION,MUH,Batı,Dağıtım,10.0.0.11,up,True,distribution,
+TEK-DS01,Orta bölgesi dağıtım switch'i,DISTRIBUTION,TEK,Orta,Dağıtım,10.0.0.12,up,True,distribution,
+REK-DS01,Doğu bölgesi dağıtım switch'i,DISTRIBUTION,REK,Doğu,Dağıtım,10.0.0.13,up,True,distribution,
+BIDB-SS01,Bilgi İşlem Daire Başkanlığı (veri merkezi) sunucu switch'i 1,SERVER_SWITCH,BIDB,Çekirdek,Veri merkezi,10.1.1.1,up,True,server,1
+BIDB-SS02,Bilgi İşlem Daire Başkanlığı (veri merkezi) sunucu switch'i 2,SERVER_SWITCH,BIDB,Çekirdek,Veri merkezi,10.1.1.2,up,True,server,1
+BIDB-AP001,Bilgi İşlem Daire Başkanlığı (veri merkezi) erişim noktası 1,AP,BIDB,Çekirdek,Kablosuz,10.2.1.1,up,True,wireless,1
+BIDB-AP002,Bilgi İşlem Daire Başkanlığı (veri merkezi) erişim noktası 2,AP,BIDB,Çekirdek,Kablosuz,10.2.1.2,up,True,wireless,1
+BIDB-AP003,Bilgi İşlem Daire Başkanlığı (veri merkezi) erişim noktası 3,AP,BIDB,Çekirdek,Kablosuz,10.2.1.3,up,True,wireless,1
+BIDB-AP004,Bilgi İşlem Daire Başkanlığı (veri merkezi) erişim noktası 4,AP,BIDB,Çekirdek,Kablosuz,10.2.1.4,up,True,wireless,1
+BIDB-AP005,Bilgi İşlem Daire Başkanlığı (veri merkezi) erişim noktası 5,AP,BIDB,Çekirdek,Kablosuz,10.2.1.5,up,True,wireless,1
+BIDB-AP006,Bilgi İşlem Daire Başkanlığı (veri merkezi) erişim noktası 6,AP,BIDB,Çekirdek,Kablosuz,10.2.1.6,up,True,wireless,1
+REK-AS01,Rektörlük erişim switch'i 1,ACCESS,REK,Doğu,Erişim,10.1.2.1,up,True,uplink-primary,1
+REK-AS02,Rektörlük erişim switch'i 2,ACCESS,REK,Doğu,Erişim,10.1.2.2,up,True,uplink-backup,2
+REK-AS03,Rektörlük erişim switch'i 3,ACCESS,REK,Doğu,Erişim,10.1.2.3,up,True,access,3
+REK-AS04,Rektörlük erişim switch'i 4,ACCESS,REK,Doğu,Erişim,10.1.2.4,up,True,access,4
+REK-AS05,Rektörlük erişim switch'i 5,ACCESS,REK,Doğu,Erişim,10.1.2.5,up,True,access,5
+REK-AP001,Rektörlük erişim noktası 1,AP,REK,Doğu,Kablosuz,10.2.2.1,up,True,wireless,1
+REK-AP002,Rektörlük erişim noktası 2,AP,REK,Doğu,Kablosuz,10.2.2.2,up,True,wireless,2
+REK-AP003,Rektörlük erişim noktası 3,AP,REK,Doğu,Kablosuz,10.2.2.3,up,True,wireless,3
+REK-AP004,Rektörlük erişim noktası 4,AP,REK,Doğu,Kablosuz,10.2.2.4,up,True,wireless,4
+REK-AP005,Rektörlük erişim noktası 5,AP,REK,Doğu,Kablosuz,10.2.2.5,up,True,wireless,5
+REK-AP006,Rektörlük erişim noktası 6,AP,REK,Doğu,Kablosuz,10.2.2.6,up,True,wireless,1
+REK-AP007,Rektörlük erişim noktası 7,AP,REK,Doğu,Kablosuz,10.2.2.7,up,True,wireless,2
+REK-AP008,Rektörlük erişim noktası 8,AP,REK,Doğu,Kablosuz,10.2.2.8,up,True,wireless,3
+REK-AP009,Rektörlük erişim noktası 9,AP,REK,Doğu,Kablosuz,10.2.2.9,up,True,wireless,4
+REK-AP010,Rektörlük erişim noktası 10,AP,REK,Doğu,Kablosuz,10.2.2.10,up,True,wireless,5
+REK-AP011,Rektörlük erişim noktası 11,AP,REK,Doğu,Kablosuz,10.2.2.11,up,True,wireless,1
+REK-AP012,Rektörlük erişim noktası 12,AP,REK,Doğu,Kablosuz,10.2.2.12,up,True,wireless,2
+MUH-AS01,Mühendislik Fakültesi erişim switch'i 1,ACCESS,MUH,Batı,Erişim,10.1.3.1,up,True,uplink-primary,1
+MUH-AS02,Mühendislik Fakültesi erişim switch'i 2,ACCESS,MUH,Batı,Erişim,10.1.3.2,up,True,uplink-backup,2
+MUH-AS03,Mühendislik Fakültesi erişim switch'i 3,ACCESS,MUH,Batı,Erişim,10.1.3.3,up,True,access,3
+MUH-AS04,Mühendislik Fakültesi erişim switch'i 4,ACCESS,MUH,Batı,Erişim,10.1.3.4,up,True,access,4
+MUH-AS05,Mühendislik Fakültesi erişim switch'i 5,ACCESS,MUH,Batı,Erişim,10.1.3.5,up,True,access,5
+MUH-AS06,Mühendislik Fakültesi erişim switch'i 6,ACCESS,MUH,Batı,Erişim,10.1.3.6,up,True,access,1
+MUH-AS07,Mühendislik Fakültesi erişim switch'i 7,ACCESS,MUH,Batı,Erişim,10.1.3.7,up,True,access,2
+MUH-AS08,Mühendislik Fakültesi erişim switch'i 8,ACCESS,MUH,Batı,Erişim,10.1.3.8,up,True,access,3
+MUH-AS09,Mühendislik Fakültesi erişim switch'i 9,ACCESS,MUH,Batı,Erişim,10.1.3.9,up,True,access,4
+MUH-AS10,Mühendislik Fakültesi erişim switch'i 10,ACCESS,MUH,Batı,Erişim,10.1.3.10,up,True,access,5
+MUH-AP001,Mühendislik Fakültesi erişim noktası 1,AP,MUH,Batı,Kablosuz,10.2.3.1,up,True,wireless,1
+MUH-AP002,Mühendislik Fakültesi erişim noktası 2,AP,MUH,Batı,Kablosuz,10.2.3.2,up,True,wireless,2
+MUH-AP003,Mühendislik Fakültesi erişim noktası 3,AP,MUH,Batı,Kablosuz,10.2.3.3,up,True,wireless,3
+MUH-AP004,Mühendislik Fakültesi erişim noktası 4,AP,MUH,Batı,Kablosuz,10.2.3.4,up,True,wireless,4
+MUH-AP005,Mühendislik Fakültesi erişim noktası 5,AP,MUH,Batı,Kablosuz,10.2.3.5,up,True,wireless,5
+MUH-AP006,Mühendislik Fakültesi erişim noktası 6,AP,MUH,Batı,Kablosuz,10.2.3.6,up,True,wireless,1
+MUH-AP007,Mühendislik Fakültesi erişim noktası 7,AP,MUH,Batı,Kablosuz,10.2.3.7,up,True,wireless,2
+MUH-AP008,Mühendislik Fakültesi erişim noktası 8,AP,MUH,Batı,Kablosuz,10.2.3.8,up,True,wireless,3
+MUH-AP009,Mühendislik Fakültesi erişim noktası 9,AP,MUH,Batı,Kablosuz,10.2.3.9,up,True,wireless,4
+MUH-AP010,Mühendislik Fakültesi erişim noktası 10,AP,MUH,Batı,Kablosuz,10.2.3.10,up,True,wireless,5
+MUH-AP011,Mühendislik Fakültesi erişim noktası 11,AP,MUH,Batı,Kablosuz,10.2.3.11,up,True,wireless,1
+MUH-AP012,Mühendislik Fakültesi erişim noktası 12,AP,MUH,Batı,Kablosuz,10.2.3.12,up,True,wireless,2
+MUH-AP013,Mühendislik Fakültesi erişim noktası 13,AP,MUH,Batı,Kablosuz,10.2.3.13,up,True,wireless,3
+MUH-AP014,Mühendislik Fakültesi erişim noktası 14,AP,MUH,Batı,Kablosuz,10.2.3.14,up,True,wireless,4
+MUH-AP015,Mühendislik Fakültesi erişim noktası 15,AP,MUH,Batı,Kablosuz,10.2.3.15,up,True,wireless,5
+MUH-AP016,Mühendislik Fakültesi erişim noktası 16,AP,MUH,Batı,Kablosuz,10.2.3.16,up,True,wireless,1
+MUH-AP017,Mühendislik Fakültesi erişim noktası 17,AP,MUH,Batı,Kablosuz,10.2.3.17,up,True,wireless,2
+MUH-AP018,Mühendislik Fakültesi erişim noktası 18,AP,MUH,Batı,Kablosuz,10.2.3.18,up,True,wireless,3
+MUH-AP019,Mühendislik Fakültesi erişim noktası 19,AP,MUH,Batı,Kablosuz,10.2.3.19,up,True,wireless,4
+MUH-AP020,Mühendislik Fakültesi erişim noktası 20,AP,MUH,Batı,Kablosuz,10.2.3.20,up,True,wireless,5
+MUH-AP021,Mühendislik Fakültesi erişim noktası 21,AP,MUH,Batı,Kablosuz,10.2.3.21,up,True,wireless,1
+MUH-AP022,Mühendislik Fakültesi erişim noktası 22,AP,MUH,Batı,Kablosuz,10.2.3.22,up,True,wireless,2
+MUH-AP023,Mühendislik Fakültesi erişim noktası 23,AP,MUH,Batı,Kablosuz,10.2.3.23,up,True,wireless,3
+MUH-AP024,Mühendislik Fakültesi erişim noktası 24,AP,MUH,Batı,Kablosuz,10.2.3.24,up,True,wireless,4
+MUH-AP025,Mühendislik Fakültesi erişim noktası 25,AP,MUH,Batı,Kablosuz,10.2.3.25,up,True,wireless,5
+MUH-AP026,Mühendislik Fakültesi erişim noktası 26,AP,MUH,Batı,Kablosuz,10.2.3.26,up,True,wireless,1
+MUH-AP027,Mühendislik Fakültesi erişim noktası 27,AP,MUH,Batı,Kablosuz,10.2.3.27,up,True,wireless,2
+MUH-AP028,Mühendislik Fakültesi erişim noktası 28,AP,MUH,Batı,Kablosuz,10.2.3.28,up,True,wireless,3
+MUH-AP029,Mühendislik Fakültesi erişim noktası 29,AP,MUH,Batı,Kablosuz,10.2.3.29,up,True,wireless,4
+MUH-AP030,Mühendislik Fakültesi erişim noktası 30,AP,MUH,Batı,Kablosuz,10.2.3.30,up,True,wireless,5
+MUH-AP031,Mühendislik Fakültesi erişim noktası 31,AP,MUH,Batı,Kablosuz,10.2.3.31,up,True,wireless,1
+MUH-AP032,Mühendislik Fakültesi erişim noktası 32,AP,MUH,Batı,Kablosuz,10.2.3.32,up,True,wireless,2
+MUH-AP033,Mühendislik Fakültesi erişim noktası 33,AP,MUH,Batı,Kablosuz,10.2.3.33,up,True,wireless,3
+MUH-AP034,Mühendislik Fakültesi erişim noktası 34,AP,MUH,Batı,Kablosuz,10.2.3.34,up,True,wireless,4
+MUH-AP035,Mühendislik Fakültesi erişim noktası 35,AP,MUH,Batı,Kablosuz,10.2.3.35,up,True,wireless,5
+MUH-AP036,Mühendislik Fakültesi erişim noktası 36,AP,MUH,Batı,Kablosuz,10.2.3.36,up,True,wireless,1
+MUH-AP037,Mühendislik Fakültesi erişim noktası 37,AP,MUH,Batı,Kablosuz,10.2.3.37,up,True,wireless,2
+MUH-AP038,Mühendislik Fakültesi erişim noktası 38,AP,MUH,Batı,Kablosuz,10.2.3.38,up,True,wireless,3
+MUH-AP039,Mühendislik Fakültesi erişim noktası 39,AP,MUH,Batı,Kablosuz,10.2.3.39,up,True,wireless,4
+MUH-AP040,Mühendislik Fakültesi erişim noktası 40,AP,MUH,Batı,Kablosuz,10.2.3.40,up,True,wireless,5
+MUH-AP041,Mühendislik Fakültesi erişim noktası 41,AP,MUH,Batı,Kablosuz,10.2.3.41,up,True,wireless,1
+MUH-AP042,Mühendislik Fakültesi erişim noktası 42,AP,MUH,Batı,Kablosuz,10.2.3.42,up,True,wireless,2
+MUH-AP043,Mühendislik Fakültesi erişim noktası 43,AP,MUH,Batı,Kablosuz,10.2.3.43,up,True,wireless,3
+MUH-AP044,Mühendislik Fakültesi erişim noktası 44,AP,MUH,Batı,Kablosuz,10.2.3.44,up,True,wireless,4
+MUH-AP045,Mühendislik Fakültesi erişim noktası 45,AP,MUH,Batı,Kablosuz,10.2.3.45,up,True,wireless,5
+MUH-AP046,Mühendislik Fakültesi erişim noktası 46,AP,MUH,Batı,Kablosuz,10.2.3.46,up,True,wireless,1
+MUH-AP047,Mühendislik Fakültesi erişim noktası 47,AP,MUH,Batı,Kablosuz,10.2.3.47,up,True,wireless,2
+MUH-AP048,Mühendislik Fakültesi erişim noktası 48,AP,MUH,Batı,Kablosuz,10.2.3.48,up,True,wireless,3
+MUH-AP049,Mühendislik Fakültesi erişim noktası 49,AP,MUH,Batı,Kablosuz,10.2.3.49,up,True,wireless,4
+MUH-AP050,Mühendislik Fakültesi erişim noktası 50,AP,MUH,Batı,Kablosuz,10.2.3.50,up,True,wireless,5
+MUH-AP051,Mühendislik Fakültesi erişim noktası 51,AP,MUH,Batı,Kablosuz,10.2.3.51,up,True,wireless,1
+MUH-AP052,Mühendislik Fakültesi erişim noktası 52,AP,MUH,Batı,Kablosuz,10.2.3.52,up,True,wireless,2
+MUH-AP053,Mühendislik Fakültesi erişim noktası 53,AP,MUH,Batı,Kablosuz,10.2.3.53,up,True,wireless,3
+MUH-AP054,Mühendislik Fakültesi erişim noktası 54,AP,MUH,Batı,Kablosuz,10.2.3.54,up,True,wireless,4
+MUH-AP055,Mühendislik Fakültesi erişim noktası 55,AP,MUH,Batı,Kablosuz,10.2.3.55,up,True,wireless,5
+MUH-AP056,Mühendislik Fakültesi erişim noktası 56,AP,MUH,Batı,Kablosuz,10.2.3.56,up,True,wireless,1
+MUH-AP057,Mühendislik Fakültesi erişim noktası 57,AP,MUH,Batı,Kablosuz,10.2.3.57,up,True,wireless,2
+MUH-AP058,Mühendislik Fakültesi erişim noktası 58,AP,MUH,Batı,Kablosuz,10.2.3.58,up,True,wireless,3
+MUH-AP059,Mühendislik Fakültesi erişim noktası 59,AP,MUH,Batı,Kablosuz,10.2.3.59,up,True,wireless,4
+MUH-AP060,Mühendislik Fakültesi erişim noktası 60,AP,MUH,Batı,Kablosuz,10.2.3.60,up,True,wireless,5
+MUH-AP061,Mühendislik Fakültesi erişim noktası 61,AP,MUH,Batı,Kablosuz,10.2.3.61,up,True,wireless,1
+MUH-AP062,Mühendislik Fakültesi erişim noktası 62,AP,MUH,Batı,Kablosuz,10.2.3.62,up,True,wireless,2
+MUH-AP063,Mühendislik Fakültesi erişim noktası 63,AP,MUH,Batı,Kablosuz,10.2.3.63,up,True,wireless,3
+MUH-AP064,Mühendislik Fakültesi erişim noktası 64,AP,MUH,Batı,Kablosuz,10.2.3.64,up,True,wireless,4
+ILH-AS01,İlahiyat Fakültesi erişim switch'i 1,ACCESS,ILH,Batı,Erişim,10.1.4.1,up,True,uplink-primary,1
+ILH-AS02,İlahiyat Fakültesi erişim switch'i 2,ACCESS,ILH,Batı,Erişim,10.1.4.2,up,True,access,2
+ILH-AS03,İlahiyat Fakültesi erişim switch'i 3,ACCESS,ILH,Batı,Erişim,10.1.4.3,up,True,access,3
+ILH-AS04,İlahiyat Fakültesi erişim switch'i 4,ACCESS,ILH,Batı,Erişim,10.1.4.4,up,True,access,4
+ILH-AS05,İlahiyat Fakültesi erişim switch'i 5,ACCESS,ILH,Batı,Erişim,10.1.4.5,up,True,access,1
+ILH-AP001,İlahiyat Fakültesi erişim noktası 1,AP,ILH,Batı,Kablosuz,10.2.4.1,up,True,wireless,1
+ILH-AP002,İlahiyat Fakültesi erişim noktası 2,AP,ILH,Batı,Kablosuz,10.2.4.2,up,True,wireless,2
+ILH-AP003,İlahiyat Fakültesi erişim noktası 3,AP,ILH,Batı,Kablosuz,10.2.4.3,up,True,wireless,3
+ILH-AP004,İlahiyat Fakültesi erişim noktası 4,AP,ILH,Batı,Kablosuz,10.2.4.4,up,True,wireless,4
+ILH-AP005,İlahiyat Fakültesi erişim noktası 5,AP,ILH,Batı,Kablosuz,10.2.4.5,up,True,wireless,1
+ILH-AP006,İlahiyat Fakültesi erişim noktası 6,AP,ILH,Batı,Kablosuz,10.2.4.6,up,True,wireless,2
+ILH-AP007,İlahiyat Fakültesi erişim noktası 7,AP,ILH,Batı,Kablosuz,10.2.4.7,up,True,wireless,3
+ILH-AP008,İlahiyat Fakültesi erişim noktası 8,AP,ILH,Batı,Kablosuz,10.2.4.8,up,True,wireless,4
+ILH-AP009,İlahiyat Fakültesi erişim noktası 9,AP,ILH,Batı,Kablosuz,10.2.4.9,up,True,wireless,1
+ILH-AP010,İlahiyat Fakültesi erişim noktası 10,AP,ILH,Batı,Kablosuz,10.2.4.10,up,True,wireless,2
+ILH-AP011,İlahiyat Fakültesi erişim noktası 11,AP,ILH,Batı,Kablosuz,10.2.4.11,up,True,wireless,3
+ILH-AP012,İlahiyat Fakültesi erişim noktası 12,AP,ILH,Batı,Kablosuz,10.2.4.12,up,True,wireless,4
+ILH-AP013,İlahiyat Fakültesi erişim noktası 13,AP,ILH,Batı,Kablosuz,10.2.4.13,up,True,wireless,1
+ILH-AP014,İlahiyat Fakültesi erişim noktası 14,AP,ILH,Batı,Kablosuz,10.2.4.14,up,True,wireless,2
+ILH-AP015,İlahiyat Fakültesi erişim noktası 15,AP,ILH,Batı,Kablosuz,10.2.4.15,up,True,wireless,3
+ILH-AP016,İlahiyat Fakültesi erişim noktası 16,AP,ILH,Batı,Kablosuz,10.2.4.16,up,True,wireless,4
+ILH-AP017,İlahiyat Fakültesi erişim noktası 17,AP,ILH,Batı,Kablosuz,10.2.4.17,up,True,wireless,1
+ILH-AP018,İlahiyat Fakültesi erişim noktası 18,AP,ILH,Batı,Kablosuz,10.2.4.18,up,True,wireless,2
+ILH-AP019,İlahiyat Fakültesi erişim noktası 19,AP,ILH,Batı,Kablosuz,10.2.4.19,up,True,wireless,3
+ILH-AP020,İlahiyat Fakültesi erişim noktası 20,AP,ILH,Batı,Kablosuz,10.2.4.20,up,True,wireless,4
+ILH-AP021,İlahiyat Fakültesi erişim noktası 21,AP,ILH,Batı,Kablosuz,10.2.4.21,up,True,wireless,1
+ILH-AP022,İlahiyat Fakültesi erişim noktası 22,AP,ILH,Batı,Kablosuz,10.2.4.22,up,True,wireless,2
+ILH-AP023,İlahiyat Fakültesi erişim noktası 23,AP,ILH,Batı,Kablosuz,10.2.4.23,up,True,wireless,3
+ILH-AP024,İlahiyat Fakültesi erişim noktası 24,AP,ILH,Batı,Kablosuz,10.2.4.24,up,True,wireless,4
+ILH-AP025,İlahiyat Fakültesi erişim noktası 25,AP,ILH,Batı,Kablosuz,10.2.4.25,up,True,wireless,1
+ILH-AP026,İlahiyat Fakültesi erişim noktası 26,AP,ILH,Batı,Kablosuz,10.2.4.26,up,True,wireless,2
+ECZ-AS01,Eczacılık Fakültesi erişim switch'i 1,ACCESS,ECZ,Batı,Erişim,10.1.5.1,up,True,uplink-primary,1
+ECZ-AS02,Eczacılık Fakültesi erişim switch'i 2,ACCESS,ECZ,Batı,Erişim,10.1.5.2,up,True,access,2
+ECZ-AS03,Eczacılık Fakültesi erişim switch'i 3,ACCESS,ECZ,Batı,Erişim,10.1.5.3,up,True,access,3
+ECZ-AP001,Eczacılık Fakültesi erişim noktası 1,AP,ECZ,Batı,Kablosuz,10.2.5.1,up,True,wireless,1
+ECZ-AP002,Eczacılık Fakültesi erişim noktası 2,AP,ECZ,Batı,Kablosuz,10.2.5.2,up,True,wireless,2
+ECZ-AP003,Eczacılık Fakültesi erişim noktası 3,AP,ECZ,Batı,Kablosuz,10.2.5.3,up,True,wireless,3
+ECZ-AP004,Eczacılık Fakültesi erişim noktası 4,AP,ECZ,Batı,Kablosuz,10.2.5.4,up,True,wireless,1
+ECZ-AP005,Eczacılık Fakültesi erişim noktası 5,AP,ECZ,Batı,Kablosuz,10.2.5.5,up,True,wireless,2
+ECZ-AP006,Eczacılık Fakültesi erişim noktası 6,AP,ECZ,Batı,Kablosuz,10.2.5.6,up,True,wireless,3
+ECZ-AP007,Eczacılık Fakültesi erişim noktası 7,AP,ECZ,Batı,Kablosuz,10.2.5.7,up,True,wireless,1
+ECZ-AP008,Eczacılık Fakültesi erişim noktası 8,AP,ECZ,Batı,Kablosuz,10.2.5.8,up,True,wireless,2
+ECZ-AP009,Eczacılık Fakültesi erişim noktası 9,AP,ECZ,Batı,Kablosuz,10.2.5.9,up,True,wireless,3
+ECZ-AP010,Eczacılık Fakültesi erişim noktası 10,AP,ECZ,Batı,Kablosuz,10.2.5.10,up,True,wireless,1
+ECZ-AP011,Eczacılık Fakültesi erişim noktası 11,AP,ECZ,Batı,Kablosuz,10.2.5.11,up,True,wireless,2
+ECZ-AP012,Eczacılık Fakültesi erişim noktası 12,AP,ECZ,Batı,Kablosuz,10.2.5.12,up,True,wireless,3
+ECZ-AP013,Eczacılık Fakültesi erişim noktası 13,AP,ECZ,Batı,Kablosuz,10.2.5.13,up,True,wireless,1
+ECZ-AP014,Eczacılık Fakültesi erişim noktası 14,AP,ECZ,Batı,Kablosuz,10.2.5.14,up,True,wireless,2
+ECZ-AP015,Eczacılık Fakültesi erişim noktası 15,AP,ECZ,Batı,Kablosuz,10.2.5.15,up,True,wireless,3
+MIM-AS01,Mimarlık Fakültesi erişim switch'i 1,ACCESS,MIM,Batı,Erişim,10.1.6.1,up,True,uplink-primary,1
+MIM-AS02,Mimarlık Fakültesi erişim switch'i 2,ACCESS,MIM,Batı,Erişim,10.1.6.2,up,True,access,2
+MIM-AS03,Mimarlık Fakültesi erişim switch'i 3,ACCESS,MIM,Batı,Erişim,10.1.6.3,up,True,access,3
+MIM-AS04,Mimarlık Fakültesi erişim switch'i 4,ACCESS,MIM,Batı,Erişim,10.1.6.4,up,True,access,4
+MIM-AP001,Mimarlık Fakültesi erişim noktası 1,AP,MIM,Batı,Kablosuz,10.2.6.1,up,True,wireless,1
+MIM-AP002,Mimarlık Fakültesi erişim noktası 2,AP,MIM,Batı,Kablosuz,10.2.6.2,up,True,wireless,2
+MIM-AP003,Mimarlık Fakültesi erişim noktası 3,AP,MIM,Batı,Kablosuz,10.2.6.3,up,True,wireless,3
+MIM-AP004,Mimarlık Fakültesi erişim noktası 4,AP,MIM,Batı,Kablosuz,10.2.6.4,up,True,wireless,4
+MIM-AP005,Mimarlık Fakültesi erişim noktası 5,AP,MIM,Batı,Kablosuz,10.2.6.5,up,True,wireless,1
+MIM-AP006,Mimarlık Fakültesi erişim noktası 6,AP,MIM,Batı,Kablosuz,10.2.6.6,up,True,wireless,2
+MIM-AP007,Mimarlık Fakültesi erişim noktası 7,AP,MIM,Batı,Kablosuz,10.2.6.7,up,True,wireless,3
+MIM-AP008,Mimarlık Fakültesi erişim noktası 8,AP,MIM,Batı,Kablosuz,10.2.6.8,up,True,wireless,4
+MIM-AP009,Mimarlık Fakültesi erişim noktası 9,AP,MIM,Batı,Kablosuz,10.2.6.9,up,True,wireless,1
+MIM-AP010,Mimarlık Fakültesi erişim noktası 10,AP,MIM,Batı,Kablosuz,10.2.6.10,up,True,wireless,2
+MIM-AP011,Mimarlık Fakültesi erişim noktası 11,AP,MIM,Batı,Kablosuz,10.2.6.11,up,True,wireless,3
+MIM-AP012,Mimarlık Fakültesi erişim noktası 12,AP,MIM,Batı,Kablosuz,10.2.6.12,up,True,wireless,4
+MIM-AP013,Mimarlık Fakültesi erişim noktası 13,AP,MIM,Batı,Kablosuz,10.2.6.13,up,True,wireless,1
+MIM-AP014,Mimarlık Fakültesi erişim noktası 14,AP,MIM,Batı,Kablosuz,10.2.6.14,up,True,wireless,2
+MIM-AP015,Mimarlık Fakültesi erişim noktası 15,AP,MIM,Batı,Kablosuz,10.2.6.15,up,True,wireless,3
+MIM-AP016,Mimarlık Fakültesi erişim noktası 16,AP,MIM,Batı,Kablosuz,10.2.6.16,up,True,wireless,4
+MIM-AP017,Mimarlık Fakültesi erişim noktası 17,AP,MIM,Batı,Kablosuz,10.2.6.17,up,True,wireless,1
+MIM-AP018,Mimarlık Fakültesi erişim noktası 18,AP,MIM,Batı,Kablosuz,10.2.6.18,up,True,wireless,2
+MIM-AP019,Mimarlık Fakültesi erişim noktası 19,AP,MIM,Batı,Kablosuz,10.2.6.19,up,True,wireless,3
+MIM-AP020,Mimarlık Fakültesi erişim noktası 20,AP,MIM,Batı,Kablosuz,10.2.6.20,up,True,wireless,4
+MIM-AP021,Mimarlık Fakültesi erişim noktası 21,AP,MIM,Batı,Kablosuz,10.2.6.21,up,True,wireless,1
+AKM-AS01,Atatürk Kültür Merkezi erişim switch'i 1,ACCESS,AKM,Batı,Erişim,10.1.7.1,up,True,uplink-primary,1
+AKM-AS02,Atatürk Kültür Merkezi erişim switch'i 2,ACCESS,AKM,Batı,Erişim,10.1.7.2,up,True,access,2
+AKM-AS03,Atatürk Kültür Merkezi erişim switch'i 3,ACCESS,AKM,Batı,Erişim,10.1.7.3,up,True,access,1
+AKM-AS04,Atatürk Kültür Merkezi erişim switch'i 4,ACCESS,AKM,Batı,Erişim,10.1.7.4,up,True,access,2
+AKM-AS05,Atatürk Kültür Merkezi erişim switch'i 5,ACCESS,AKM,Batı,Erişim,10.1.7.5,up,True,access,1
+AKM-AP001,Atatürk Kültür Merkezi erişim noktası 1,AP,AKM,Batı,Kablosuz,10.2.7.1,up,True,wireless,1
+AKM-AP002,Atatürk Kültür Merkezi erişim noktası 2,AP,AKM,Batı,Kablosuz,10.2.7.2,up,True,wireless,2
+AKM-AP003,Atatürk Kültür Merkezi erişim noktası 3,AP,AKM,Batı,Kablosuz,10.2.7.3,up,True,wireless,1
+AKM-AP004,Atatürk Kültür Merkezi erişim noktası 4,AP,AKM,Batı,Kablosuz,10.2.7.4,up,True,wireless,2
+AKM-AP005,Atatürk Kültür Merkezi erişim noktası 5,AP,AKM,Batı,Kablosuz,10.2.7.5,up,True,wireless,1
+AKM-AP006,Atatürk Kültür Merkezi erişim noktası 6,AP,AKM,Batı,Kablosuz,10.2.7.6,up,True,wireless,2
+AKM-AP007,Atatürk Kültür Merkezi erişim noktası 7,AP,AKM,Batı,Kablosuz,10.2.7.7,up,True,wireless,1
+AKM-AP008,Atatürk Kültür Merkezi erişim noktası 8,AP,AKM,Batı,Kablosuz,10.2.7.8,up,True,wireless,2
+AKM-AP009,Atatürk Kültür Merkezi erişim noktası 9,AP,AKM,Batı,Kablosuz,10.2.7.9,up,True,wireless,1
+AKM-AP010,Atatürk Kültür Merkezi erişim noktası 10,AP,AKM,Batı,Kablosuz,10.2.7.10,up,True,wireless,2
+AKM-AP011,Atatürk Kültür Merkezi erişim noktası 11,AP,AKM,Batı,Kablosuz,10.2.7.11,up,True,wireless,1
+AKM-AP012,Atatürk Kültür Merkezi erişim noktası 12,AP,AKM,Batı,Kablosuz,10.2.7.12,up,True,wireless,2
+AKM-AP013,Atatürk Kültür Merkezi erişim noktası 13,AP,AKM,Batı,Kablosuz,10.2.7.13,up,True,wireless,1
+AKM-AP014,Atatürk Kültür Merkezi erişim noktası 14,AP,AKM,Batı,Kablosuz,10.2.7.14,up,True,wireless,2
+AKM-AP015,Atatürk Kültür Merkezi erişim noktası 15,AP,AKM,Batı,Kablosuz,10.2.7.15,up,True,wireless,1
+AKM-AP016,Atatürk Kültür Merkezi erişim noktası 16,AP,AKM,Batı,Kablosuz,10.2.7.16,up,True,wireless,2
+AKM-AP017,Atatürk Kültür Merkezi erişim noktası 17,AP,AKM,Batı,Kablosuz,10.2.7.17,up,True,wireless,1
+AKM-AP018,Atatürk Kültür Merkezi erişim noktası 18,AP,AKM,Batı,Kablosuz,10.2.7.18,up,True,wireless,2
+AKM-AP019,Atatürk Kültür Merkezi erişim noktası 19,AP,AKM,Batı,Kablosuz,10.2.7.19,up,True,wireless,1
+AKM-AP020,Atatürk Kültür Merkezi erişim noktası 20,AP,AKM,Batı,Kablosuz,10.2.7.20,up,True,wireless,2
+AKM-AP021,Atatürk Kültür Merkezi erişim noktası 21,AP,AKM,Batı,Kablosuz,10.2.7.21,up,True,wireless,1
+AKM-AP022,Atatürk Kültür Merkezi erişim noktası 22,AP,AKM,Batı,Kablosuz,10.2.7.22,up,True,wireless,2
+AKM-AP023,Atatürk Kültür Merkezi erişim noktası 23,AP,AKM,Batı,Kablosuz,10.2.7.23,up,True,wireless,1
+AKM-AP024,Atatürk Kültür Merkezi erişim noktası 24,AP,AKM,Batı,Kablosuz,10.2.7.24,up,True,wireless,2
+AKM-AP025,Atatürk Kültür Merkezi erişim noktası 25,AP,AKM,Batı,Kablosuz,10.2.7.25,up,True,wireless,1
+AKM-AP026,Atatürk Kültür Merkezi erişim noktası 26,AP,AKM,Batı,Kablosuz,10.2.7.26,up,True,wireless,2
+AKM-AP027,Atatürk Kültür Merkezi erişim noktası 27,AP,AKM,Batı,Kablosuz,10.2.7.27,up,True,wireless,1
+AKM-AP028,Atatürk Kültür Merkezi erişim noktası 28,AP,AKM,Batı,Kablosuz,10.2.7.28,up,True,wireless,2
+AKM-AP029,Atatürk Kültür Merkezi erişim noktası 29,AP,AKM,Batı,Kablosuz,10.2.7.29,up,True,wireless,1
+MUZ-AS01,Arkeoloji ve Etnografya Müzesi erişim switch'i 1,ACCESS,MUZ,Batı,Erişim,10.1.8.1,up,True,uplink-primary,1
+MUZ-AS02,Arkeoloji ve Etnografya Müzesi erişim switch'i 2,ACCESS,MUZ,Batı,Erişim,10.1.8.2,up,True,access,2
+MUZ-AP001,Arkeoloji ve Etnografya Müzesi erişim noktası 1,AP,MUZ,Batı,Kablosuz,10.2.8.1,up,True,wireless,1
+MUZ-AP002,Arkeoloji ve Etnografya Müzesi erişim noktası 2,AP,MUZ,Batı,Kablosuz,10.2.8.2,up,True,wireless,2
+MUZ-AP003,Arkeoloji ve Etnografya Müzesi erişim noktası 3,AP,MUZ,Batı,Kablosuz,10.2.8.3,up,True,wireless,1
+MUZ-AP004,Arkeoloji ve Etnografya Müzesi erişim noktası 4,AP,MUZ,Batı,Kablosuz,10.2.8.4,up,True,wireless,2
+MUZ-AP005,Arkeoloji ve Etnografya Müzesi erişim noktası 5,AP,MUZ,Batı,Kablosuz,10.2.8.5,up,True,wireless,1
+MUZ-AP006,Arkeoloji ve Etnografya Müzesi erişim noktası 6,AP,MUZ,Batı,Kablosuz,10.2.8.6,up,True,wireless,2
+SPB-AS01,Spor Bilimleri Fakültesi erişim switch'i 1,ACCESS,SPB,Orta,Erişim,10.1.9.1,up,True,uplink-primary,1
+SPB-AS02,Spor Bilimleri Fakültesi erişim switch'i 2,ACCESS,SPB,Orta,Erişim,10.1.9.2,up,True,access,2
+SPB-AS03,Spor Bilimleri Fakültesi erişim switch'i 3,ACCESS,SPB,Orta,Erişim,10.1.9.3,up,True,access,1
+SPB-AS04,Spor Bilimleri Fakültesi erişim switch'i 4,ACCESS,SPB,Orta,Erişim,10.1.9.4,up,True,access,2
+SPB-AP001,Spor Bilimleri Fakültesi erişim noktası 1,AP,SPB,Orta,Kablosuz,10.2.9.1,up,True,wireless,1
+SPB-AP002,Spor Bilimleri Fakültesi erişim noktası 2,AP,SPB,Orta,Kablosuz,10.2.9.2,up,True,wireless,2
+SPB-AP003,Spor Bilimleri Fakültesi erişim noktası 3,AP,SPB,Orta,Kablosuz,10.2.9.3,up,True,wireless,1
+SPB-AP004,Spor Bilimleri Fakültesi erişim noktası 4,AP,SPB,Orta,Kablosuz,10.2.9.4,up,True,wireless,2
+SPB-AP005,Spor Bilimleri Fakültesi erişim noktası 5,AP,SPB,Orta,Kablosuz,10.2.9.5,up,True,wireless,1
+SPB-AP006,Spor Bilimleri Fakültesi erişim noktası 6,AP,SPB,Orta,Kablosuz,10.2.9.6,up,True,wireless,2
+SPB-AP007,Spor Bilimleri Fakültesi erişim noktası 7,AP,SPB,Orta,Kablosuz,10.2.9.7,up,True,wireless,1
+SPB-AP008,Spor Bilimleri Fakültesi erişim noktası 8,AP,SPB,Orta,Kablosuz,10.2.9.8,up,True,wireless,2
+SPB-AP009,Spor Bilimleri Fakültesi erişim noktası 9,AP,SPB,Orta,Kablosuz,10.2.9.9,up,True,wireless,1
+SPB-AP010,Spor Bilimleri Fakültesi erişim noktası 10,AP,SPB,Orta,Kablosuz,10.2.9.10,up,True,wireless,2
+SPB-AP011,Spor Bilimleri Fakültesi erişim noktası 11,AP,SPB,Orta,Kablosuz,10.2.9.11,up,True,wireless,1
+SPB-AP012,Spor Bilimleri Fakültesi erişim noktası 12,AP,SPB,Orta,Kablosuz,10.2.9.12,up,True,wireless,2
+SPB-AP013,Spor Bilimleri Fakültesi erişim noktası 13,AP,SPB,Orta,Kablosuz,10.2.9.13,up,True,wireless,1
+SPB-AP014,Spor Bilimleri Fakültesi erişim noktası 14,AP,SPB,Orta,Kablosuz,10.2.9.14,up,True,wireless,2
+SPB-AP015,Spor Bilimleri Fakültesi erişim noktası 15,AP,SPB,Orta,Kablosuz,10.2.9.15,up,True,wireless,1
+SPB-AP016,Spor Bilimleri Fakültesi erişim noktası 16,AP,SPB,Orta,Kablosuz,10.2.9.16,up,True,wireless,2
+SPB-AP017,Spor Bilimleri Fakültesi erişim noktası 17,AP,SPB,Orta,Kablosuz,10.2.9.17,up,True,wireless,1
+SPB-AP018,Spor Bilimleri Fakültesi erişim noktası 18,AP,SPB,Orta,Kablosuz,10.2.9.18,up,True,wireless,2
+SPB-AP019,Spor Bilimleri Fakültesi erişim noktası 19,AP,SPB,Orta,Kablosuz,10.2.9.19,up,True,wireless,1
+SPB-AP020,Spor Bilimleri Fakültesi erişim noktası 20,AP,SPB,Orta,Kablosuz,10.2.9.20,up,True,wireless,2
+SPB-AP021,Spor Bilimleri Fakültesi erişim noktası 21,AP,SPB,Orta,Kablosuz,10.2.9.21,up,True,wireless,1
+SPB-AP022,Spor Bilimleri Fakültesi erişim noktası 22,AP,SPB,Orta,Kablosuz,10.2.9.22,up,True,wireless,2
+SPB-AP023,Spor Bilimleri Fakültesi erişim noktası 23,AP,SPB,Orta,Kablosuz,10.2.9.23,up,True,wireless,1
+SPB-AP024,Spor Bilimleri Fakültesi erişim noktası 24,AP,SPB,Orta,Kablosuz,10.2.9.24,up,True,wireless,2
+EGT-AS01,Eğitim Fakültesi erişim switch'i 1,ACCESS,EGT,Orta,Erişim,10.1.10.1,up,True,uplink-primary,1
+EGT-AS02,Eğitim Fakültesi erişim switch'i 2,ACCESS,EGT,Orta,Erişim,10.1.10.2,up,True,uplink-backup,2
+EGT-AS03,Eğitim Fakültesi erişim switch'i 3,ACCESS,EGT,Orta,Erişim,10.1.10.3,up,True,access,3
+EGT-AS04,Eğitim Fakültesi erişim switch'i 4,ACCESS,EGT,Orta,Erişim,10.1.10.4,up,True,access,4
+EGT-AS05,Eğitim Fakültesi erişim switch'i 5,ACCESS,EGT,Orta,Erişim,10.1.10.5,up,True,access,1
+EGT-AS06,Eğitim Fakültesi erişim switch'i 6,ACCESS,EGT,Orta,Erişim,10.1.10.6,up,True,access,2
+EGT-AS07,Eğitim Fakültesi erişim switch'i 7,ACCESS,EGT,Orta,Erişim,10.1.10.7,up,True,access,3
+EGT-AP001,Eğitim Fakültesi erişim noktası 1,AP,EGT,Orta,Kablosuz,10.2.10.1,up,True,wireless,1
+EGT-AP002,Eğitim Fakültesi erişim noktası 2,AP,EGT,Orta,Kablosuz,10.2.10.2,up,True,wireless,2
+EGT-AP003,Eğitim Fakültesi erişim noktası 3,AP,EGT,Orta,Kablosuz,10.2.10.3,up,True,wireless,3
+EGT-AP004,Eğitim Fakültesi erişim noktası 4,AP,EGT,Orta,Kablosuz,10.2.10.4,up,True,wireless,4
+EGT-AP005,Eğitim Fakültesi erişim noktası 5,AP,EGT,Orta,Kablosuz,10.2.10.5,up,True,wireless,1
+EGT-AP006,Eğitim Fakültesi erişim noktası 6,AP,EGT,Orta,Kablosuz,10.2.10.6,up,True,wireless,2
+EGT-AP007,Eğitim Fakültesi erişim noktası 7,AP,EGT,Orta,Kablosuz,10.2.10.7,up,True,wireless,3
+EGT-AP008,Eğitim Fakültesi erişim noktası 8,AP,EGT,Orta,Kablosuz,10.2.10.8,up,True,wireless,4
+EGT-AP009,Eğitim Fakültesi erişim noktası 9,AP,EGT,Orta,Kablosuz,10.2.10.9,up,True,wireless,1
+EGT-AP010,Eğitim Fakültesi erişim noktası 10,AP,EGT,Orta,Kablosuz,10.2.10.10,up,True,wireless,2
+EGT-AP011,Eğitim Fakültesi erişim noktası 11,AP,EGT,Orta,Kablosuz,10.2.10.11,up,True,wireless,3
+EGT-AP012,Eğitim Fakültesi erişim noktası 12,AP,EGT,Orta,Kablosuz,10.2.10.12,up,True,wireless,4
+EGT-AP013,Eğitim Fakültesi erişim noktası 13,AP,EGT,Orta,Kablosuz,10.2.10.13,up,True,wireless,1
+EGT-AP014,Eğitim Fakültesi erişim noktası 14,AP,EGT,Orta,Kablosuz,10.2.10.14,up,True,wireless,2
+EGT-AP015,Eğitim Fakültesi erişim noktası 15,AP,EGT,Orta,Kablosuz,10.2.10.15,up,True,wireless,3
+EGT-AP016,Eğitim Fakültesi erişim noktası 16,AP,EGT,Orta,Kablosuz,10.2.10.16,up,True,wireless,4
+EGT-AP017,Eğitim Fakültesi erişim noktası 17,AP,EGT,Orta,Kablosuz,10.2.10.17,up,True,wireless,1
+EGT-AP018,Eğitim Fakültesi erişim noktası 18,AP,EGT,Orta,Kablosuz,10.2.10.18,up,True,wireless,2
+EGT-AP019,Eğitim Fakültesi erişim noktası 19,AP,EGT,Orta,Kablosuz,10.2.10.19,up,True,wireless,3
+EGT-AP020,Eğitim Fakültesi erişim noktası 20,AP,EGT,Orta,Kablosuz,10.2.10.20,up,True,wireless,4
+EGT-AP021,Eğitim Fakültesi erişim noktası 21,AP,EGT,Orta,Kablosuz,10.2.10.21,up,True,wireless,1
+EGT-AP022,Eğitim Fakültesi erişim noktası 22,AP,EGT,Orta,Kablosuz,10.2.10.22,up,True,wireless,2
+EGT-AP023,Eğitim Fakültesi erişim noktası 23,AP,EGT,Orta,Kablosuz,10.2.10.23,up,True,wireless,3
+EGT-AP024,Eğitim Fakültesi erişim noktası 24,AP,EGT,Orta,Kablosuz,10.2.10.24,up,True,wireless,4
+EGT-AP025,Eğitim Fakültesi erişim noktası 25,AP,EGT,Orta,Kablosuz,10.2.10.25,up,True,wireless,1
+EGT-AP026,Eğitim Fakültesi erişim noktası 26,AP,EGT,Orta,Kablosuz,10.2.10.26,up,True,wireless,2
+EGT-AP027,Eğitim Fakültesi erişim noktası 27,AP,EGT,Orta,Kablosuz,10.2.10.27,up,True,wireless,3
+EGT-AP028,Eğitim Fakültesi erişim noktası 28,AP,EGT,Orta,Kablosuz,10.2.10.28,up,True,wireless,4
+EGT-AP029,Eğitim Fakültesi erişim noktası 29,AP,EGT,Orta,Kablosuz,10.2.10.29,up,True,wireless,1
+EGT-AP030,Eğitim Fakültesi erişim noktası 30,AP,EGT,Orta,Kablosuz,10.2.10.30,up,True,wireless,2
+EGT-AP031,Eğitim Fakültesi erişim noktası 31,AP,EGT,Orta,Kablosuz,10.2.10.31,up,True,wireless,3
+EGT-AP032,Eğitim Fakültesi erişim noktası 32,AP,EGT,Orta,Kablosuz,10.2.10.32,up,True,wireless,4
+EGT-AP033,Eğitim Fakültesi erişim noktası 33,AP,EGT,Orta,Kablosuz,10.2.10.33,up,True,wireless,1
+EGT-AP034,Eğitim Fakültesi erişim noktası 34,AP,EGT,Orta,Kablosuz,10.2.10.34,up,True,wireless,2
+EGT-AP035,Eğitim Fakültesi erişim noktası 35,AP,EGT,Orta,Kablosuz,10.2.10.35,up,True,wireless,3
+EGT-AP036,Eğitim Fakültesi erişim noktası 36,AP,EGT,Orta,Kablosuz,10.2.10.36,up,True,wireless,4
+EGT-AP037,Eğitim Fakültesi erişim noktası 37,AP,EGT,Orta,Kablosuz,10.2.10.37,up,True,wireless,1
+EGT-AP038,Eğitim Fakültesi erişim noktası 38,AP,EGT,Orta,Kablosuz,10.2.10.38,up,True,wireless,2
+EGT-AP039,Eğitim Fakültesi erişim noktası 39,AP,EGT,Orta,Kablosuz,10.2.10.39,up,True,wireless,3
+EGT-AP040,Eğitim Fakültesi erişim noktası 40,AP,EGT,Orta,Kablosuz,10.2.10.40,up,True,wireless,4
+EGT-AP041,Eğitim Fakültesi erişim noktası 41,AP,EGT,Orta,Kablosuz,10.2.10.41,up,True,wireless,1
+EGT-AP042,Eğitim Fakültesi erişim noktası 42,AP,EGT,Orta,Kablosuz,10.2.10.42,up,True,wireless,2
+EGT-AP043,Eğitim Fakültesi erişim noktası 43,AP,EGT,Orta,Kablosuz,10.2.10.43,up,True,wireless,3
+EGT-AP044,Eğitim Fakültesi erişim noktası 44,AP,EGT,Orta,Kablosuz,10.2.10.44,up,True,wireless,4
+IIBF-AS01,İktisadi ve İdari Bilimler Fakültesi erişim switch'i 1,ACCESS,IIBF,Orta,Erişim,10.1.11.1,up,True,uplink-primary,1
+IIBF-AS02,İktisadi ve İdari Bilimler Fakültesi erişim switch'i 2,ACCESS,IIBF,Orta,Erişim,10.1.11.2,up,True,uplink-backup,2
+IIBF-AS03,İktisadi ve İdari Bilimler Fakültesi erişim switch'i 3,ACCESS,IIBF,Orta,Erişim,10.1.11.3,up,True,access,3
+IIBF-AS04,İktisadi ve İdari Bilimler Fakültesi erişim switch'i 4,ACCESS,IIBF,Orta,Erişim,10.1.11.4,up,True,access,4
+IIBF-AS05,İktisadi ve İdari Bilimler Fakültesi erişim switch'i 5,ACCESS,IIBF,Orta,Erişim,10.1.11.5,up,True,access,1
+IIBF-AS06,İktisadi ve İdari Bilimler Fakültesi erişim switch'i 6,ACCESS,IIBF,Orta,Erişim,10.1.11.6,up,True,access,2
+IIBF-AS07,İktisadi ve İdari Bilimler Fakültesi erişim switch'i 7,ACCESS,IIBF,Orta,Erişim,10.1.11.7,up,True,access,3
+IIBF-AS08,İktisadi ve İdari Bilimler Fakültesi erişim switch'i 8,ACCESS,IIBF,Orta,Erişim,10.1.11.8,up,True,access,4
+IIBF-AP001,İktisadi ve İdari Bilimler Fakültesi erişim noktası 1,AP,IIBF,Orta,Kablosuz,10.2.11.1,up,True,wireless,1
+IIBF-AP002,İktisadi ve İdari Bilimler Fakültesi erişim noktası 2,AP,IIBF,Orta,Kablosuz,10.2.11.2,up,True,wireless,2
+IIBF-AP003,İktisadi ve İdari Bilimler Fakültesi erişim noktası 3,AP,IIBF,Orta,Kablosuz,10.2.11.3,up,True,wireless,3
+IIBF-AP004,İktisadi ve İdari Bilimler Fakültesi erişim noktası 4,AP,IIBF,Orta,Kablosuz,10.2.11.4,up,True,wireless,4
+IIBF-AP005,İktisadi ve İdari Bilimler Fakültesi erişim noktası 5,AP,IIBF,Orta,Kablosuz,10.2.11.5,up,True,wireless,1
+IIBF-AP006,İktisadi ve İdari Bilimler Fakültesi erişim noktası 6,AP,IIBF,Orta,Kablosuz,10.2.11.6,up,True,wireless,2
+IIBF-AP007,İktisadi ve İdari Bilimler Fakültesi erişim noktası 7,AP,IIBF,Orta,Kablosuz,10.2.11.7,up,True,wireless,3
+IIBF-AP008,İktisadi ve İdari Bilimler Fakültesi erişim noktası 8,AP,IIBF,Orta,Kablosuz,10.2.11.8,up,True,wireless,4
+IIBF-AP009,İktisadi ve İdari Bilimler Fakültesi erişim noktası 9,AP,IIBF,Orta,Kablosuz,10.2.11.9,up,True,wireless,1
+IIBF-AP010,İktisadi ve İdari Bilimler Fakültesi erişim noktası 10,AP,IIBF,Orta,Kablosuz,10.2.11.10,up,True,wireless,2
+IIBF-AP011,İktisadi ve İdari Bilimler Fakültesi erişim noktası 11,AP,IIBF,Orta,Kablosuz,10.2.11.11,up,True,wireless,3
+IIBF-AP012,İktisadi ve İdari Bilimler Fakültesi erişim noktası 12,AP,IIBF,Orta,Kablosuz,10.2.11.12,up,True,wireless,4
+IIBF-AP013,İktisadi ve İdari Bilimler Fakültesi erişim noktası 13,AP,IIBF,Orta,Kablosuz,10.2.11.13,up,True,wireless,1
+IIBF-AP014,İktisadi ve İdari Bilimler Fakültesi erişim noktası 14,AP,IIBF,Orta,Kablosuz,10.2.11.14,up,True,wireless,2
+IIBF-AP015,İktisadi ve İdari Bilimler Fakültesi erişim noktası 15,AP,IIBF,Orta,Kablosuz,10.2.11.15,up,True,wireless,3
+IIBF-AP016,İktisadi ve İdari Bilimler Fakültesi erişim noktası 16,AP,IIBF,Orta,Kablosuz,10.2.11.16,up,True,wireless,4
+IIBF-AP017,İktisadi ve İdari Bilimler Fakültesi erişim noktası 17,AP,IIBF,Orta,Kablosuz,10.2.11.17,up,True,wireless,1
+IIBF-AP018,İktisadi ve İdari Bilimler Fakültesi erişim noktası 18,AP,IIBF,Orta,Kablosuz,10.2.11.18,up,True,wireless,2
+IIBF-AP019,İktisadi ve İdari Bilimler Fakültesi erişim noktası 19,AP,IIBF,Orta,Kablosuz,10.2.11.19,up,True,wireless,3
+IIBF-AP020,İktisadi ve İdari Bilimler Fakültesi erişim noktası 20,AP,IIBF,Orta,Kablosuz,10.2.11.20,up,True,wireless,4
+IIBF-AP021,İktisadi ve İdari Bilimler Fakültesi erişim noktası 21,AP,IIBF,Orta,Kablosuz,10.2.11.21,up,True,wireless,1
+IIBF-AP022,İktisadi ve İdari Bilimler Fakültesi erişim noktası 22,AP,IIBF,Orta,Kablosuz,10.2.11.22,up,True,wireless,2
+IIBF-AP023,İktisadi ve İdari Bilimler Fakültesi erişim noktası 23,AP,IIBF,Orta,Kablosuz,10.2.11.23,up,True,wireless,3
+IIBF-AP024,İktisadi ve İdari Bilimler Fakültesi erişim noktası 24,AP,IIBF,Orta,Kablosuz,10.2.11.24,up,True,wireless,4
+IIBF-AP025,İktisadi ve İdari Bilimler Fakültesi erişim noktası 25,AP,IIBF,Orta,Kablosuz,10.2.11.25,up,True,wireless,1
+IIBF-AP026,İktisadi ve İdari Bilimler Fakültesi erişim noktası 26,AP,IIBF,Orta,Kablosuz,10.2.11.26,up,True,wireless,2
+IIBF-AP027,İktisadi ve İdari Bilimler Fakültesi erişim noktası 27,AP,IIBF,Orta,Kablosuz,10.2.11.27,up,True,wireless,3
+IIBF-AP028,İktisadi ve İdari Bilimler Fakültesi erişim noktası 28,AP,IIBF,Orta,Kablosuz,10.2.11.28,up,True,wireless,4
+IIBF-AP029,İktisadi ve İdari Bilimler Fakültesi erişim noktası 29,AP,IIBF,Orta,Kablosuz,10.2.11.29,up,True,wireless,1
+IIBF-AP030,İktisadi ve İdari Bilimler Fakültesi erişim noktası 30,AP,IIBF,Orta,Kablosuz,10.2.11.30,up,True,wireless,2
+IIBF-AP031,İktisadi ve İdari Bilimler Fakültesi erişim noktası 31,AP,IIBF,Orta,Kablosuz,10.2.11.31,up,True,wireless,3
+IIBF-AP032,İktisadi ve İdari Bilimler Fakültesi erişim noktası 32,AP,IIBF,Orta,Kablosuz,10.2.11.32,up,True,wireless,4
+IIBF-AP033,İktisadi ve İdari Bilimler Fakültesi erişim noktası 33,AP,IIBF,Orta,Kablosuz,10.2.11.33,up,True,wireless,1
+IIBF-AP034,İktisadi ve İdari Bilimler Fakültesi erişim noktası 34,AP,IIBF,Orta,Kablosuz,10.2.11.34,up,True,wireless,2
+IIBF-AP035,İktisadi ve İdari Bilimler Fakültesi erişim noktası 35,AP,IIBF,Orta,Kablosuz,10.2.11.35,up,True,wireless,3
+IIBF-AP036,İktisadi ve İdari Bilimler Fakültesi erişim noktası 36,AP,IIBF,Orta,Kablosuz,10.2.11.36,up,True,wireless,4
+IIBF-AP037,İktisadi ve İdari Bilimler Fakültesi erişim noktası 37,AP,IIBF,Orta,Kablosuz,10.2.11.37,up,True,wireless,1
+IIBF-AP038,İktisadi ve İdari Bilimler Fakültesi erişim noktası 38,AP,IIBF,Orta,Kablosuz,10.2.11.38,up,True,wireless,2
+IIBF-AP039,İktisadi ve İdari Bilimler Fakültesi erişim noktası 39,AP,IIBF,Orta,Kablosuz,10.2.11.39,up,True,wireless,3
+IIBF-AP040,İktisadi ve İdari Bilimler Fakültesi erişim noktası 40,AP,IIBF,Orta,Kablosuz,10.2.11.40,up,True,wireless,4
+IIBF-AP041,İktisadi ve İdari Bilimler Fakültesi erişim noktası 41,AP,IIBF,Orta,Kablosuz,10.2.11.41,up,True,wireless,1
+IIBF-AP042,İktisadi ve İdari Bilimler Fakültesi erişim noktası 42,AP,IIBF,Orta,Kablosuz,10.2.11.42,up,True,wireless,2
+IIBF-AP043,İktisadi ve İdari Bilimler Fakültesi erişim noktası 43,AP,IIBF,Orta,Kablosuz,10.2.11.43,up,True,wireless,3
+IIBF-AP044,İktisadi ve İdari Bilimler Fakültesi erişim noktası 44,AP,IIBF,Orta,Kablosuz,10.2.11.44,up,True,wireless,4
+IIBF-AP045,İktisadi ve İdari Bilimler Fakültesi erişim noktası 45,AP,IIBF,Orta,Kablosuz,10.2.11.45,up,True,wireless,1
+IIBF-AP046,İktisadi ve İdari Bilimler Fakültesi erişim noktası 46,AP,IIBF,Orta,Kablosuz,10.2.11.46,up,True,wireless,2
+IIBF-AP047,İktisadi ve İdari Bilimler Fakültesi erişim noktası 47,AP,IIBF,Orta,Kablosuz,10.2.11.47,up,True,wireless,3
+IIBF-AP048,İktisadi ve İdari Bilimler Fakültesi erişim noktası 48,AP,IIBF,Orta,Kablosuz,10.2.11.48,up,True,wireless,4
+IIBF-AP049,İktisadi ve İdari Bilimler Fakültesi erişim noktası 49,AP,IIBF,Orta,Kablosuz,10.2.11.49,up,True,wireless,1
+SAG-AS01,Sağlık Bilimleri Fakültesi erişim switch'i 1,ACCESS,SAG,Orta,Erişim,10.1.12.1,up,True,uplink-primary,1
+SAG-AS02,Sağlık Bilimleri Fakültesi erişim switch'i 2,ACCESS,SAG,Orta,Erişim,10.1.12.2,up,True,access,2
+SAG-AS03,Sağlık Bilimleri Fakültesi erişim switch'i 3,ACCESS,SAG,Orta,Erişim,10.1.12.3,up,True,access,3
+SAG-AS04,Sağlık Bilimleri Fakültesi erişim switch'i 4,ACCESS,SAG,Orta,Erişim,10.1.12.4,up,True,access,4
+SAG-AS05,Sağlık Bilimleri Fakültesi erişim switch'i 5,ACCESS,SAG,Orta,Erişim,10.1.12.5,up,True,access,1
+SAG-AS06,Sağlık Bilimleri Fakültesi erişim switch'i 6,ACCESS,SAG,Orta,Erişim,10.1.12.6,up,True,access,2
+SAG-AP001,Sağlık Bilimleri Fakültesi erişim noktası 1,AP,SAG,Orta,Kablosuz,10.2.12.1,up,True,wireless,1
+SAG-AP002,Sağlık Bilimleri Fakültesi erişim noktası 2,AP,SAG,Orta,Kablosuz,10.2.12.2,up,True,wireless,2
+SAG-AP003,Sağlık Bilimleri Fakültesi erişim noktası 3,AP,SAG,Orta,Kablosuz,10.2.12.3,up,True,wireless,3
+SAG-AP004,Sağlık Bilimleri Fakültesi erişim noktası 4,AP,SAG,Orta,Kablosuz,10.2.12.4,up,True,wireless,4
+SAG-AP005,Sağlık Bilimleri Fakültesi erişim noktası 5,AP,SAG,Orta,Kablosuz,10.2.12.5,up,True,wireless,1
+SAG-AP006,Sağlık Bilimleri Fakültesi erişim noktası 6,AP,SAG,Orta,Kablosuz,10.2.12.6,up,True,wireless,2
+SAG-AP007,Sağlık Bilimleri Fakültesi erişim noktası 7,AP,SAG,Orta,Kablosuz,10.2.12.7,up,True,wireless,3
+SAG-AP008,Sağlık Bilimleri Fakültesi erişim noktası 8,AP,SAG,Orta,Kablosuz,10.2.12.8,up,True,wireless,4
+SAG-AP009,Sağlık Bilimleri Fakültesi erişim noktası 9,AP,SAG,Orta,Kablosuz,10.2.12.9,up,True,wireless,1
+SAG-AP010,Sağlık Bilimleri Fakültesi erişim noktası 10,AP,SAG,Orta,Kablosuz,10.2.12.10,up,True,wireless,2
+SAG-AP011,Sağlık Bilimleri Fakültesi erişim noktası 11,AP,SAG,Orta,Kablosuz,10.2.12.11,up,True,wireless,3
+SAG-AP012,Sağlık Bilimleri Fakültesi erişim noktası 12,AP,SAG,Orta,Kablosuz,10.2.12.12,up,True,wireless,4
+SAG-AP013,Sağlık Bilimleri Fakültesi erişim noktası 13,AP,SAG,Orta,Kablosuz,10.2.12.13,up,True,wireless,1
+SAG-AP014,Sağlık Bilimleri Fakültesi erişim noktası 14,AP,SAG,Orta,Kablosuz,10.2.12.14,up,True,wireless,2
+SAG-AP015,Sağlık Bilimleri Fakültesi erişim noktası 15,AP,SAG,Orta,Kablosuz,10.2.12.15,up,True,wireless,3
+SAG-AP016,Sağlık Bilimleri Fakültesi erişim noktası 16,AP,SAG,Orta,Kablosuz,10.2.12.16,up,True,wireless,4
+SAG-AP017,Sağlık Bilimleri Fakültesi erişim noktası 17,AP,SAG,Orta,Kablosuz,10.2.12.17,up,True,wireless,1
+SAG-AP018,Sağlık Bilimleri Fakültesi erişim noktası 18,AP,SAG,Orta,Kablosuz,10.2.12.18,up,True,wireless,2
+SAG-AP019,Sağlık Bilimleri Fakültesi erişim noktası 19,AP,SAG,Orta,Kablosuz,10.2.12.19,up,True,wireless,3
+SAG-AP020,Sağlık Bilimleri Fakültesi erişim noktası 20,AP,SAG,Orta,Kablosuz,10.2.12.20,up,True,wireless,4
+SAG-AP021,Sağlık Bilimleri Fakültesi erişim noktası 21,AP,SAG,Orta,Kablosuz,10.2.12.21,up,True,wireless,1
+SAG-AP022,Sağlık Bilimleri Fakültesi erişim noktası 22,AP,SAG,Orta,Kablosuz,10.2.12.22,up,True,wireless,2
+SAG-AP023,Sağlık Bilimleri Fakültesi erişim noktası 23,AP,SAG,Orta,Kablosuz,10.2.12.23,up,True,wireless,3
+SAG-AP024,Sağlık Bilimleri Fakültesi erişim noktası 24,AP,SAG,Orta,Kablosuz,10.2.12.24,up,True,wireless,4
+SAG-AP025,Sağlık Bilimleri Fakültesi erişim noktası 25,AP,SAG,Orta,Kablosuz,10.2.12.25,up,True,wireless,1
+SAG-AP026,Sağlık Bilimleri Fakültesi erişim noktası 26,AP,SAG,Orta,Kablosuz,10.2.12.26,up,True,wireless,2
+SAG-AP027,Sağlık Bilimleri Fakültesi erişim noktası 27,AP,SAG,Orta,Kablosuz,10.2.12.27,up,True,wireless,3
+SAG-AP028,Sağlık Bilimleri Fakültesi erişim noktası 28,AP,SAG,Orta,Kablosuz,10.2.12.28,up,True,wireless,4
+SAG-AP029,Sağlık Bilimleri Fakültesi erişim noktası 29,AP,SAG,Orta,Kablosuz,10.2.12.29,up,True,wireless,1
+SAG-AP030,Sağlık Bilimleri Fakültesi erişim noktası 30,AP,SAG,Orta,Kablosuz,10.2.12.30,up,True,wireless,2
+SAG-AP031,Sağlık Bilimleri Fakültesi erişim noktası 31,AP,SAG,Orta,Kablosuz,10.2.12.31,up,True,wireless,3
+SAG-AP032,Sağlık Bilimleri Fakültesi erişim noktası 32,AP,SAG,Orta,Kablosuz,10.2.12.32,up,True,wireless,4
+SAG-AP033,Sağlık Bilimleri Fakültesi erişim noktası 33,AP,SAG,Orta,Kablosuz,10.2.12.33,up,True,wireless,1
+SAG-AP034,Sağlık Bilimleri Fakültesi erişim noktası 34,AP,SAG,Orta,Kablosuz,10.2.12.34,up,True,wireless,2
+SAG-AP035,Sağlık Bilimleri Fakültesi erişim noktası 35,AP,SAG,Orta,Kablosuz,10.2.12.35,up,True,wireless,3
+SUR-AS01,Su Ürünleri Fakültesi erişim switch'i 1,ACCESS,SUR,Orta,Erişim,10.1.13.1,up,True,uplink-primary,1
+SUR-AS02,Su Ürünleri Fakültesi erişim switch'i 2,ACCESS,SUR,Orta,Erişim,10.1.13.2,up,True,access,2
+SUR-AS03,Su Ürünleri Fakültesi erişim switch'i 3,ACCESS,SUR,Orta,Erişim,10.1.13.3,up,True,access,3
+SUR-AP001,Su Ürünleri Fakültesi erişim noktası 1,AP,SUR,Orta,Kablosuz,10.2.13.1,up,True,wireless,1
+SUR-AP002,Su Ürünleri Fakültesi erişim noktası 2,AP,SUR,Orta,Kablosuz,10.2.13.2,up,True,wireless,2
+SUR-AP003,Su Ürünleri Fakültesi erişim noktası 3,AP,SUR,Orta,Kablosuz,10.2.13.3,up,True,wireless,3
+SUR-AP004,Su Ürünleri Fakültesi erişim noktası 4,AP,SUR,Orta,Kablosuz,10.2.13.4,up,True,wireless,1
+SUR-AP005,Su Ürünleri Fakültesi erişim noktası 5,AP,SUR,Orta,Kablosuz,10.2.13.5,up,True,wireless,2
+SUR-AP006,Su Ürünleri Fakültesi erişim noktası 6,AP,SUR,Orta,Kablosuz,10.2.13.6,up,True,wireless,3
+SUR-AP007,Su Ürünleri Fakültesi erişim noktası 7,AP,SUR,Orta,Kablosuz,10.2.13.7,up,True,wireless,1
+SUR-AP008,Su Ürünleri Fakültesi erişim noktası 8,AP,SUR,Orta,Kablosuz,10.2.13.8,up,True,wireless,2
+SUR-AP009,Su Ürünleri Fakültesi erişim noktası 9,AP,SUR,Orta,Kablosuz,10.2.13.9,up,True,wireless,3
+SUR-AP010,Su Ürünleri Fakültesi erişim noktası 10,AP,SUR,Orta,Kablosuz,10.2.13.10,up,True,wireless,1
+SUR-AP011,Su Ürünleri Fakültesi erişim noktası 11,AP,SUR,Orta,Kablosuz,10.2.13.11,up,True,wireless,2
+SUR-AP012,Su Ürünleri Fakültesi erişim noktası 12,AP,SUR,Orta,Kablosuz,10.2.13.12,up,True,wireless,3
+TEK-AS01,Teknoloji Fakültesi erişim switch'i 1,ACCESS,TEK,Orta,Erişim,10.1.14.1,up,True,uplink-primary,1
+TEK-AS02,Teknoloji Fakültesi erişim switch'i 2,ACCESS,TEK,Orta,Erişim,10.1.14.2,up,True,uplink-backup,2
+TEK-AS03,Teknoloji Fakültesi erişim switch'i 3,ACCESS,TEK,Orta,Erişim,10.1.14.3,up,True,access,3
+TEK-AS04,Teknoloji Fakültesi erişim switch'i 4,ACCESS,TEK,Orta,Erişim,10.1.14.4,up,True,access,4
+TEK-AS05,Teknoloji Fakültesi erişim switch'i 5,ACCESS,TEK,Orta,Erişim,10.1.14.5,up,True,access,1
+TEK-AS06,Teknoloji Fakültesi erişim switch'i 6,ACCESS,TEK,Orta,Erişim,10.1.14.6,up,True,access,2
+TEK-AS07,Teknoloji Fakültesi erişim switch'i 7,ACCESS,TEK,Orta,Erişim,10.1.14.7,up,True,access,3
+TEK-AS08,Teknoloji Fakültesi erişim switch'i 8,ACCESS,TEK,Orta,Erişim,10.1.14.8,up,True,access,4
+TEK-AP001,Teknoloji Fakültesi erişim noktası 1,AP,TEK,Orta,Kablosuz,10.2.14.1,up,True,wireless,1
+TEK-AP002,Teknoloji Fakültesi erişim noktası 2,AP,TEK,Orta,Kablosuz,10.2.14.2,up,True,wireless,2
+TEK-AP003,Teknoloji Fakültesi erişim noktası 3,AP,TEK,Orta,Kablosuz,10.2.14.3,up,True,wireless,3
+TEK-AP004,Teknoloji Fakültesi erişim noktası 4,AP,TEK,Orta,Kablosuz,10.2.14.4,up,True,wireless,4
+TEK-AP005,Teknoloji Fakültesi erişim noktası 5,AP,TEK,Orta,Kablosuz,10.2.14.5,up,True,wireless,1
+TEK-AP006,Teknoloji Fakültesi erişim noktası 6,AP,TEK,Orta,Kablosuz,10.2.14.6,up,True,wireless,2
+TEK-AP007,Teknoloji Fakültesi erişim noktası 7,AP,TEK,Orta,Kablosuz,10.2.14.7,up,True,wireless,3
+TEK-AP008,Teknoloji Fakültesi erişim noktası 8,AP,TEK,Orta,Kablosuz,10.2.14.8,up,True,wireless,4
+TEK-AP009,Teknoloji Fakültesi erişim noktası 9,AP,TEK,Orta,Kablosuz,10.2.14.9,up,True,wireless,1
+TEK-AP010,Teknoloji Fakültesi erişim noktası 10,AP,TEK,Orta,Kablosuz,10.2.14.10,up,True,wireless,2
+TEK-AP011,Teknoloji Fakültesi erişim noktası 11,AP,TEK,Orta,Kablosuz,10.2.14.11,up,True,wireless,3
+TEK-AP012,Teknoloji Fakültesi erişim noktası 12,AP,TEK,Orta,Kablosuz,10.2.14.12,up,True,wireless,4
+TEK-AP013,Teknoloji Fakültesi erişim noktası 13,AP,TEK,Orta,Kablosuz,10.2.14.13,up,True,wireless,1
+TEK-AP014,Teknoloji Fakültesi erişim noktası 14,AP,TEK,Orta,Kablosuz,10.2.14.14,up,True,wireless,2
+TEK-AP015,Teknoloji Fakültesi erişim noktası 15,AP,TEK,Orta,Kablosuz,10.2.14.15,up,True,wireless,3
+TEK-AP016,Teknoloji Fakültesi erişim noktası 16,AP,TEK,Orta,Kablosuz,10.2.14.16,up,True,wireless,4
+TEK-AP017,Teknoloji Fakültesi erişim noktası 17,AP,TEK,Orta,Kablosuz,10.2.14.17,up,True,wireless,1
+TEK-AP018,Teknoloji Fakültesi erişim noktası 18,AP,TEK,Orta,Kablosuz,10.2.14.18,up,True,wireless,2
+TEK-AP019,Teknoloji Fakültesi erişim noktası 19,AP,TEK,Orta,Kablosuz,10.2.14.19,up,True,wireless,3
+TEK-AP020,Teknoloji Fakültesi erişim noktası 20,AP,TEK,Orta,Kablosuz,10.2.14.20,up,True,wireless,4
+TEK-AP021,Teknoloji Fakültesi erişim noktası 21,AP,TEK,Orta,Kablosuz,10.2.14.21,up,True,wireless,1
+TEK-AP022,Teknoloji Fakültesi erişim noktası 22,AP,TEK,Orta,Kablosuz,10.2.14.22,up,True,wireless,2
+TEK-AP023,Teknoloji Fakültesi erişim noktası 23,AP,TEK,Orta,Kablosuz,10.2.14.23,up,True,wireless,3
+TEK-AP024,Teknoloji Fakültesi erişim noktası 24,AP,TEK,Orta,Kablosuz,10.2.14.24,up,True,wireless,4
+TEK-AP025,Teknoloji Fakültesi erişim noktası 25,AP,TEK,Orta,Kablosuz,10.2.14.25,up,True,wireless,1
+TEK-AP026,Teknoloji Fakültesi erişim noktası 26,AP,TEK,Orta,Kablosuz,10.2.14.26,up,True,wireless,2
+TEK-AP027,Teknoloji Fakültesi erişim noktası 27,AP,TEK,Orta,Kablosuz,10.2.14.27,up,True,wireless,3
+TEK-AP028,Teknoloji Fakültesi erişim noktası 28,AP,TEK,Orta,Kablosuz,10.2.14.28,up,True,wireless,4
+TEK-AP029,Teknoloji Fakültesi erişim noktası 29,AP,TEK,Orta,Kablosuz,10.2.14.29,up,True,wireless,1
+TEK-AP030,Teknoloji Fakültesi erişim noktası 30,AP,TEK,Orta,Kablosuz,10.2.14.30,up,True,wireless,2
+TEK-AP031,Teknoloji Fakültesi erişim noktası 31,AP,TEK,Orta,Kablosuz,10.2.14.31,up,True,wireless,3
+TEK-AP032,Teknoloji Fakültesi erişim noktası 32,AP,TEK,Orta,Kablosuz,10.2.14.32,up,True,wireless,4
+TEK-AP033,Teknoloji Fakültesi erişim noktası 33,AP,TEK,Orta,Kablosuz,10.2.14.33,up,True,wireless,1
+TEK-AP034,Teknoloji Fakültesi erişim noktası 34,AP,TEK,Orta,Kablosuz,10.2.14.34,up,True,wireless,2
+TEK-AP035,Teknoloji Fakültesi erişim noktası 35,AP,TEK,Orta,Kablosuz,10.2.14.35,up,True,wireless,3
+TEK-AP036,Teknoloji Fakültesi erişim noktası 36,AP,TEK,Orta,Kablosuz,10.2.14.36,up,True,wireless,4
+TEK-AP037,Teknoloji Fakültesi erişim noktası 37,AP,TEK,Orta,Kablosuz,10.2.14.37,up,True,wireless,1
+TEK-AP038,Teknoloji Fakültesi erişim noktası 38,AP,TEK,Orta,Kablosuz,10.2.14.38,up,True,wireless,2
+TEK-AP039,Teknoloji Fakültesi erişim noktası 39,AP,TEK,Orta,Kablosuz,10.2.14.39,up,True,wireless,3
+TEK-AP040,Teknoloji Fakültesi erişim noktası 40,AP,TEK,Orta,Kablosuz,10.2.14.40,up,True,wireless,4
+TEK-AP041,Teknoloji Fakültesi erişim noktası 41,AP,TEK,Orta,Kablosuz,10.2.14.41,up,True,wireless,1
+TEK-AP042,Teknoloji Fakültesi erişim noktası 42,AP,TEK,Orta,Kablosuz,10.2.14.42,up,True,wireless,2
+TEK-AP043,Teknoloji Fakültesi erişim noktası 43,AP,TEK,Orta,Kablosuz,10.2.14.43,up,True,wireless,3
+TEK-AP044,Teknoloji Fakültesi erişim noktası 44,AP,TEK,Orta,Kablosuz,10.2.14.44,up,True,wireless,4
+TEK-AP045,Teknoloji Fakültesi erişim noktası 45,AP,TEK,Orta,Kablosuz,10.2.14.45,up,True,wireless,1
+TEK-AP046,Teknoloji Fakültesi erişim noktası 46,AP,TEK,Orta,Kablosuz,10.2.14.46,up,True,wireless,2
+TEK-AP047,Teknoloji Fakültesi erişim noktası 47,AP,TEK,Orta,Kablosuz,10.2.14.47,up,True,wireless,3
+KUT-AS01,Merkez Kütüphane erişim switch'i 1,ACCESS,KUT,Orta,Erişim,10.1.15.1,up,True,uplink-primary,1
+KUT-AS02,Merkez Kütüphane erişim switch'i 2,ACCESS,KUT,Orta,Erişim,10.1.15.2,up,True,uplink-backup,2
+KUT-AS03,Merkez Kütüphane erişim switch'i 3,ACCESS,KUT,Orta,Erişim,10.1.15.3,up,True,access,3
+KUT-AS04,Merkez Kütüphane erişim switch'i 4,ACCESS,KUT,Orta,Erişim,10.1.15.4,up,True,access,4
+KUT-AS05,Merkez Kütüphane erişim switch'i 5,ACCESS,KUT,Orta,Erişim,10.1.15.5,up,True,access,1
+KUT-AP001,Merkez Kütüphane erişim noktası 1,AP,KUT,Orta,Kablosuz,10.2.15.1,up,True,wireless,1
+KUT-AP002,Merkez Kütüphane erişim noktası 2,AP,KUT,Orta,Kablosuz,10.2.15.2,up,True,wireless,2
+KUT-AP003,Merkez Kütüphane erişim noktası 3,AP,KUT,Orta,Kablosuz,10.2.15.3,up,True,wireless,3
+KUT-AP004,Merkez Kütüphane erişim noktası 4,AP,KUT,Orta,Kablosuz,10.2.15.4,up,True,wireless,4
+KUT-AP005,Merkez Kütüphane erişim noktası 5,AP,KUT,Orta,Kablosuz,10.2.15.5,up,True,wireless,1
+KUT-AP006,Merkez Kütüphane erişim noktası 6,AP,KUT,Orta,Kablosuz,10.2.15.6,up,True,wireless,2
+KUT-AP007,Merkez Kütüphane erişim noktası 7,AP,KUT,Orta,Kablosuz,10.2.15.7,up,True,wireless,3
+KUT-AP008,Merkez Kütüphane erişim noktası 8,AP,KUT,Orta,Kablosuz,10.2.15.8,up,True,wireless,4
+KUT-AP009,Merkez Kütüphane erişim noktası 9,AP,KUT,Orta,Kablosuz,10.2.15.9,up,True,wireless,1
+KUT-AP010,Merkez Kütüphane erişim noktası 10,AP,KUT,Orta,Kablosuz,10.2.15.10,up,True,wireless,2
+KUT-AP011,Merkez Kütüphane erişim noktası 11,AP,KUT,Orta,Kablosuz,10.2.15.11,up,True,wireless,3
+KUT-AP012,Merkez Kütüphane erişim noktası 12,AP,KUT,Orta,Kablosuz,10.2.15.12,up,True,wireless,4
+KUT-AP013,Merkez Kütüphane erişim noktası 13,AP,KUT,Orta,Kablosuz,10.2.15.13,up,True,wireless,1
+KUT-AP014,Merkez Kütüphane erişim noktası 14,AP,KUT,Orta,Kablosuz,10.2.15.14,up,True,wireless,2
+KUT-AP015,Merkez Kütüphane erişim noktası 15,AP,KUT,Orta,Kablosuz,10.2.15.15,up,True,wireless,3
+KUT-AP016,Merkez Kütüphane erişim noktası 16,AP,KUT,Orta,Kablosuz,10.2.15.16,up,True,wireless,4
+KUT-AP017,Merkez Kütüphane erişim noktası 17,AP,KUT,Orta,Kablosuz,10.2.15.17,up,True,wireless,1
+KUT-AP018,Merkez Kütüphane erişim noktası 18,AP,KUT,Orta,Kablosuz,10.2.15.18,up,True,wireless,2
+KUT-AP019,Merkez Kütüphane erişim noktası 19,AP,KUT,Orta,Kablosuz,10.2.15.19,up,True,wireless,3
+KUT-AP020,Merkez Kütüphane erişim noktası 20,AP,KUT,Orta,Kablosuz,10.2.15.20,up,True,wireless,4
+KUT-AP021,Merkez Kütüphane erişim noktası 21,AP,KUT,Orta,Kablosuz,10.2.15.21,up,True,wireless,1
+KUT-AP022,Merkez Kütüphane erişim noktası 22,AP,KUT,Orta,Kablosuz,10.2.15.22,up,True,wireless,2
+KUT-AP023,Merkez Kütüphane erişim noktası 23,AP,KUT,Orta,Kablosuz,10.2.15.23,up,True,wireless,3
+KUT-AP024,Merkez Kütüphane erişim noktası 24,AP,KUT,Orta,Kablosuz,10.2.15.24,up,True,wireless,4
+KUT-AP025,Merkez Kütüphane erişim noktası 25,AP,KUT,Orta,Kablosuz,10.2.15.25,up,True,wireless,1
+KUT-AP026,Merkez Kütüphane erişim noktası 26,AP,KUT,Orta,Kablosuz,10.2.15.26,up,True,wireless,2
+YEM-AS01,Merkez Yemekhane erişim switch'i 1,ACCESS,YEM,Orta,Erişim,10.1.16.1,up,True,uplink-primary,1
+YEM-AS02,Merkez Yemekhane erişim switch'i 2,ACCESS,YEM,Orta,Erişim,10.1.16.2,up,True,uplink-backup,2
+YEM-AS03,Merkez Yemekhane erişim switch'i 3,ACCESS,YEM,Orta,Erişim,10.1.16.3,up,True,access,1
+YEM-AS04,Merkez Yemekhane erişim switch'i 4,ACCESS,YEM,Orta,Erişim,10.1.16.4,up,True,access,2
+YEM-AS05,Merkez Yemekhane erişim switch'i 5,ACCESS,YEM,Orta,Erişim,10.1.16.5,up,True,access,1
+YEM-AS06,Merkez Yemekhane erişim switch'i 6,ACCESS,YEM,Orta,Erişim,10.1.16.6,up,True,access,2
+YEM-AS07,Merkez Yemekhane erişim switch'i 7,ACCESS,YEM,Orta,Erişim,10.1.16.7,up,True,access,1
+YEM-AP001,Merkez Yemekhane erişim noktası 1,AP,YEM,Orta,Kablosuz,10.2.16.1,up,True,wireless,1
+YEM-AP002,Merkez Yemekhane erişim noktası 2,AP,YEM,Orta,Kablosuz,10.2.16.2,up,True,wireless,2
+YEM-AP003,Merkez Yemekhane erişim noktası 3,AP,YEM,Orta,Kablosuz,10.2.16.3,up,True,wireless,1
+YEM-AP004,Merkez Yemekhane erişim noktası 4,AP,YEM,Orta,Kablosuz,10.2.16.4,up,True,wireless,2
+YEM-AP005,Merkez Yemekhane erişim noktası 5,AP,YEM,Orta,Kablosuz,10.2.16.5,up,True,wireless,1
+YEM-AP006,Merkez Yemekhane erişim noktası 6,AP,YEM,Orta,Kablosuz,10.2.16.6,up,True,wireless,2
+YEM-AP007,Merkez Yemekhane erişim noktası 7,AP,YEM,Orta,Kablosuz,10.2.16.7,up,True,wireless,1
+YEM-AP008,Merkez Yemekhane erişim noktası 8,AP,YEM,Orta,Kablosuz,10.2.16.8,up,True,wireless,2
+YEM-AP009,Merkez Yemekhane erişim noktası 9,AP,YEM,Orta,Kablosuz,10.2.16.9,up,True,wireless,1
+YEM-AP010,Merkez Yemekhane erişim noktası 10,AP,YEM,Orta,Kablosuz,10.2.16.10,up,True,wireless,2
+YEM-AP011,Merkez Yemekhane erişim noktası 11,AP,YEM,Orta,Kablosuz,10.2.16.11,up,True,wireless,1
+YEM-AP012,Merkez Yemekhane erişim noktası 12,AP,YEM,Orta,Kablosuz,10.2.16.12,up,True,wireless,2
+YEM-AP013,Merkez Yemekhane erişim noktası 13,AP,YEM,Orta,Kablosuz,10.2.16.13,up,True,wireless,1
+YEM-AP014,Merkez Yemekhane erişim noktası 14,AP,YEM,Orta,Kablosuz,10.2.16.14,up,True,wireless,2
+YEM-AP015,Merkez Yemekhane erişim noktası 15,AP,YEM,Orta,Kablosuz,10.2.16.15,up,True,wireless,1
+YEM-AP016,Merkez Yemekhane erişim noktası 16,AP,YEM,Orta,Kablosuz,10.2.16.16,up,True,wireless,2
+YEM-AP017,Merkez Yemekhane erişim noktası 17,AP,YEM,Orta,Kablosuz,10.2.16.17,up,True,wireless,1
+YEM-AP018,Merkez Yemekhane erişim noktası 18,AP,YEM,Orta,Kablosuz,10.2.16.18,up,True,wireless,2
+YEM-AP019,Merkez Yemekhane erişim noktası 19,AP,YEM,Orta,Kablosuz,10.2.16.19,up,True,wireless,1
+YEM-AP020,Merkez Yemekhane erişim noktası 20,AP,YEM,Orta,Kablosuz,10.2.16.20,up,True,wireless,2
+YEM-AP021,Merkez Yemekhane erişim noktası 21,AP,YEM,Orta,Kablosuz,10.2.16.21,up,True,wireless,1
+YEM-AP022,Merkez Yemekhane erişim noktası 22,AP,YEM,Orta,Kablosuz,10.2.16.22,up,True,wireless,2
+YEM-AP023,Merkez Yemekhane erişim noktası 23,AP,YEM,Orta,Kablosuz,10.2.16.23,up,True,wireless,1
+YEM-AP024,Merkez Yemekhane erişim noktası 24,AP,YEM,Orta,Kablosuz,10.2.16.24,up,True,wireless,2
+YEM-AP025,Merkez Yemekhane erişim noktası 25,AP,YEM,Orta,Kablosuz,10.2.16.25,up,True,wireless,1
+YEM-AP026,Merkez Yemekhane erişim noktası 26,AP,YEM,Orta,Kablosuz,10.2.16.26,up,True,wireless,2
+YEM-AP027,Merkez Yemekhane erişim noktası 27,AP,YEM,Orta,Kablosuz,10.2.16.27,up,True,wireless,1
+YEM-AP028,Merkez Yemekhane erişim noktası 28,AP,YEM,Orta,Kablosuz,10.2.16.28,up,True,wireless,2
+YEM-AP029,Merkez Yemekhane erişim noktası 29,AP,YEM,Orta,Kablosuz,10.2.16.29,up,True,wireless,1
+YEM-AP030,Merkez Yemekhane erişim noktası 30,AP,YEM,Orta,Kablosuz,10.2.16.30,up,True,wireless,2
+YEM-AP031,Merkez Yemekhane erişim noktası 31,AP,YEM,Orta,Kablosuz,10.2.16.31,up,True,wireless,1
+YEM-AP032,Merkez Yemekhane erişim noktası 32,AP,YEM,Orta,Kablosuz,10.2.16.32,up,True,wireless,2
+YEM-AP033,Merkez Yemekhane erişim noktası 33,AP,YEM,Orta,Kablosuz,10.2.16.33,up,True,wireless,1
+YEM-AP034,Merkez Yemekhane erişim noktası 34,AP,YEM,Orta,Kablosuz,10.2.16.34,up,True,wireless,2
+YEM-AP035,Merkez Yemekhane erişim noktası 35,AP,YEM,Orta,Kablosuz,10.2.16.35,up,True,wireless,1
+YEM-AP036,Merkez Yemekhane erişim noktası 36,AP,YEM,Orta,Kablosuz,10.2.16.36,up,True,wireless,2
+YEM-AP037,Merkez Yemekhane erişim noktası 37,AP,YEM,Orta,Kablosuz,10.2.16.37,up,True,wireless,1
+YEM-AP038,Merkez Yemekhane erişim noktası 38,AP,YEM,Orta,Kablosuz,10.2.16.38,up,True,wireless,2
+YEM-AP039,Merkez Yemekhane erişim noktası 39,AP,YEM,Orta,Kablosuz,10.2.16.39,up,True,wireless,1
+YEM-AP040,Merkez Yemekhane erişim noktası 40,AP,YEM,Orta,Kablosuz,10.2.16.40,up,True,wireless,2
+YEM-AP041,Merkez Yemekhane erişim noktası 41,AP,YEM,Orta,Kablosuz,10.2.16.41,up,True,wireless,1
+YEM-AP042,Merkez Yemekhane erişim noktası 42,AP,YEM,Orta,Kablosuz,10.2.16.42,up,True,wireless,2
+YEM-AP043,Merkez Yemekhane erişim noktası 43,AP,YEM,Orta,Kablosuz,10.2.16.43,up,True,wireless,1
+YEM-AP044,Merkez Yemekhane erişim noktası 44,AP,YEM,Orta,Kablosuz,10.2.16.44,up,True,wireless,2
+FEN-AS01,Fen Fakültesi erişim switch'i 1,ACCESS,FEN,Doğu,Erişim,10.1.17.1,up,True,uplink-primary,1
+FEN-AS02,Fen Fakültesi erişim switch'i 2,ACCESS,FEN,Doğu,Erişim,10.1.17.2,up,True,access,2
+FEN-AS03,Fen Fakültesi erişim switch'i 3,ACCESS,FEN,Doğu,Erişim,10.1.17.3,up,True,access,3
+FEN-AS04,Fen Fakültesi erişim switch'i 4,ACCESS,FEN,Doğu,Erişim,10.1.17.4,up,True,access,4
+FEN-AS05,Fen Fakültesi erişim switch'i 5,ACCESS,FEN,Doğu,Erişim,10.1.17.5,up,True,access,1
+FEN-AS06,Fen Fakültesi erişim switch'i 6,ACCESS,FEN,Doğu,Erişim,10.1.17.6,up,True,access,2
+FEN-AS07,Fen Fakültesi erişim switch'i 7,ACCESS,FEN,Doğu,Erişim,10.1.17.7,up,True,access,3
+FEN-AP001,Fen Fakültesi erişim noktası 1,AP,FEN,Doğu,Kablosuz,10.2.17.1,up,True,wireless,1
+FEN-AP002,Fen Fakültesi erişim noktası 2,AP,FEN,Doğu,Kablosuz,10.2.17.2,up,True,wireless,2
+FEN-AP003,Fen Fakültesi erişim noktası 3,AP,FEN,Doğu,Kablosuz,10.2.17.3,up,True,wireless,3
+FEN-AP004,Fen Fakültesi erişim noktası 4,AP,FEN,Doğu,Kablosuz,10.2.17.4,up,True,wireless,4
+FEN-AP005,Fen Fakültesi erişim noktası 5,AP,FEN,Doğu,Kablosuz,10.2.17.5,up,True,wireless,1
+FEN-AP006,Fen Fakültesi erişim noktası 6,AP,FEN,Doğu,Kablosuz,10.2.17.6,up,True,wireless,2
+FEN-AP007,Fen Fakültesi erişim noktası 7,AP,FEN,Doğu,Kablosuz,10.2.17.7,up,True,wireless,3
+FEN-AP008,Fen Fakültesi erişim noktası 8,AP,FEN,Doğu,Kablosuz,10.2.17.8,up,True,wireless,4
+FEN-AP009,Fen Fakültesi erişim noktası 9,AP,FEN,Doğu,Kablosuz,10.2.17.9,up,True,wireless,1
+FEN-AP010,Fen Fakültesi erişim noktası 10,AP,FEN,Doğu,Kablosuz,10.2.17.10,up,True,wireless,2
+FEN-AP011,Fen Fakültesi erişim noktası 11,AP,FEN,Doğu,Kablosuz,10.2.17.11,up,True,wireless,3
+FEN-AP012,Fen Fakültesi erişim noktası 12,AP,FEN,Doğu,Kablosuz,10.2.17.12,up,True,wireless,4
+FEN-AP013,Fen Fakültesi erişim noktası 13,AP,FEN,Doğu,Kablosuz,10.2.17.13,up,True,wireless,1
+FEN-AP014,Fen Fakültesi erişim noktası 14,AP,FEN,Doğu,Kablosuz,10.2.17.14,up,True,wireless,2
+FEN-AP015,Fen Fakültesi erişim noktası 15,AP,FEN,Doğu,Kablosuz,10.2.17.15,up,True,wireless,3
+FEN-AP016,Fen Fakültesi erişim noktası 16,AP,FEN,Doğu,Kablosuz,10.2.17.16,up,True,wireless,4
+FEN-AP017,Fen Fakültesi erişim noktası 17,AP,FEN,Doğu,Kablosuz,10.2.17.17,up,True,wireless,1
+FEN-AP018,Fen Fakültesi erişim noktası 18,AP,FEN,Doğu,Kablosuz,10.2.17.18,up,True,wireless,2
+FEN-AP019,Fen Fakültesi erişim noktası 19,AP,FEN,Doğu,Kablosuz,10.2.17.19,up,True,wireless,3
+FEN-AP020,Fen Fakültesi erişim noktası 20,AP,FEN,Doğu,Kablosuz,10.2.17.20,up,True,wireless,4
+FEN-AP021,Fen Fakültesi erişim noktası 21,AP,FEN,Doğu,Kablosuz,10.2.17.21,up,True,wireless,1
+FEN-AP022,Fen Fakültesi erişim noktası 22,AP,FEN,Doğu,Kablosuz,10.2.17.22,up,True,wireless,2
+FEN-AP023,Fen Fakültesi erişim noktası 23,AP,FEN,Doğu,Kablosuz,10.2.17.23,up,True,wireless,3
+FEN-AP024,Fen Fakültesi erişim noktası 24,AP,FEN,Doğu,Kablosuz,10.2.17.24,up,True,wireless,4
+FEN-AP025,Fen Fakültesi erişim noktası 25,AP,FEN,Doğu,Kablosuz,10.2.17.25,up,True,wireless,1
+FEN-AP026,Fen Fakültesi erişim noktası 26,AP,FEN,Doğu,Kablosuz,10.2.17.26,up,True,wireless,2
+FEN-AP027,Fen Fakültesi erişim noktası 27,AP,FEN,Doğu,Kablosuz,10.2.17.27,up,True,wireless,3
+FEN-AP028,Fen Fakültesi erişim noktası 28,AP,FEN,Doğu,Kablosuz,10.2.17.28,up,True,wireless,4
+FEN-AP029,Fen Fakültesi erişim noktası 29,AP,FEN,Doğu,Kablosuz,10.2.17.29,up,True,wireless,1
+FEN-AP030,Fen Fakültesi erişim noktası 30,AP,FEN,Doğu,Kablosuz,10.2.17.30,up,True,wireless,2
+FEN-AP031,Fen Fakültesi erişim noktası 31,AP,FEN,Doğu,Kablosuz,10.2.17.31,up,True,wireless,3
+FEN-AP032,Fen Fakültesi erişim noktası 32,AP,FEN,Doğu,Kablosuz,10.2.17.32,up,True,wireless,4
+FEN-AP033,Fen Fakültesi erişim noktası 33,AP,FEN,Doğu,Kablosuz,10.2.17.33,up,True,wireless,1
+FEN-AP034,Fen Fakültesi erişim noktası 34,AP,FEN,Doğu,Kablosuz,10.2.17.34,up,True,wireless,2
+FEN-AP035,Fen Fakültesi erişim noktası 35,AP,FEN,Doğu,Kablosuz,10.2.17.35,up,True,wireless,3
+FEN-AP036,Fen Fakültesi erişim noktası 36,AP,FEN,Doğu,Kablosuz,10.2.17.36,up,True,wireless,4
+FEN-AP037,Fen Fakültesi erişim noktası 37,AP,FEN,Doğu,Kablosuz,10.2.17.37,up,True,wireless,1
+FEN-AP038,Fen Fakültesi erişim noktası 38,AP,FEN,Doğu,Kablosuz,10.2.17.38,up,True,wireless,2
+FEN-AP039,Fen Fakültesi erişim noktası 39,AP,FEN,Doğu,Kablosuz,10.2.17.39,up,True,wireless,3
+FEN-AP040,Fen Fakültesi erişim noktası 40,AP,FEN,Doğu,Kablosuz,10.2.17.40,up,True,wireless,4
+FEN-AP041,Fen Fakültesi erişim noktası 41,AP,FEN,Doğu,Kablosuz,10.2.17.41,up,True,wireless,1
+VET-AS01,Veteriner Fakültesi erişim switch'i 1,ACCESS,VET,Doğu,Erişim,10.1.18.1,up,True,uplink-primary,1
+VET-AS02,Veteriner Fakültesi erişim switch'i 2,ACCESS,VET,Doğu,Erişim,10.1.18.2,up,True,access,2
+VET-AS03,Veteriner Fakültesi erişim switch'i 3,ACCESS,VET,Doğu,Erişim,10.1.18.3,up,True,access,3
+VET-AS04,Veteriner Fakültesi erişim switch'i 4,ACCESS,VET,Doğu,Erişim,10.1.18.4,up,True,access,1
+VET-AS05,Veteriner Fakültesi erişim switch'i 5,ACCESS,VET,Doğu,Erişim,10.1.18.5,up,True,access,2
+VET-AP001,Veteriner Fakültesi erişim noktası 1,AP,VET,Doğu,Kablosuz,10.2.18.1,up,True,wireless,1
+VET-AP002,Veteriner Fakültesi erişim noktası 2,AP,VET,Doğu,Kablosuz,10.2.18.2,up,True,wireless,2
+VET-AP003,Veteriner Fakültesi erişim noktası 3,AP,VET,Doğu,Kablosuz,10.2.18.3,up,True,wireless,3
+VET-AP004,Veteriner Fakültesi erişim noktası 4,AP,VET,Doğu,Kablosuz,10.2.18.4,up,True,wireless,1
+VET-AP005,Veteriner Fakültesi erişim noktası 5,AP,VET,Doğu,Kablosuz,10.2.18.5,up,True,wireless,2
+VET-AP006,Veteriner Fakültesi erişim noktası 6,AP,VET,Doğu,Kablosuz,10.2.18.6,up,True,wireless,3
+VET-AP007,Veteriner Fakültesi erişim noktası 7,AP,VET,Doğu,Kablosuz,10.2.18.7,up,True,wireless,1
+VET-AP008,Veteriner Fakültesi erişim noktası 8,AP,VET,Doğu,Kablosuz,10.2.18.8,up,True,wireless,2
+VET-AP009,Veteriner Fakültesi erişim noktası 9,AP,VET,Doğu,Kablosuz,10.2.18.9,up,True,wireless,3
+VET-AP010,Veteriner Fakültesi erişim noktası 10,AP,VET,Doğu,Kablosuz,10.2.18.10,up,True,wireless,1
+VET-AP011,Veteriner Fakültesi erişim noktası 11,AP,VET,Doğu,Kablosuz,10.2.18.11,up,True,wireless,2
+VET-AP012,Veteriner Fakültesi erişim noktası 12,AP,VET,Doğu,Kablosuz,10.2.18.12,up,True,wireless,3
+VET-AP013,Veteriner Fakültesi erişim noktası 13,AP,VET,Doğu,Kablosuz,10.2.18.13,up,True,wireless,1
+VET-AP014,Veteriner Fakültesi erişim noktası 14,AP,VET,Doğu,Kablosuz,10.2.18.14,up,True,wireless,2
+VET-AP015,Veteriner Fakültesi erişim noktası 15,AP,VET,Doğu,Kablosuz,10.2.18.15,up,True,wireless,3
+VET-AP016,Veteriner Fakültesi erişim noktası 16,AP,VET,Doğu,Kablosuz,10.2.18.16,up,True,wireless,1
+VET-AP017,Veteriner Fakültesi erişim noktası 17,AP,VET,Doğu,Kablosuz,10.2.18.17,up,True,wireless,2
+VET-AP018,Veteriner Fakültesi erişim noktası 18,AP,VET,Doğu,Kablosuz,10.2.18.18,up,True,wireless,3
+VET-AP019,Veteriner Fakültesi erişim noktası 19,AP,VET,Doğu,Kablosuz,10.2.18.19,up,True,wireless,1
+VET-AP020,Veteriner Fakültesi erişim noktası 20,AP,VET,Doğu,Kablosuz,10.2.18.20,up,True,wireless,2
+VET-AP021,Veteriner Fakültesi erişim noktası 21,AP,VET,Doğu,Kablosuz,10.2.18.21,up,True,wireless,3
+VET-AP022,Veteriner Fakültesi erişim noktası 22,AP,VET,Doğu,Kablosuz,10.2.18.22,up,True,wireless,1
+VET-AP023,Veteriner Fakültesi erişim noktası 23,AP,VET,Doğu,Kablosuz,10.2.18.23,up,True,wireless,2
+VET-AP024,Veteriner Fakültesi erişim noktası 24,AP,VET,Doğu,Kablosuz,10.2.18.24,up,True,wireless,3
+VET-AP025,Veteriner Fakültesi erişim noktası 25,AP,VET,Doğu,Kablosuz,10.2.18.25,up,True,wireless,1
+VET-AP026,Veteriner Fakültesi erişim noktası 26,AP,VET,Doğu,Kablosuz,10.2.18.26,up,True,wireless,2
+ITB-AS01,İnsan ve Toplum Bilimleri Fakültesi erişim switch'i 1,ACCESS,ITB,Doğu,Erişim,10.1.19.1,up,True,uplink-primary,1
+ITB-AS02,İnsan ve Toplum Bilimleri Fakültesi erişim switch'i 2,ACCESS,ITB,Doğu,Erişim,10.1.19.2,up,True,access,2
+ITB-AS03,İnsan ve Toplum Bilimleri Fakültesi erişim switch'i 3,ACCESS,ITB,Doğu,Erişim,10.1.19.3,up,True,access,3
+ITB-AS04,İnsan ve Toplum Bilimleri Fakültesi erişim switch'i 4,ACCESS,ITB,Doğu,Erişim,10.1.19.4,up,True,access,4
+ITB-AS05,İnsan ve Toplum Bilimleri Fakültesi erişim switch'i 5,ACCESS,ITB,Doğu,Erişim,10.1.19.5,up,True,access,1
+ITB-AS06,İnsan ve Toplum Bilimleri Fakültesi erişim switch'i 6,ACCESS,ITB,Doğu,Erişim,10.1.19.6,up,True,access,2
+ITB-AP001,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 1,AP,ITB,Doğu,Kablosuz,10.2.19.1,up,True,wireless,1
+ITB-AP002,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 2,AP,ITB,Doğu,Kablosuz,10.2.19.2,up,True,wireless,2
+ITB-AP003,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 3,AP,ITB,Doğu,Kablosuz,10.2.19.3,up,True,wireless,3
+ITB-AP004,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 4,AP,ITB,Doğu,Kablosuz,10.2.19.4,up,True,wireless,4
+ITB-AP005,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 5,AP,ITB,Doğu,Kablosuz,10.2.19.5,up,True,wireless,1
+ITB-AP006,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 6,AP,ITB,Doğu,Kablosuz,10.2.19.6,up,True,wireless,2
+ITB-AP007,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 7,AP,ITB,Doğu,Kablosuz,10.2.19.7,up,True,wireless,3
+ITB-AP008,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 8,AP,ITB,Doğu,Kablosuz,10.2.19.8,up,True,wireless,4
+ITB-AP009,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 9,AP,ITB,Doğu,Kablosuz,10.2.19.9,up,True,wireless,1
+ITB-AP010,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 10,AP,ITB,Doğu,Kablosuz,10.2.19.10,up,True,wireless,2
+ITB-AP011,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 11,AP,ITB,Doğu,Kablosuz,10.2.19.11,up,True,wireless,3
+ITB-AP012,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 12,AP,ITB,Doğu,Kablosuz,10.2.19.12,up,True,wireless,4
+ITB-AP013,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 13,AP,ITB,Doğu,Kablosuz,10.2.19.13,up,True,wireless,1
+ITB-AP014,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 14,AP,ITB,Doğu,Kablosuz,10.2.19.14,up,True,wireless,2
+ITB-AP015,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 15,AP,ITB,Doğu,Kablosuz,10.2.19.15,up,True,wireless,3
+ITB-AP016,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 16,AP,ITB,Doğu,Kablosuz,10.2.19.16,up,True,wireless,4
+ITB-AP017,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 17,AP,ITB,Doğu,Kablosuz,10.2.19.17,up,True,wireless,1
+ITB-AP018,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 18,AP,ITB,Doğu,Kablosuz,10.2.19.18,up,True,wireless,2
+ITB-AP019,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 19,AP,ITB,Doğu,Kablosuz,10.2.19.19,up,True,wireless,3
+ITB-AP020,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 20,AP,ITB,Doğu,Kablosuz,10.2.19.20,up,True,wireless,4
+ITB-AP021,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 21,AP,ITB,Doğu,Kablosuz,10.2.19.21,up,True,wireless,1
+ITB-AP022,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 22,AP,ITB,Doğu,Kablosuz,10.2.19.22,up,True,wireless,2
+ITB-AP023,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 23,AP,ITB,Doğu,Kablosuz,10.2.19.23,up,True,wireless,3
+ITB-AP024,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 24,AP,ITB,Doğu,Kablosuz,10.2.19.24,up,True,wireless,4
+ITB-AP025,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 25,AP,ITB,Doğu,Kablosuz,10.2.19.25,up,True,wireless,1
+ITB-AP026,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 26,AP,ITB,Doğu,Kablosuz,10.2.19.26,up,True,wireless,2
+ITB-AP027,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 27,AP,ITB,Doğu,Kablosuz,10.2.19.27,up,True,wireless,3
+ITB-AP028,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 28,AP,ITB,Doğu,Kablosuz,10.2.19.28,up,True,wireless,4
+ITB-AP029,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 29,AP,ITB,Doğu,Kablosuz,10.2.19.29,up,True,wireless,1
+ITB-AP030,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 30,AP,ITB,Doğu,Kablosuz,10.2.19.30,up,True,wireless,2
+ITB-AP031,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 31,AP,ITB,Doğu,Kablosuz,10.2.19.31,up,True,wireless,3
+ITB-AP032,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 32,AP,ITB,Doğu,Kablosuz,10.2.19.32,up,True,wireless,4
+ITB-AP033,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 33,AP,ITB,Doğu,Kablosuz,10.2.19.33,up,True,wireless,1
+ITB-AP034,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 34,AP,ITB,Doğu,Kablosuz,10.2.19.34,up,True,wireless,2
+ITB-AP035,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 35,AP,ITB,Doğu,Kablosuz,10.2.19.35,up,True,wireless,3
+ITB-AP036,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 36,AP,ITB,Doğu,Kablosuz,10.2.19.36,up,True,wireless,4
+ITB-AP037,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 37,AP,ITB,Doğu,Kablosuz,10.2.19.37,up,True,wireless,1
+ITB-AP038,İnsan ve Toplum Bilimleri Fakültesi erişim noktası 38,AP,ITB,Doğu,Kablosuz,10.2.19.38,up,True,wireless,2
+TIP-AS01,Tıp Fakültesi erişim switch'i 1,ACCESS,TIP,Doğu,Erişim,10.1.20.1,up,True,uplink-primary,1
+TIP-AS02,Tıp Fakültesi erişim switch'i 2,ACCESS,TIP,Doğu,Erişim,10.1.20.2,up,True,uplink-backup,2
+TIP-AS03,Tıp Fakültesi erişim switch'i 3,ACCESS,TIP,Doğu,Erişim,10.1.20.3,up,True,access,3
+TIP-AS04,Tıp Fakültesi erişim switch'i 4,ACCESS,TIP,Doğu,Erişim,10.1.20.4,up,True,access,4
+TIP-AS05,Tıp Fakültesi erişim switch'i 5,ACCESS,TIP,Doğu,Erişim,10.1.20.5,up,True,access,5
+TIP-AS06,Tıp Fakültesi erişim switch'i 6,ACCESS,TIP,Doğu,Erişim,10.1.20.6,up,True,access,6
+TIP-AS07,Tıp Fakültesi erişim switch'i 7,ACCESS,TIP,Doğu,Erişim,10.1.20.7,up,True,access,1
+TIP-AS08,Tıp Fakültesi erişim switch'i 8,ACCESS,TIP,Doğu,Erişim,10.1.20.8,up,True,access,2
+TIP-AS09,Tıp Fakültesi erişim switch'i 9,ACCESS,TIP,Doğu,Erişim,10.1.20.9,up,True,access,3
+TIP-AP001,Tıp Fakültesi erişim noktası 1,AP,TIP,Doğu,Kablosuz,10.2.20.1,up,True,wireless,1
+TIP-AP002,Tıp Fakültesi erişim noktası 2,AP,TIP,Doğu,Kablosuz,10.2.20.2,up,True,wireless,2
+TIP-AP003,Tıp Fakültesi erişim noktası 3,AP,TIP,Doğu,Kablosuz,10.2.20.3,up,True,wireless,3
+TIP-AP004,Tıp Fakültesi erişim noktası 4,AP,TIP,Doğu,Kablosuz,10.2.20.4,up,True,wireless,4
+TIP-AP005,Tıp Fakültesi erişim noktası 5,AP,TIP,Doğu,Kablosuz,10.2.20.5,up,True,wireless,5
+TIP-AP006,Tıp Fakültesi erişim noktası 6,AP,TIP,Doğu,Kablosuz,10.2.20.6,up,True,wireless,6
+TIP-AP007,Tıp Fakültesi erişim noktası 7,AP,TIP,Doğu,Kablosuz,10.2.20.7,up,True,wireless,1
+TIP-AP008,Tıp Fakültesi erişim noktası 8,AP,TIP,Doğu,Kablosuz,10.2.20.8,up,True,wireless,2
+TIP-AP009,Tıp Fakültesi erişim noktası 9,AP,TIP,Doğu,Kablosuz,10.2.20.9,up,True,wireless,3
+TIP-AP010,Tıp Fakültesi erişim noktası 10,AP,TIP,Doğu,Kablosuz,10.2.20.10,up,True,wireless,4
+TIP-AP011,Tıp Fakültesi erişim noktası 11,AP,TIP,Doğu,Kablosuz,10.2.20.11,up,True,wireless,5
+TIP-AP012,Tıp Fakültesi erişim noktası 12,AP,TIP,Doğu,Kablosuz,10.2.20.12,up,True,wireless,6
+TIP-AP013,Tıp Fakültesi erişim noktası 13,AP,TIP,Doğu,Kablosuz,10.2.20.13,up,True,wireless,1
+TIP-AP014,Tıp Fakültesi erişim noktası 14,AP,TIP,Doğu,Kablosuz,10.2.20.14,up,True,wireless,2
+TIP-AP015,Tıp Fakültesi erişim noktası 15,AP,TIP,Doğu,Kablosuz,10.2.20.15,up,True,wireless,3
+TIP-AP016,Tıp Fakültesi erişim noktası 16,AP,TIP,Doğu,Kablosuz,10.2.20.16,up,True,wireless,4
+TIP-AP017,Tıp Fakültesi erişim noktası 17,AP,TIP,Doğu,Kablosuz,10.2.20.17,up,True,wireless,5
+TIP-AP018,Tıp Fakültesi erişim noktası 18,AP,TIP,Doğu,Kablosuz,10.2.20.18,up,True,wireless,6
+TIP-AP019,Tıp Fakültesi erişim noktası 19,AP,TIP,Doğu,Kablosuz,10.2.20.19,up,True,wireless,1
+TIP-AP020,Tıp Fakültesi erişim noktası 20,AP,TIP,Doğu,Kablosuz,10.2.20.20,up,True,wireless,2
+TIP-AP021,Tıp Fakültesi erişim noktası 21,AP,TIP,Doğu,Kablosuz,10.2.20.21,up,True,wireless,3
+TIP-AP022,Tıp Fakültesi erişim noktası 22,AP,TIP,Doğu,Kablosuz,10.2.20.22,up,True,wireless,4
+TIP-AP023,Tıp Fakültesi erişim noktası 23,AP,TIP,Doğu,Kablosuz,10.2.20.23,up,True,wireless,5
+TIP-AP024,Tıp Fakültesi erişim noktası 24,AP,TIP,Doğu,Kablosuz,10.2.20.24,up,True,wireless,6
+TIP-AP025,Tıp Fakültesi erişim noktası 25,AP,TIP,Doğu,Kablosuz,10.2.20.25,up,True,wireless,1
+TIP-AP026,Tıp Fakültesi erişim noktası 26,AP,TIP,Doğu,Kablosuz,10.2.20.26,up,True,wireless,2
+TIP-AP027,Tıp Fakültesi erişim noktası 27,AP,TIP,Doğu,Kablosuz,10.2.20.27,up,True,wireless,3
+TIP-AP028,Tıp Fakültesi erişim noktası 28,AP,TIP,Doğu,Kablosuz,10.2.20.28,up,True,wireless,4
+TIP-AP029,Tıp Fakültesi erişim noktası 29,AP,TIP,Doğu,Kablosuz,10.2.20.29,up,True,wireless,5
+TIP-AP030,Tıp Fakültesi erişim noktası 30,AP,TIP,Doğu,Kablosuz,10.2.20.30,up,True,wireless,6
+TIP-AP031,Tıp Fakültesi erişim noktası 31,AP,TIP,Doğu,Kablosuz,10.2.20.31,up,True,wireless,1
+TIP-AP032,Tıp Fakültesi erişim noktası 32,AP,TIP,Doğu,Kablosuz,10.2.20.32,up,True,wireless,2
+TIP-AP033,Tıp Fakültesi erişim noktası 33,AP,TIP,Doğu,Kablosuz,10.2.20.33,up,True,wireless,3
+TIP-AP034,Tıp Fakültesi erişim noktası 34,AP,TIP,Doğu,Kablosuz,10.2.20.34,up,True,wireless,4
+TIP-AP035,Tıp Fakültesi erişim noktası 35,AP,TIP,Doğu,Kablosuz,10.2.20.35,up,True,wireless,5
+TIP-AP036,Tıp Fakültesi erişim noktası 36,AP,TIP,Doğu,Kablosuz,10.2.20.36,up,True,wireless,6
+TIP-AP037,Tıp Fakültesi erişim noktası 37,AP,TIP,Doğu,Kablosuz,10.2.20.37,up,True,wireless,1
+TIP-AP038,Tıp Fakültesi erişim noktası 38,AP,TIP,Doğu,Kablosuz,10.2.20.38,up,True,wireless,2
+TIP-AP039,Tıp Fakültesi erişim noktası 39,AP,TIP,Doğu,Kablosuz,10.2.20.39,up,True,wireless,3
+TIP-AP040,Tıp Fakültesi erişim noktası 40,AP,TIP,Doğu,Kablosuz,10.2.20.40,up,True,wireless,4
+TIP-AP041,Tıp Fakültesi erişim noktası 41,AP,TIP,Doğu,Kablosuz,10.2.20.41,up,True,wireless,5
+TIP-AP042,Tıp Fakültesi erişim noktası 42,AP,TIP,Doğu,Kablosuz,10.2.20.42,up,True,wireless,6
+TIP-AP043,Tıp Fakültesi erişim noktası 43,AP,TIP,Doğu,Kablosuz,10.2.20.43,up,True,wireless,1
+TIP-AP044,Tıp Fakültesi erişim noktası 44,AP,TIP,Doğu,Kablosuz,10.2.20.44,up,True,wireless,2
+TIP-AP045,Tıp Fakültesi erişim noktası 45,AP,TIP,Doğu,Kablosuz,10.2.20.45,up,True,wireless,3
+TIP-AP046,Tıp Fakültesi erişim noktası 46,AP,TIP,Doğu,Kablosuz,10.2.20.46,up,True,wireless,4
+TIP-AP047,Tıp Fakültesi erişim noktası 47,AP,TIP,Doğu,Kablosuz,10.2.20.47,up,True,wireless,5
+TIP-AP048,Tıp Fakültesi erişim noktası 48,AP,TIP,Doğu,Kablosuz,10.2.20.48,up,True,wireless,6
+TIP-AP049,Tıp Fakültesi erişim noktası 49,AP,TIP,Doğu,Kablosuz,10.2.20.49,up,True,wireless,1
+TIP-AP050,Tıp Fakültesi erişim noktası 50,AP,TIP,Doğu,Kablosuz,10.2.20.50,up,True,wireless,2
+TIP-AP051,Tıp Fakültesi erişim noktası 51,AP,TIP,Doğu,Kablosuz,10.2.20.51,up,True,wireless,3
+TIP-AP052,Tıp Fakültesi erişim noktası 52,AP,TIP,Doğu,Kablosuz,10.2.20.52,up,True,wireless,4

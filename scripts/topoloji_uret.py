@@ -1,4 +1,6 @@
 import math, csv
+from pathlib import Path
+ROOT = Path(__file__).resolve().parent.parent  # depo kök klasörü
 # ad, kod, tur, kat, tepe kullanici, enlem, boylam, konum kaynagi, kritik
 B=[
 ("Bilgi İşlem Daire Başkanlığı (veri merkezi)","BIDB","Veri merkezi",3,120,38.67785,39.20290,"Google Haritalar",True),
@@ -35,8 +37,11 @@ def mesafe(a,b):
 rows=[]
 for ad,kod,tur,kat,kul,la,lo,kay,krit in B:
     if kod=="BIDB":
-        rows.append(dict(kod=kod,ad=ad,tur=tur,kat=kat,kullanici=kul,eszamanli=round(kul*0.6),ap=kat*2,kablolu=60,port=0,sw=4,yerleske="Rektörlük Yerleşkesi",bolge="Çekirdek",birincil="—",birincil_m=0,yedek="—",yedek_m=0,kural_yedek="Çekirdek katmanı",enlem=la,boylam=lo,konum_kaynagi=kay));continue
-    esz=math.ceil(kul*0.6); ap=max(math.ceil(esz/30),kat); kablolu=math.ceil(kul*0.15)
+        # Veri merkezi: K1/K1b/K4 aynı yuvarlama kuralıyla hesaplanır; AP, kablolu uç ve switch sayısı elle belirlenir.
+        esz=math.ceil(kul*0.6); cihaz=math.ceil(esz*1.2)
+        ap=6; kablolu=60; port=math.ceil((ap+kablolu)*1.2); sw=2  # sw: 2 sunucu switch'i (BIDB-SS01/02); çekirdek switch'leri ayrıca sayılır
+        rows.append(dict(kod=kod,ad=ad,tur=tur,kat=kat,kullanici=kul,eszamanli=esz,cihaz=cihaz,ap=ap,kablolu=kablolu,port=port,sw=sw,yerleske="Rektörlük Yerleşkesi",bolge="Çekirdek",birincil="—",birincil_m=0,yedek="—",yedek_m=0,kural_yedek="Çekirdek katmanı",enlem=la,boylam=lo,konum_kaynagi=kay,deger_turu="manuel: ap, kablolu, sw | hesaplanan: eszamanli, cihaz, port"));continue
+    esz=math.ceil(kul*0.6); cihaz=math.ceil(esz*1.2); ap=max(math.ceil(cihaz/25),kat); kablolu=math.ceil(kul*0.15)
     port=math.ceil((ap+kablolu)*1.2); sw=max(kat,math.ceil(port/48))
     bz=bolge(lo); d=DIST[bz]
     if d==kod: birincil="Kendi binası (dağıtım burada)"; bm=0
@@ -45,30 +50,31 @@ for ad,kod,tur,kat,kul,la,lo,kay,krit in B:
     if yedekli: yb=BACKUP_TO[bz]; yedek=f"{DIST[yb]}-DS01 ({yb})"; ym=mesafe(kod,DIST[yb])
     else: yedek="Yok"; ym=0
     neden=("kullanıcı ≥ 1.500" if kul>=1500 else "kritik hizmet") if yedekli else "kullanıcı < 1.500, kritik değil"
-    rows.append(dict(kod=kod,ad=ad,tur=tur,kat=kat,kullanici=kul,eszamanli=esz,ap=ap,kablolu=kablolu,port=port,sw=sw,yerleske=YERLESKE[bz],bolge=bz,birincil=birincil,birincil_m=bm,yedek=yedek,yedek_m=ym,kural_yedek=neden,enlem=la,boylam=lo,konum_kaynagi=kay))
-with open("topoloji.csv","w",newline="",encoding="utf-8") as f:
+    rows.append(dict(kod=kod,ad=ad,tur=tur,kat=kat,kullanici=kul,eszamanli=esz,cihaz=cihaz,ap=ap,kablolu=kablolu,port=port,sw=sw,yerleske=YERLESKE[bz],bolge=bz,birincil=birincil,birincil_m=bm,yedek=yedek,yedek_m=ym,kural_yedek=neden,enlem=la,boylam=lo,konum_kaynagi=kay,deger_turu="hesaplanan"))
+with open(ROOT/"data"/"topoloji.csv","w",newline="",encoding="utf-8") as f:
     w=csv.DictWriter(f,fieldnames=list(rows[0].keys()));w.writeheader();w.writerows(rows)
 tr=lambda n:f"{n:,}".replace(",",".")
 md=["# Ağ Topolojisi Tablosu\n",
 "Bu tablo Fırat Üniversitesi kampüs ağının sentetik (uydurma ama kurallı) modelidir. Cihaz sayıları aşağıdaki kurallardan hesaplanmıştır, elle yazılmamıştır.\n",
-"## 0. Veri kaynakları ve varsayımlar\n",
-"| Bilgi | Kaynak | Durum |\n|---|---|---|",
-"| Fakülte listesi | Fırat Üniversitesi resmî sitesi (https://www.firat.edu.tr/tr/page/event/fakulteler-mezuniyet-toreni-ikinci-grup-7452) | Gerçek |",
-"| Bina konumları | Google Haritalar ve OpenStreetMap (her binanın kaynağı tabloda) | Gerçek, yalnız Merkez Yemekhane tahmini |",
-"| İki ana yerleşke (Mühendislik ve Rektörlük) | Fırat Üniversitesi SKS Daire Başkanlığı sitesi | Gerçek |",
-"| Kat sayıları ve kullanıcı sayıları | — | Temsili varsayım |",
-"| Ağ cihazları, bağlantılar, katsayılar | Bu belgedeki kurallar | Sentetik (projenin tasarımı) |\n",
+"## 0. Veri türleri\n",
+"Fırat Üniversitesi'nin gerçek ağ altyapısı bu çalışmada kullanılmamıştır. Model üç tür veriden oluşur:\n",
+"| Tür | İçerik | Kaynak |\n|---|---|---|",
+"| **A. Gerçek coğrafi veri** | Fakülte isimleri; bina konumları (Merkez Yemekhane hariç); iki yerleşkeli kampüs yapısı | Fırat Üniversitesi resmî sitesi (fakülte listesi: https://www.firat.edu.tr/tr/page/event/fakulteler-mezuniyet-toreni-ikinci-grup-7452; yerleşkeler: SKS Daire Başkanlığı sitesi); Google Haritalar, OpenStreetMap, Wikipedia (her binanın konum kaynağı tabloda) |",
+"| **B. Sentetik tasarım parametresi** | Kat ve kullanıcı sayıları; AP, switch ve port sayıları; cihaz adları; IP adresleri; bağlantılar ve yedeklilik ilişkileri; hat kapasiteleri ve fiber uzunlukları | Bu belgedeki K1–K9 kuralları ve `docs/ag_modeli.md`; katsayıların bir kısmı kaynaklarla desteklenmiştir (bkz. `docs/kaynaklar.md`) |",
+"| **C. Simülasyon verisi** | Gecikme, paket kaybı, trafik, CPU ve bellek kullanımı, arıza durumları | Henüz üretilmemiştir; şema ve senaryo mantığı `docs/telemetri_semasi.md` dosyasındadır |\n",
 "## 1. Boyutlandırma kuralları\n",
-"| Kural | Tanım | Gerekçe |\n|---|---|---|",
-"| K1 · Eşzamanlı kullanıcı | Tepe kullanıcı × 0,6 | Tepe saatte binadakilerin yaklaşık %60'ı aynı anda ağa bağlı kabul edilmiştir |",
-"| K2 · Erişim noktası (AP) | max(⌈eşzamanlı ÷ 30⌉, kat sayısı) | Bir AP ~30 kullanıcıya rahat hizmet verir; her katta en az bir AP |",
-"| K3 · Kablolu uç | ⌈tepe kullanıcı × 0,15⌉ | Laboratuvar bilgisayarları, ofisler, yazıcılar, kameralar |",
-"| K4 · Port ihtiyacı | ⌈(AP + kablolu uç) × 1,2⌉ | Her AP bir port kullanır; %20 büyüme payı |",
-"| K5 · Erişim switch'i | max(kat sayısı, ⌈port ÷ 48⌉) | 48 portlu switch; her katta en az bir kat dolabı |",
-"| K6 · Bölge | Binanın gerçek boylamına göre: Batı (< 39,192), Orta (39,192–39,199), Doğu (> 39,199) | Batı bölgesi Mühendislik Yerleşkesi'ne, Orta ve Doğu Rektörlük Yerleşkesi'ne karşılık gelir |",
-"| K7 · Yedek hat | Tepe kullanıcı ≥ 1.500 **veya** kritik hizmet | Bu binalar komşu bölgenin dağıtım switch'ine ikinci bir fiber hatla da bağlanır |",
-"| K8 · Hat kapasitesi | Bina → dağıtım: 10 Gbps; dağıtım → çekirdek: 40 Gbps | Kurumsal kampüs ağlarında yaygın değerler |",
-"| K9 · Fiber uzunluğu | İki bina arası kuş uçuşu mesafe × 1,3 | Kablo yol ve kanal güzergâhını izlediği için %30 pay |\n",
+"| Kural | Tanım | Gerekçe | Kaynak |\n|---|---|---|---|",
+"| K1 · Eşzamanlı kullanıcı | Tepe kullanıcı × 0,6 | Bir üniversitede gün içinde aynı anda bağlı kullanıcılar günlük kullanıcıların %33–58'i olarak ölçülmüştür; yoğun saate göre boyutlandırma için üst sınır alınmıştır | Okumura & Fujimura (2023); Mohottige vd. (2022) |",
+"| K1b · Eşzamanlı cihaz | Eşzamanlı kullanıcı × 1,2 | Kişi başına 1,2–1,3 kablosuz cihaz ölçülmüştür; kullanıcılar genellikle birden fazla cihaz taşır | Okumura & Fujimura (2023); Cisco (2013) |",
+"| K2 · Erişim noktası (AP) | max(⌈eşzamanlı cihaz ÷ 25⌉, kat sayısı) | Tipik ofis ortamında AP hücresi başına 20–30 kullanıcı; aralığın ortası alınmıştır; her katta en az bir AP | Cisco (2013) |",
+"| K3 · Kablolu uç | ⌈tepe kullanıcı × 0,15⌉ | Laboratuvar bilgisayarları, ofisler, yazıcılar, kameralar | Tasarım varsayımı (kaynak aranıyor) |",
+"| K4 · Port ihtiyacı | ⌈(AP + kablolu uç) × 1,2⌉ | Her AP bir port kullanır; %20 büyüme payı | Tasarım varsayımı (kaynak aranıyor) |",
+"| K5 · Erişim switch'i | max(kat sayısı, ⌈port ÷ 48⌉) | 48 portlu switch; her katta en az bir kat dolabı | Tasarım varsayımı (kaynak aranıyor) |",
+"| K6 · Bölge | Binanın gerçek boylamına göre: Batı (< 39,192), Orta (39,192–39,199), Doğu (> 39,199) | Batı bölgesi Mühendislik Yerleşkesi'ne, Orta ve Doğu Rektörlük Yerleşkesi'ne karşılık gelir | Bina konumları (bkz. bölüm 0) |",
+"| K7 · Yedek hat | Tepe kullanıcı ≥ 1.500 **veya** kritik hizmet | Bu binalar komşu bölgenin dağıtım switch'ine ikinci bir fiber hatla da bağlanır | Tasarım kararı |",
+"| K8 · Hat kapasitesi | Bina → dağıtım: 10 Gbps; dağıtım → çekirdek: 40 Gbps | Erişim katmanı yoğun trafiğe karşı 20:1 aşırı abonelik oranıyla tasarlanır | Cisco (2013) |",
+"| K9 · Fiber uzunluğu | İki bina arası kuş uçuşu mesafe × 1,3 | Kablo yol ve kanal güzergâhını izlediği için %30 pay (güzergâh katsayısı) | Tasarım varsayımı (kaynak aranıyor) |\n",
+"Kaynakların tam künyeleri `docs/kaynaklar.md` dosyasındadır.\n",
 "## 2. Katman yapısı\n",
 "| Katman | Cihaz | Konum |\n|---|---|---|",
 "| Çekirdek | BIDB-CS01, BIDB-CS02 (yedekli çift) | Bilgi İşlem Daire Başkanlığı |",
@@ -80,14 +86,21 @@ md=["# Ağ Topolojisi Tablosu\n",
 "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
 for r in rows:
     md.append(f"| {r['kod']} | {r['ad']} | {r['yerleske']} | {r['bolge']} | {r['kat']} | {tr(r['kullanici'])} | {r['ap']} | {r['sw']} | {r['birincil']} | {r['birincil_m'] or '—'} | {r['yedek']} | {r['yedek_m'] or '—'} | {r['konum_kaynagi']} |")
-md.append("\nEşzamanlı kullanıcı (K1), kablolu uç (K3) ve port (K4) ara değerleri `data/topoloji.csv` dosyasında yer alır. Veri merkezi satırı kurallarla değil, elle belirlenmiştir: 2 çekirdek ve 2 sunucu switch'i.\n")
+md.append("\nEşzamanlı kullanıcı (K1), eşzamanlı cihaz (K1b), kablolu uç (K3) ve port (K4) ara değerleri `data/topoloji.csv` dosyasında yer alır. Her satırın `deger_turu` sütunu değerin kuralla mı hesaplandığını yoksa elle mi belirlendiğini gösterir.\n")
+md.append("**Veri merkezi (BIDB) satırı:** Eşzamanlı kullanıcı, eşzamanlı cihaz ve port sayısı diğer binalarla aynı kurallarla hesaplanır. AP sayısı (6), kablolu uç sayısı (60; sunucu ve depolama bağlantıları) ve switch sayısı (2 sunucu switch'i: BIDB-SS01, BIDB-SS02) elle belirlenmiştir, çünkü veri merkezinin ihtiyacı kullanıcı sayısından değil barındırdığı sistemlerden doğar. Çekirdek switch'leri (BIDB-CS01, BIDB-CS02) bu sayıya dahil değildir.\n")
 md.append("## 4. Özet\n")
-md.append("| Kalem | Toplam |\n|---|---|")
-md.append(f"| Bina (veri merkezi hariç) | {len(rows)-1} |")
-md.append(f"| Tepe kullanıcı | {tr(sum(r['kullanici'] for r in rows))} |")
-md.append(f"| Erişim noktası | {sum(r['ap'] for r in rows)} |")
-md.append(f"| Erişim switch'i | {sum(r['sw'] for r in rows if r['kod']!='BIDB')} |")
-md.append("| Dağıtım switch'i | 3 |\n| Çekirdek switch | 2 |")
+nd=[r for r in rows if r['kod']!='BIDB']
+S=lambda rs,k: sum(r[k] for r in rs)
+md.append("Tüm değerler doğrudan `data/topoloji.csv` satırlarından toplanmıştır.\n")
+md.append("| Kalem | Veri merkezi hariç | Veri merkezi dahil |\n|---|---|---|")
+md.append(f"| Bina | {len(nd)} | {len(rows)} |")
+md.append(f"| Tepe kullanıcı | {tr(S(nd,'kullanici'))} | {tr(S(rows,'kullanici'))} |")
+md.append(f"| Eşzamanlı cihaz (K1b) | {tr(S(nd,'cihaz'))} | {tr(S(rows,'cihaz'))} |")
+md.append(f"| Erişim noktası (AP) | {S(nd,'ap')} | {S(rows,'ap')} |")
+md.append(f"| Kablolu uç | {tr(S(nd,'kablolu'))} | {tr(S(rows,'kablolu'))} |")
+md.append(f"| Erişim katmanı switch'i (ACCESS) | {S(nd,'sw')} | {S(nd,'sw')} |")
+md.append(f"| Veri merkezi sunucu switch'i (SERVER_SWITCH) | — | {S(rows,'sw') - S(nd,'sw')} |")
+md.append("| Dağıtım switch'i | 3 | 3 |\n| Çekirdek switch | — | 2 |")
 yed=[r['kod'] for r in rows if r['yedek'] not in ('Yok','—')];yok=[r['kod'] for r in rows if r['yedek']=='Yok']
 md.append(f"| Yedek hattı olan bina | {len(yed)} ({', '.join(yed)}) |")
 md.append(f"| Yedek hattı olmayan bina | {len(yok)} ({', '.join(yok)}) |")
@@ -99,9 +112,9 @@ for s in ["Kat sayıları ve kullanıcı sayıları temsilidir; gerçek kampüs 
 "İnsan ve Toplum Bilimleri Fakültesi haritada \"İnsani ve Sosyal Bilimler Fakültesi\" adıyla bulunmuştur.",
 "Fırat Üniversitesi Hastanesi ayrı bina olarak modellenmemiş, Tıp Fakültesi kapsamında düşünülmüştür.",
 "Öğrenci yurtları modele alınmamıştır; devlet yurtları üniversiteye değil Kredi ve Yurtlar Kurumu'na bağlıdır.",
-"Dağıtım switch'ini barındıran binalar (MUH, TEK, REK) kendi switch'leri arızalanırsa yedek hatla komşu bölgeye geçer.",
-"Katsayılar (0,6 · 30 · 0,15 · 1,2 · 1,3) varsayımdır ve raporda kaynakla desteklenmelidir."]:
+"Model gerçek üniversite altyapısı üzerinde doğrulanmamıştır; tasarımın tutarlılığı yalnızca `scripts/topoloji_dogrula.py` ile otomatik olarak sınanmıştır.",
+"Yedeklilik ve kapasite değerlendirmesi `docs/ag_modeli.md` ve `docs/dogrulama_raporu.md` dosyalarındadır.",
+"K3, K4, K5 ve K9 katsayıları (0,15 · 1,2 · 48 · 1,3) henüz kaynakla desteklenmemiş tasarım varsayımlarıdır."]:
     md.append("- "+s)
-open("topoloji.md","w",encoding="utf-8").write("\n".join(md)+"\n")
-for r in rows: print(r['kod'],r['bolge'],r['birincil'],r['birincil_m'],r['yedek'],r['yedek_m'])
-print(sum(r['ap'] for r in rows), sum(r['sw'] for r in rows if r['kod']!='BIDB'))
+open(ROOT/"docs"/"topoloji.md","w",encoding="utf-8").write("\n".join(md)+"\n")
+print("topoloji.csv ve topoloji.md yazıldı:", len(rows), "satır")

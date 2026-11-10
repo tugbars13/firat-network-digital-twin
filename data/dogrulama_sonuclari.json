@@ -1,0 +1,2744 @@
+{
+ "testler": [
+  {
+   "test": "T1 Her cihazın benzersiz kimliği var",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "733 cihaz; yinelenen: yok"
+  },
+  {
+   "test": "T2 Bağlantı kimlikleri benzersiz",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "763 bağlantı; yinelenen: yok"
+  },
+  {
+   "test": "T3 Her bağlantının iki ucu devices.csv içinde",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "geçersiz uç: yok"
+  },
+  {
+   "test": "T4 Kendine bağlanan cihaz yok",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "yok"
+  },
+  {
+   "test": "T5 Aynı iki cihaz arasında aynı türde yinelenen bağlantı yok",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "yok"
+  },
+  {
+   "test": "T6 İzole cihaz yok",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "yok"
+  },
+  {
+   "test": "T7 Ağ grafiği tek parça (bağlı)",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "bileşen sayısı: 1"
+  },
+  {
+   "test": "T8 Yönetim IP adresleri benzersiz ve özel (RFC 1918)",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "yinelenen: yok; tümü özel: True"
+  },
+  {
+   "test": "T9 Her dağıtım switch'i çekirdeğe bağlı",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "MUH-DS01 → BIDB-CS01, BIDB-CS02; TEK-DS01 → BIDB-CS01, BIDB-CS02; REK-DS01 → BIDB-CS01, BIDB-CS02"
+  },
+  {
+   "test": "T10 Çekirdek switch'leri birbirine bağlı",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "BIDB-CS01 ↔ BIDB-CS02"
+  },
+  {
+   "test": "T11 Cihaz envanteri topoloji.csv ile birebir uyumlu (AP ve erişim/sunucu switch'i)",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "uyumsuz bina: yok"
+  },
+  {
+   "test": "T12 K1–K5 hesapları her bina için yeniden doğrulandı",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "hatalı satır: yok"
+  },
+  {
+   "test": "T13 Toplamlar beklenen değerlerle uyumlu (20.900 / 611 hariç; 21.020 / 617 dahil)",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "hariç: 20900 kullanıcı, 611 AP; dahil: 21020 kullanıcı, 617 AP"
+  },
+  {
+   "test": "T14 Binalar arası fiber uzunlukları K9 ile tutarlı",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "uyumsuz: yok"
+  },
+  {
+   "test": "T15 Tanımlı her yedek hat, birincil hat koptuğunda binayı ayakta tutuyor",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "başarısız: yok"
+  },
+  {
+   "test": "T16 SERVER_SWITCH ve ACCESS ayrımı (2/3/109/2/617 = 733)",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "bulunan: {'CORE': 2, 'DISTRIBUTION': 3, 'ACCESS': 109, 'SERVER_SWITCH': 2, 'AP': 617}, toplam 733; BIDB'de ACCESS: yok; hatalı SS: yok; SS iki çekirdeğe bağlı: True"
+  },
+  {
+   "test": "T17 Bina içi halka tutarlılığı (STACK yok, aynı bina, n switch'te n bağlantı, tek döngü, toplam 108)",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "STACK: 0; ACCESS_RING: 108 (beklenen 108); uç hatası: yok; biçim hatası: yok"
+  },
+  {
+   "test": "T18 Yedeklilik sınıflandırması (8 yedek hatlı bina = hat+dağıtım yedekli; 9 dayanıklı = 8 + BIDB)",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "kural (K7): ['EGT', 'IIBF', 'KUT', 'MUH', 'REK', 'TEK', 'TIP', 'YEM']; YEDEK hattı olan: ['EGT', 'IIBF', 'KUT', 'MUH', 'REK', 'TEK', 'TIP', 'YEM']; testle yedekli: ['EGT', 'IIBF', 'KUT', 'MUH', 'REK', 'TEK', 'TIP', 'YEM']; tek arızaya dayanıklı: ['BIDB', 'EGT', 'IIBF', 'KUT', 'MUH', 'REK', 'TEK', 'TIP', 'YEM']"
+  },
+  {
+   "test": "T19 Fiziksel ortak arıza (SRLG tanımlı; A'da BIDB kaybı 20 binanın tamamını düşürür; A'da DS–BIDB güzergâh kesintisi dağıtımı çekirdekten koparır ve yalnız bina transiti kalır; B'de tek bina/güzergâh kaybı başka binayı düşürmez ve transite gerek kalmaz)",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "SRLG'siz bağlantı: 0; A/BIDB kaybı: 20 bina çevrimdışı; A/DS–BIDB kesintisinde bina transiti: MUH-DS01 → MUH (%120.4); TEK-DS01 → EGT, IIBF, TEK, KUT, YEM (%42.1); REK-DS01 → REK, TIP (%63.5); B'de başka bina düşmüyor: True; B'de transit gerekmiyor: True"
+  },
+  {
+   "test": "T20 Fiber uzunluğu bileşenleri toplamla tutarlı (13.517 + dağıtım–çekirdek = toplam; uzunluk yalnız K9 hatlarında)",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "birincil 5888 + yedek 7629 = 13517; + dağıtım–çekirdek 5370 + veri merkezi 0 = 18887 m; K9 olup uzunluğu boş: yok; K9 dışı uzunluk: yok"
+  },
+  {
+   "test": "T21 Aktif-pasif ve aktif-aktif kapasite hesapları tutarlı (AA bölüşümü VLAN modeliyle eşleşiyor); N-1 durumunda hiçbir hat %100'ü aşmıyor",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "hata: yok; dağıtım arızasında aşım: yok; kampüs beklenen yükü 45.78 Gbps"
+  },
+  {
+   "test": "T22 Adresleme modeli tutarlı (34 /31 omurga hattı, çakışma yok, VIP çakışması yok, VLAN boyutları yeterli)",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "109 VLAN, 34 /31, 32 OSPF yönlendiricisi; hata: yok"
+  },
+  {
+   "test": "T23 Senaryo B envanteri A ile aynı (yalnızca CS02'nin binası ve ilgili uzunluklar değişir)",
+   "sonuc": "BAŞARILI",
+   "ayrinti": "cihaz: 733, bağlantı: 763; binası değişen: ['BIDB-CS02']"
+  }
+ ],
+ "senaryolar": {
+  "S1_erisim_switchi": [
+   {
+    "senaryo": "REK: birincil yukarı bağlantı switch'i (REK-AS01) arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "REK (3/12 AP)"
+    ],
+    "kaybedilen_ap": 3
+   },
+   {
+    "senaryo": "MUH: birincil yukarı bağlantı switch'i (MUH-AS01) arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "MUH (7/64 AP)"
+    ],
+    "kaybedilen_ap": 7
+   },
+   {
+    "senaryo": "ILH: birincil yukarı bağlantı switch'i (ILH-AS01) arızalı",
+    "cevrimdisi_bina": [
+     "ILH"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 26
+   },
+   {
+    "senaryo": "ECZ: birincil yukarı bağlantı switch'i (ECZ-AS01) arızalı",
+    "cevrimdisi_bina": [
+     "ECZ"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 15
+   },
+   {
+    "senaryo": "MIM: birincil yukarı bağlantı switch'i (MIM-AS01) arızalı",
+    "cevrimdisi_bina": [
+     "MIM"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 21
+   },
+   {
+    "senaryo": "AKM: birincil yukarı bağlantı switch'i (AKM-AS01) arızalı",
+    "cevrimdisi_bina": [
+     "AKM"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 29
+   },
+   {
+    "senaryo": "MUZ: birincil yukarı bağlantı switch'i (MUZ-AS01) arızalı",
+    "cevrimdisi_bina": [
+     "MUZ"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 6
+   },
+   {
+    "senaryo": "SPB: birincil yukarı bağlantı switch'i (SPB-AS01) arızalı",
+    "cevrimdisi_bina": [
+     "SPB"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 24
+   },
+   {
+    "senaryo": "EGT: birincil yukarı bağlantı switch'i (EGT-AS01) arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "EGT (6/44 AP)"
+    ],
+    "kaybedilen_ap": 6
+   },
+   {
+    "senaryo": "IIBF: birincil yukarı bağlantı switch'i (IIBF-AS01) arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "IIBF (7/49 AP)"
+    ],
+    "kaybedilen_ap": 7
+   },
+   {
+    "senaryo": "SAG: birincil yukarı bağlantı switch'i (SAG-AS01) arızalı",
+    "cevrimdisi_bina": [
+     "SAG"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 35
+   },
+   {
+    "senaryo": "SUR: birincil yukarı bağlantı switch'i (SUR-AS01) arızalı",
+    "cevrimdisi_bina": [
+     "SUR"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 12
+   },
+   {
+    "senaryo": "TEK: birincil yukarı bağlantı switch'i (TEK-AS01) arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "TEK (6/47 AP)"
+    ],
+    "kaybedilen_ap": 6
+   },
+   {
+    "senaryo": "KUT: birincil yukarı bağlantı switch'i (KUT-AS01) arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "KUT (4/26 AP)"
+    ],
+    "kaybedilen_ap": 4
+   },
+   {
+    "senaryo": "YEM: birincil yukarı bağlantı switch'i (YEM-AS01) arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "YEM (6/44 AP)"
+    ],
+    "kaybedilen_ap": 6
+   },
+   {
+    "senaryo": "FEN: birincil yukarı bağlantı switch'i (FEN-AS01) arızalı",
+    "cevrimdisi_bina": [
+     "FEN"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 41
+   },
+   {
+    "senaryo": "VET: birincil yukarı bağlantı switch'i (VET-AS01) arızalı",
+    "cevrimdisi_bina": [
+     "VET"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 26
+   },
+   {
+    "senaryo": "ITB: birincil yukarı bağlantı switch'i (ITB-AS01) arızalı",
+    "cevrimdisi_bina": [
+     "ITB"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 38
+   },
+   {
+    "senaryo": "TIP: birincil yukarı bağlantı switch'i (TIP-AS01) arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "TIP (5/52 AP)"
+    ],
+    "kaybedilen_ap": 5
+   }
+  ],
+  "S1b_siradan_erisim_switchi": [
+   {
+    "senaryo": "REK: REK-AS05 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "REK (2/12 AP)"
+    ],
+    "kaybedilen_ap": 2
+   },
+   {
+    "senaryo": "MUH: MUH-AS10 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "MUH (6/64 AP)"
+    ],
+    "kaybedilen_ap": 6
+   },
+   {
+    "senaryo": "ILH: ILH-AS05 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "ILH (3/26 AP)"
+    ],
+    "kaybedilen_ap": 3
+   },
+   {
+    "senaryo": "ECZ: ECZ-AS03 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "ECZ (5/15 AP)"
+    ],
+    "kaybedilen_ap": 5
+   },
+   {
+    "senaryo": "MIM: MIM-AS04 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "MIM (5/21 AP)"
+    ],
+    "kaybedilen_ap": 5
+   },
+   {
+    "senaryo": "AKM: AKM-AS05 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "AKM (5/29 AP)"
+    ],
+    "kaybedilen_ap": 5
+   },
+   {
+    "senaryo": "MUZ: MUZ-AS02 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "MUZ (3/6 AP)"
+    ],
+    "kaybedilen_ap": 3
+   },
+   {
+    "senaryo": "SPB: SPB-AS04 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "SPB (6/24 AP)"
+    ],
+    "kaybedilen_ap": 6
+   },
+   {
+    "senaryo": "EGT: EGT-AS07 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "EGT (5/44 AP)"
+    ],
+    "kaybedilen_ap": 5
+   },
+   {
+    "senaryo": "IIBF: IIBF-AS08 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "IIBF (6/49 AP)"
+    ],
+    "kaybedilen_ap": 6
+   },
+   {
+    "senaryo": "SAG: SAG-AS06 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "SAG (4/35 AP)"
+    ],
+    "kaybedilen_ap": 4
+   },
+   {
+    "senaryo": "SUR: SUR-AS03 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "SUR (4/12 AP)"
+    ],
+    "kaybedilen_ap": 4
+   },
+   {
+    "senaryo": "TEK: TEK-AS08 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "TEK (5/47 AP)"
+    ],
+    "kaybedilen_ap": 5
+   },
+   {
+    "senaryo": "KUT: KUT-AS05 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "KUT (3/26 AP)"
+    ],
+    "kaybedilen_ap": 3
+   },
+   {
+    "senaryo": "YEM: YEM-AS07 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "YEM (5/44 AP)"
+    ],
+    "kaybedilen_ap": 5
+   },
+   {
+    "senaryo": "FEN: FEN-AS07 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "FEN (5/41 AP)"
+    ],
+    "kaybedilen_ap": 5
+   },
+   {
+    "senaryo": "VET: VET-AS05 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "VET (4/26 AP)"
+    ],
+    "kaybedilen_ap": 4
+   },
+   {
+    "senaryo": "ITB: ITB-AS06 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "ITB (5/38 AP)"
+    ],
+    "kaybedilen_ap": 5
+   },
+   {
+    "senaryo": "TIP: TIP-AS09 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [
+     "TIP (4/52 AP)"
+    ],
+    "kaybedilen_ap": 4
+   }
+  ],
+  "S2_birincil_fiber": [
+   {
+    "senaryo": "REK: birincil hat (L0023) koptu",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 0
+   },
+   {
+    "senaryo": "MUH: birincil hat (L0047) koptu",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 0
+   },
+   {
+    "senaryo": "ILH: birincil hat (L0118) koptu",
+    "cevrimdisi_bina": [
+     "ILH"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 26
+   },
+   {
+    "senaryo": "ECZ: birincil hat (L0148) koptu",
+    "cevrimdisi_bina": [
+     "ECZ"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 15
+   },
+   {
+    "senaryo": "MIM: birincil hat (L0168) koptu",
+    "cevrimdisi_bina": [
+     "MIM"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 21
+   },
+   {
+    "senaryo": "AKM: birincil hat (L0195) koptu",
+    "cevrimdisi_bina": [
+     "AKM"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 29
+   },
+   {
+    "senaryo": "MUZ: birincil hat (L0226) koptu",
+    "cevrimdisi_bina": [
+     "MUZ"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 6
+   },
+   {
+    "senaryo": "SPB: birincil hat (L0237) koptu",
+    "cevrimdisi_bina": [
+     "SPB"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 24
+   },
+   {
+    "senaryo": "EGT: birincil hat (L0269) koptu",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 0
+   },
+   {
+    "senaryo": "IIBF: birincil hat (L0323) koptu",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 0
+   },
+   {
+    "senaryo": "SAG: birincil hat (L0380) koptu",
+    "cevrimdisi_bina": [
+     "SAG"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 35
+   },
+   {
+    "senaryo": "SUR: birincil hat (L0419) koptu",
+    "cevrimdisi_bina": [
+     "SUR"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 12
+   },
+   {
+    "senaryo": "TEK: birincil hat (L0440) koptu",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 0
+   },
+   {
+    "senaryo": "KUT: birincil hat (L0494) koptu",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 0
+   },
+   {
+    "senaryo": "YEM: birincil hat (L0529) koptu",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 0
+   },
+   {
+    "senaryo": "FEN: birincil hat (L0582) koptu",
+    "cevrimdisi_bina": [
+     "FEN"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 41
+   },
+   {
+    "senaryo": "VET: birincil hat (L0629) koptu",
+    "cevrimdisi_bina": [
+     "VET"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 26
+   },
+   {
+    "senaryo": "ITB: birincil hat (L0662) koptu",
+    "cevrimdisi_bina": [
+     "ITB"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 38
+   },
+   {
+    "senaryo": "TIP: birincil hat (L0710) koptu",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 0
+   }
+  ],
+  "S3_dagitim_switchi": [
+   {
+    "senaryo": "MUH-DS01 arızalı",
+    "cevrimdisi_bina": [
+     "ILH",
+     "ECZ",
+     "MIM",
+     "AKM",
+     "MUZ"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 97
+   },
+   {
+    "senaryo": "TEK-DS01 arızalı",
+    "cevrimdisi_bina": [
+     "SPB",
+     "SAG",
+     "SUR"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 71
+   },
+   {
+    "senaryo": "REK-DS01 arızalı",
+    "cevrimdisi_bina": [
+     "FEN",
+     "VET",
+     "ITB"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 105
+   }
+  ],
+  "S4_cekirdek_switchi": [
+   {
+    "senaryo": "BIDB-CS01 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 0
+   },
+   {
+    "senaryo": "BIDB-CS02 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 0
+   }
+  ],
+  "S5_dagitim_cekirdek_hatti": [
+   {
+    "senaryo": "MUH-DS01 → BIDB-CS01 (PRIMARY) koptu",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 0
+   },
+   {
+    "senaryo": "MUH-DS01 → BIDB-CS02 (BACKUP) koptu",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 0
+   },
+   {
+    "senaryo": "TEK-DS01 → BIDB-CS01 (PRIMARY) koptu",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 0
+   },
+   {
+    "senaryo": "TEK-DS01 → BIDB-CS02 (BACKUP) koptu",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 0
+   },
+   {
+    "senaryo": "REK-DS01 → BIDB-CS01 (PRIMARY) koptu",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 0
+   },
+   {
+    "senaryo": "REK-DS01 → BIDB-CS02 (BACKUP) koptu",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 0
+   }
+  ],
+  "S4_onceki_tasarim": [
+   {
+    "senaryo": "[D1 öncesi tasarım] BIDB-CS01 arızalı",
+    "cevrimdisi_bina": [
+     "REK",
+     "MUH",
+     "ILH",
+     "ECZ",
+     "MIM",
+     "AKM",
+     "MUZ",
+     "SPB",
+     "EGT",
+     "IIBF",
+     "SAG",
+     "SUR",
+     "TEK",
+     "KUT",
+     "YEM",
+     "FEN",
+     "VET",
+     "ITB",
+     "TIP"
+    ],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 611
+   },
+   {
+    "senaryo": "[D1 öncesi tasarım] BIDB-CS02 arızalı",
+    "cevrimdisi_bina": [],
+    "kismi_etkilenen": [],
+    "kaybedilen_ap": 0
+   }
+  ],
+  "S6_ikili_ariza": {
+   "incelenen_cift": 741,
+   "bina_kaybettiren_cift": 450,
+   "tek_arizaya_dayanikli_binalar": [
+    "BIDB",
+    "EGT",
+    "IIBF",
+    "KUT",
+    "MUH",
+    "REK",
+    "TEK",
+    "TIP",
+    "YEM"
+   ],
+   "dayanikli_bina_kaybettiren_cift": 27,
+   "en_kotu_10": [
+    {
+     "ariza": "BIDB-CS01 + BIDB-CS02",
+     "cevrimdisi_bina": [
+      "BIDB",
+      "REK",
+      "MUH",
+      "ILH",
+      "ECZ",
+      "MIM",
+      "AKM",
+      "MUZ",
+      "SPB",
+      "EGT",
+      "IIBF",
+      "SAG",
+      "SUR",
+      "TEK",
+      "KUT",
+      "YEM",
+      "FEN",
+      "VET",
+      "ITB",
+      "TIP"
+     ],
+     "kaybedilen_ap": 617
+    },
+    {
+     "ariza": "TEK-DS01 + REK-DS01",
+     "cevrimdisi_bina": [
+      "REK",
+      "SPB",
+      "EGT",
+      "IIBF",
+      "SAG",
+      "SUR",
+      "TEK",
+      "KUT",
+      "YEM",
+      "FEN",
+      "VET",
+      "ITB",
+      "TIP"
+     ],
+     "kaybedilen_ap": 450
+    },
+    {
+     "ariza": "MUH-DS01 + TEK-DS01",
+     "cevrimdisi_bina": [
+      "MUH",
+      "ILH",
+      "ECZ",
+      "MIM",
+      "AKM",
+      "MUZ",
+      "SPB",
+      "SAG",
+      "SUR"
+     ],
+     "kaybedilen_ap": 232
+    },
+    {
+     "ariza": "MUH-DS01 + REK-DS01",
+     "cevrimdisi_bina": [
+      "ILH",
+      "ECZ",
+      "MIM",
+      "AKM",
+      "MUZ",
+      "FEN",
+      "VET",
+      "ITB"
+     ],
+     "kaybedilen_ap": 202
+    },
+    {
+     "ariza": "MUH-DS01 + hat MUH-AS02–TEK-DS01",
+     "cevrimdisi_bina": [
+      "MUH",
+      "ILH",
+      "ECZ",
+      "MIM",
+      "AKM",
+      "MUZ"
+     ],
+     "kaybedilen_ap": 161
+    },
+    {
+     "ariza": "MUH-DS01 + hat FEN-AS01–REK-DS01",
+     "cevrimdisi_bina": [
+      "ILH",
+      "ECZ",
+      "MIM",
+      "AKM",
+      "MUZ",
+      "FEN"
+     ],
+     "kaybedilen_ap": 138
+    },
+    {
+     "ariza": "MUH-DS01 + hat ITB-AS01–REK-DS01",
+     "cevrimdisi_bina": [
+      "ILH",
+      "ECZ",
+      "MIM",
+      "AKM",
+      "MUZ",
+      "ITB"
+     ],
+     "kaybedilen_ap": 135
+    },
+    {
+     "ariza": "MUH-DS01 + hat SAG-AS01–TEK-DS01",
+     "cevrimdisi_bina": [
+      "ILH",
+      "ECZ",
+      "MIM",
+      "AKM",
+      "MUZ",
+      "SAG"
+     ],
+     "kaybedilen_ap": 132
+    },
+    {
+     "ariza": "MUH-DS01 + hat VET-AS01–REK-DS01",
+     "cevrimdisi_bina": [
+      "ILH",
+      "ECZ",
+      "MIM",
+      "AKM",
+      "MUZ",
+      "VET"
+     ],
+     "kaybedilen_ap": 123
+    },
+    {
+     "ariza": "MUH-DS01 + hat SPB-AS01–TEK-DS01",
+     "cevrimdisi_bina": [
+      "ILH",
+      "ECZ",
+      "MIM",
+      "AKM",
+      "MUZ",
+      "SPB"
+     ],
+     "kaybedilen_ap": 121
+    }
+   ]
+  }
+ },
+ "tek_hata_noktalari": [
+  {
+   "eleman": "MUH-DS01",
+   "tur": "cihaz",
+   "cevrimdisi_bina": [
+    "ILH",
+    "ECZ",
+    "MIM",
+    "AKM",
+    "MUZ"
+   ],
+   "kaybedilen_ap": 97
+  },
+  {
+   "eleman": "TEK-DS01",
+   "tur": "cihaz",
+   "cevrimdisi_bina": [
+    "SPB",
+    "SAG",
+    "SUR"
+   ],
+   "kaybedilen_ap": 71
+  },
+  {
+   "eleman": "REK-DS01",
+   "tur": "cihaz",
+   "cevrimdisi_bina": [
+    "FEN",
+    "VET",
+    "ITB"
+   ],
+   "kaybedilen_ap": 105
+  },
+  {
+   "eleman": "ILH-AS01",
+   "tur": "cihaz",
+   "cevrimdisi_bina": [
+    "ILH"
+   ],
+   "kaybedilen_ap": 26
+  },
+  {
+   "eleman": "ECZ-AS01",
+   "tur": "cihaz",
+   "cevrimdisi_bina": [
+    "ECZ"
+   ],
+   "kaybedilen_ap": 15
+  },
+  {
+   "eleman": "MIM-AS01",
+   "tur": "cihaz",
+   "cevrimdisi_bina": [
+    "MIM"
+   ],
+   "kaybedilen_ap": 21
+  },
+  {
+   "eleman": "AKM-AS01",
+   "tur": "cihaz",
+   "cevrimdisi_bina": [
+    "AKM"
+   ],
+   "kaybedilen_ap": 29
+  },
+  {
+   "eleman": "MUZ-AS01",
+   "tur": "cihaz",
+   "cevrimdisi_bina": [
+    "MUZ"
+   ],
+   "kaybedilen_ap": 6
+  },
+  {
+   "eleman": "SPB-AS01",
+   "tur": "cihaz",
+   "cevrimdisi_bina": [
+    "SPB"
+   ],
+   "kaybedilen_ap": 24
+  },
+  {
+   "eleman": "SAG-AS01",
+   "tur": "cihaz",
+   "cevrimdisi_bina": [
+    "SAG"
+   ],
+   "kaybedilen_ap": 35
+  },
+  {
+   "eleman": "SUR-AS01",
+   "tur": "cihaz",
+   "cevrimdisi_bina": [
+    "SUR"
+   ],
+   "kaybedilen_ap": 12
+  },
+  {
+   "eleman": "FEN-AS01",
+   "tur": "cihaz",
+   "cevrimdisi_bina": [
+    "FEN"
+   ],
+   "kaybedilen_ap": 41
+  },
+  {
+   "eleman": "VET-AS01",
+   "tur": "cihaz",
+   "cevrimdisi_bina": [
+    "VET"
+   ],
+   "kaybedilen_ap": 26
+  },
+  {
+   "eleman": "ITB-AS01",
+   "tur": "cihaz",
+   "cevrimdisi_bina": [
+    "ITB"
+   ],
+   "kaybedilen_ap": 38
+  },
+  {
+   "eleman": "L0118 ILH-AS01–MUH-DS01 (BUILDING_UPLINK)",
+   "tur": "bağlantı",
+   "cevrimdisi_bina": [
+    "ILH"
+   ],
+   "kaybedilen_ap": 26
+  },
+  {
+   "eleman": "L0148 ECZ-AS01–MUH-DS01 (BUILDING_UPLINK)",
+   "tur": "bağlantı",
+   "cevrimdisi_bina": [
+    "ECZ"
+   ],
+   "kaybedilen_ap": 15
+  },
+  {
+   "eleman": "L0168 MIM-AS01–MUH-DS01 (BUILDING_UPLINK)",
+   "tur": "bağlantı",
+   "cevrimdisi_bina": [
+    "MIM"
+   ],
+   "kaybedilen_ap": 21
+  },
+  {
+   "eleman": "L0195 AKM-AS01–MUH-DS01 (BUILDING_UPLINK)",
+   "tur": "bağlantı",
+   "cevrimdisi_bina": [
+    "AKM"
+   ],
+   "kaybedilen_ap": 29
+  },
+  {
+   "eleman": "L0226 MUZ-AS01–MUH-DS01 (BUILDING_UPLINK)",
+   "tur": "bağlantı",
+   "cevrimdisi_bina": [
+    "MUZ"
+   ],
+   "kaybedilen_ap": 6
+  },
+  {
+   "eleman": "L0237 SPB-AS01–TEK-DS01 (BUILDING_UPLINK)",
+   "tur": "bağlantı",
+   "cevrimdisi_bina": [
+    "SPB"
+   ],
+   "kaybedilen_ap": 24
+  },
+  {
+   "eleman": "L0380 SAG-AS01–TEK-DS01 (BUILDING_UPLINK)",
+   "tur": "bağlantı",
+   "cevrimdisi_bina": [
+    "SAG"
+   ],
+   "kaybedilen_ap": 35
+  },
+  {
+   "eleman": "L0419 SUR-AS01–TEK-DS01 (BUILDING_UPLINK)",
+   "tur": "bağlantı",
+   "cevrimdisi_bina": [
+    "SUR"
+   ],
+   "kaybedilen_ap": 12
+  },
+  {
+   "eleman": "L0582 FEN-AS01–REK-DS01 (BUILDING_UPLINK)",
+   "tur": "bağlantı",
+   "cevrimdisi_bina": [
+    "FEN"
+   ],
+   "kaybedilen_ap": 41
+  },
+  {
+   "eleman": "L0629 VET-AS01–REK-DS01 (BUILDING_UPLINK)",
+   "tur": "bağlantı",
+   "cevrimdisi_bina": [
+    "VET"
+   ],
+   "kaybedilen_ap": 26
+  },
+  {
+   "eleman": "L0662 ITB-AS01–REK-DS01 (BUILDING_UPLINK)",
+   "tur": "bağlantı",
+   "cevrimdisi_bina": [
+    "ITB"
+   ],
+   "kaybedilen_ap": 38
+  }
+ ],
+ "fiber": {
+  "A": {
+   "kategoriler": [
+    {
+     "kategori": "bina_birincil",
+     "ad": "Bina birincil hattı (bina → dağıtım)",
+     "baglanti": 19,
+     "uzunlugu_tanimli": 16,
+     "uzunlugu_tanimsiz": 3,
+     "toplam_m": 5888,
+     "dayanak": [
+      "K9"
+     ]
+    },
+    {
+     "kategori": "bina_yedek",
+     "ad": "Bina yedek hattı (AS02 → diğer dağıtım)",
+     "baglanti": 8,
+     "uzunlugu_tanimli": 8,
+     "uzunlugu_tanimsiz": 0,
+     "toplam_m": 7629,
+     "dayanak": [
+      "K9"
+     ]
+    },
+    {
+     "kategori": "dagitim_cekirdek_birincil",
+     "ad": "Dağıtım → CS01 (birincil)",
+     "baglanti": 3,
+     "uzunlugu_tanimli": 3,
+     "uzunlugu_tanimsiz": 0,
+     "toplam_m": 2685,
+     "dayanak": [
+      "K9"
+     ]
+    },
+    {
+     "kategori": "dagitim_cekirdek_yedek",
+     "ad": "Dağıtım → CS02 (yedek)",
+     "baglanti": 3,
+     "uzunlugu_tanimli": 3,
+     "uzunlugu_tanimsiz": 0,
+     "toplam_m": 2685,
+     "dayanak": [
+      "K9"
+     ]
+    },
+    {
+     "kategori": "veri_merkezi",
+     "ad": "Veri merkezi (çekirdek arası + sunucu switch'i yukarı bağlantıları)",
+     "baglanti": 5,
+     "uzunlugu_tanimli": 0,
+     "uzunlugu_tanimsiz": 5,
+     "toplam_m": 0,
+     "dayanak": [
+      "uzunluk tanımlanmadı"
+     ]
+    },
+    {
+     "kategori": "bina_ici",
+     "ad": "Bina içi (katlar arası halka + AP bağlantıları)",
+     "baglanti": 725,
+     "uzunlugu_tanimli": 0,
+     "uzunlugu_tanimsiz": 725,
+     "toplam_m": 0,
+     "dayanak": [
+      "uzunluk tanımlanmadı"
+     ]
+    }
+   ],
+   "toplam_m": 18887,
+   "guzergah_m": 16202,
+   "guzergah_sayisi": 27,
+   "eski_toplam_m": 13517,
+   "eski_bilesen": {
+    "bina_birincil": 5888,
+    "bina_yedek": 7629
+   }
+  },
+  "B": {
+   "kategoriler": [
+    {
+     "kategori": "bina_birincil",
+     "ad": "Bina birincil hattı (bina → dağıtım)",
+     "baglanti": 19,
+     "uzunlugu_tanimli": 16,
+     "uzunlugu_tanimsiz": 3,
+     "toplam_m": 5888,
+     "dayanak": [
+      "K9"
+     ]
+    },
+    {
+     "kategori": "bina_yedek",
+     "ad": "Bina yedek hattı (AS02 → diğer dağıtım)",
+     "baglanti": 8,
+     "uzunlugu_tanimli": 8,
+     "uzunlugu_tanimsiz": 0,
+     "toplam_m": 7629,
+     "dayanak": [
+      "K9"
+     ]
+    },
+    {
+     "kategori": "dagitim_cekirdek_birincil",
+     "ad": "Dağıtım → CS01 (birincil)",
+     "baglanti": 3,
+     "uzunlugu_tanimli": 3,
+     "uzunlugu_tanimsiz": 0,
+     "toplam_m": 2685,
+     "dayanak": [
+      "K9"
+     ]
+    },
+    {
+     "kategori": "dagitim_cekirdek_yedek",
+     "ad": "Dağıtım → CS02 (yedek)",
+     "baglanti": 3,
+     "uzunlugu_tanimli": 3,
+     "uzunlugu_tanimsiz": 0,
+     "toplam_m": 2084,
+     "dayanak": [
+      "K9"
+     ]
+    },
+    {
+     "kategori": "veri_merkezi",
+     "ad": "Veri merkezi (çekirdek arası + sunucu switch'i yukarı bağlantıları)",
+     "baglanti": 5,
+     "uzunlugu_tanimli": 3,
+     "uzunlugu_tanimsiz": 2,
+     "toplam_m": 2523,
+     "dayanak": [
+      "K9"
+     ]
+    },
+    {
+     "kategori": "bina_ici",
+     "ad": "Bina içi (katlar arası halka + AP bağlantıları)",
+     "baglanti": 725,
+     "uzunlugu_tanimli": 0,
+     "uzunlugu_tanimsiz": 725,
+     "toplam_m": 0,
+     "dayanak": [
+      "uzunluk tanımlanmadı"
+     ]
+    }
+   ],
+   "toplam_m": 20809,
+   "guzergah_m": 19127,
+   "guzergah_sayisi": 31,
+   "eski_toplam_m": 13517,
+   "eski_bilesen": {
+    "bina_birincil": 5888,
+    "bina_yedek": 7629
+   }
+  }
+ },
+ "bina_yedeklilik": [
+  {
+   "bina": "BIDB",
+   "yedek_hat": false,
+   "sinif": "Veri merkezi: sunucu switch'leri iki çekirdeğe çift bağlı",
+   "testler": {
+    "birincil_fiber": {
+     "ariza": "BIDB-SS01 → CS01 hattı",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "birincil_erisim_switchi": {
+     "ariza": "BIDB-SS01",
+     "durum": "kısmi",
+     "ap_kayip": 3,
+     "cihaz_kayip": 4,
+     "kampus_cevrimdisi": 0
+    },
+    "dagitim_switchi": {
+     "ariza": "uygulanamaz (veri merkezi dağıtım katmanına bağlı değil)",
+     "durum": "—",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "cekirdek_CS01": {
+     "ariza": "BIDB-CS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "cekirdek_CS02": {
+     "ariza": "BIDB-CS02",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    }
+   },
+   "alternatif_yol": "SS01/SS02 → CS02"
+  },
+  {
+   "bina": "REK",
+   "yedek_hat": true,
+   "sinif": "Hat + dağıtım + çekirdek yedekli",
+   "testler": {
+    "birincil_fiber": {
+     "ariza": "L0023 (REK-AS01 → REK-DS01)",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "birincil_erisim_switchi": {
+     "ariza": "REK-AS01",
+     "durum": "kısmi",
+     "ap_kayip": 3,
+     "cihaz_kayip": 4,
+     "kampus_cevrimdisi": 0
+    },
+    "dagitim_switchi": {
+     "ariza": "REK-DS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 3
+    },
+    "cekirdek_CS01": {
+     "ariza": "BIDB-CS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "cekirdek_CS02": {
+     "ariza": "BIDB-CS02",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    }
+   },
+   "alternatif_yol": "REK-AS02 → TEK-DS01"
+  },
+  {
+   "bina": "MUH",
+   "yedek_hat": true,
+   "sinif": "Hat + dağıtım + çekirdek yedekli",
+   "testler": {
+    "birincil_fiber": {
+     "ariza": "L0047 (MUH-AS01 → MUH-DS01)",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "birincil_erisim_switchi": {
+     "ariza": "MUH-AS01",
+     "durum": "kısmi",
+     "ap_kayip": 7,
+     "cihaz_kayip": 8,
+     "kampus_cevrimdisi": 0
+    },
+    "dagitim_switchi": {
+     "ariza": "MUH-DS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 5
+    },
+    "cekirdek_CS01": {
+     "ariza": "BIDB-CS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "cekirdek_CS02": {
+     "ariza": "BIDB-CS02",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    }
+   },
+   "alternatif_yol": "MUH-AS02 → TEK-DS01"
+  },
+  {
+   "bina": "ILH",
+   "yedek_hat": false,
+   "sinif": "Yalnızca çekirdek yedekli (hat ve dağıtım tek nokta)",
+   "testler": {
+    "birincil_fiber": {
+     "ariza": "L0118 (ILH-AS01 → MUH-DS01)",
+     "durum": "çevrimdışı",
+     "ap_kayip": 26,
+     "cihaz_kayip": 31,
+     "kampus_cevrimdisi": 1
+    },
+    "birincil_erisim_switchi": {
+     "ariza": "ILH-AS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 26,
+     "cihaz_kayip": 31,
+     "kampus_cevrimdisi": 1
+    },
+    "dagitim_switchi": {
+     "ariza": "MUH-DS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 26,
+     "cihaz_kayip": 31,
+     "kampus_cevrimdisi": 5
+    },
+    "cekirdek_CS01": {
+     "ariza": "BIDB-CS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "cekirdek_CS02": {
+     "ariza": "BIDB-CS02",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    }
+   },
+   "alternatif_yol": "yok"
+  },
+  {
+   "bina": "ECZ",
+   "yedek_hat": false,
+   "sinif": "Yalnızca çekirdek yedekli (hat ve dağıtım tek nokta)",
+   "testler": {
+    "birincil_fiber": {
+     "ariza": "L0148 (ECZ-AS01 → MUH-DS01)",
+     "durum": "çevrimdışı",
+     "ap_kayip": 15,
+     "cihaz_kayip": 18,
+     "kampus_cevrimdisi": 1
+    },
+    "birincil_erisim_switchi": {
+     "ariza": "ECZ-AS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 15,
+     "cihaz_kayip": 18,
+     "kampus_cevrimdisi": 1
+    },
+    "dagitim_switchi": {
+     "ariza": "MUH-DS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 15,
+     "cihaz_kayip": 18,
+     "kampus_cevrimdisi": 5
+    },
+    "cekirdek_CS01": {
+     "ariza": "BIDB-CS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "cekirdek_CS02": {
+     "ariza": "BIDB-CS02",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    }
+   },
+   "alternatif_yol": "yok"
+  },
+  {
+   "bina": "MIM",
+   "yedek_hat": false,
+   "sinif": "Yalnızca çekirdek yedekli (hat ve dağıtım tek nokta)",
+   "testler": {
+    "birincil_fiber": {
+     "ariza": "L0168 (MIM-AS01 → MUH-DS01)",
+     "durum": "çevrimdışı",
+     "ap_kayip": 21,
+     "cihaz_kayip": 25,
+     "kampus_cevrimdisi": 1
+    },
+    "birincil_erisim_switchi": {
+     "ariza": "MIM-AS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 21,
+     "cihaz_kayip": 25,
+     "kampus_cevrimdisi": 1
+    },
+    "dagitim_switchi": {
+     "ariza": "MUH-DS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 21,
+     "cihaz_kayip": 25,
+     "kampus_cevrimdisi": 5
+    },
+    "cekirdek_CS01": {
+     "ariza": "BIDB-CS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "cekirdek_CS02": {
+     "ariza": "BIDB-CS02",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    }
+   },
+   "alternatif_yol": "yok"
+  },
+  {
+   "bina": "AKM",
+   "yedek_hat": false,
+   "sinif": "Yalnızca çekirdek yedekli (hat ve dağıtım tek nokta)",
+   "testler": {
+    "birincil_fiber": {
+     "ariza": "L0195 (AKM-AS01 → MUH-DS01)",
+     "durum": "çevrimdışı",
+     "ap_kayip": 29,
+     "cihaz_kayip": 34,
+     "kampus_cevrimdisi": 1
+    },
+    "birincil_erisim_switchi": {
+     "ariza": "AKM-AS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 29,
+     "cihaz_kayip": 34,
+     "kampus_cevrimdisi": 1
+    },
+    "dagitim_switchi": {
+     "ariza": "MUH-DS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 29,
+     "cihaz_kayip": 34,
+     "kampus_cevrimdisi": 5
+    },
+    "cekirdek_CS01": {
+     "ariza": "BIDB-CS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "cekirdek_CS02": {
+     "ariza": "BIDB-CS02",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    }
+   },
+   "alternatif_yol": "yok"
+  },
+  {
+   "bina": "MUZ",
+   "yedek_hat": false,
+   "sinif": "Yalnızca çekirdek yedekli (hat ve dağıtım tek nokta)",
+   "testler": {
+    "birincil_fiber": {
+     "ariza": "L0226 (MUZ-AS01 → MUH-DS01)",
+     "durum": "çevrimdışı",
+     "ap_kayip": 6,
+     "cihaz_kayip": 8,
+     "kampus_cevrimdisi": 1
+    },
+    "birincil_erisim_switchi": {
+     "ariza": "MUZ-AS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 6,
+     "cihaz_kayip": 8,
+     "kampus_cevrimdisi": 1
+    },
+    "dagitim_switchi": {
+     "ariza": "MUH-DS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 6,
+     "cihaz_kayip": 8,
+     "kampus_cevrimdisi": 5
+    },
+    "cekirdek_CS01": {
+     "ariza": "BIDB-CS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "cekirdek_CS02": {
+     "ariza": "BIDB-CS02",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    }
+   },
+   "alternatif_yol": "yok"
+  },
+  {
+   "bina": "SPB",
+   "yedek_hat": false,
+   "sinif": "Yalnızca çekirdek yedekli (hat ve dağıtım tek nokta)",
+   "testler": {
+    "birincil_fiber": {
+     "ariza": "L0237 (SPB-AS01 → TEK-DS01)",
+     "durum": "çevrimdışı",
+     "ap_kayip": 24,
+     "cihaz_kayip": 28,
+     "kampus_cevrimdisi": 1
+    },
+    "birincil_erisim_switchi": {
+     "ariza": "SPB-AS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 24,
+     "cihaz_kayip": 28,
+     "kampus_cevrimdisi": 1
+    },
+    "dagitim_switchi": {
+     "ariza": "TEK-DS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 24,
+     "cihaz_kayip": 28,
+     "kampus_cevrimdisi": 3
+    },
+    "cekirdek_CS01": {
+     "ariza": "BIDB-CS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "cekirdek_CS02": {
+     "ariza": "BIDB-CS02",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    }
+   },
+   "alternatif_yol": "yok"
+  },
+  {
+   "bina": "EGT",
+   "yedek_hat": true,
+   "sinif": "Hat + dağıtım + çekirdek yedekli",
+   "testler": {
+    "birincil_fiber": {
+     "ariza": "L0269 (EGT-AS01 → TEK-DS01)",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "birincil_erisim_switchi": {
+     "ariza": "EGT-AS01",
+     "durum": "kısmi",
+     "ap_kayip": 6,
+     "cihaz_kayip": 7,
+     "kampus_cevrimdisi": 0
+    },
+    "dagitim_switchi": {
+     "ariza": "TEK-DS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 3
+    },
+    "cekirdek_CS01": {
+     "ariza": "BIDB-CS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "cekirdek_CS02": {
+     "ariza": "BIDB-CS02",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    }
+   },
+   "alternatif_yol": "EGT-AS02 → REK-DS01"
+  },
+  {
+   "bina": "IIBF",
+   "yedek_hat": true,
+   "sinif": "Hat + dağıtım + çekirdek yedekli",
+   "testler": {
+    "birincil_fiber": {
+     "ariza": "L0323 (IIBF-AS01 → TEK-DS01)",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "birincil_erisim_switchi": {
+     "ariza": "IIBF-AS01",
+     "durum": "kısmi",
+     "ap_kayip": 7,
+     "cihaz_kayip": 8,
+     "kampus_cevrimdisi": 0
+    },
+    "dagitim_switchi": {
+     "ariza": "TEK-DS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 3
+    },
+    "cekirdek_CS01": {
+     "ariza": "BIDB-CS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "cekirdek_CS02": {
+     "ariza": "BIDB-CS02",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    }
+   },
+   "alternatif_yol": "IIBF-AS02 → REK-DS01"
+  },
+  {
+   "bina": "SAG",
+   "yedek_hat": false,
+   "sinif": "Yalnızca çekirdek yedekli (hat ve dağıtım tek nokta)",
+   "testler": {
+    "birincil_fiber": {
+     "ariza": "L0380 (SAG-AS01 → TEK-DS01)",
+     "durum": "çevrimdışı",
+     "ap_kayip": 35,
+     "cihaz_kayip": 41,
+     "kampus_cevrimdisi": 1
+    },
+    "birincil_erisim_switchi": {
+     "ariza": "SAG-AS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 35,
+     "cihaz_kayip": 41,
+     "kampus_cevrimdisi": 1
+    },
+    "dagitim_switchi": {
+     "ariza": "TEK-DS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 35,
+     "cihaz_kayip": 41,
+     "kampus_cevrimdisi": 3
+    },
+    "cekirdek_CS01": {
+     "ariza": "BIDB-CS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "cekirdek_CS02": {
+     "ariza": "BIDB-CS02",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    }
+   },
+   "alternatif_yol": "yok"
+  },
+  {
+   "bina": "SUR",
+   "yedek_hat": false,
+   "sinif": "Yalnızca çekirdek yedekli (hat ve dağıtım tek nokta)",
+   "testler": {
+    "birincil_fiber": {
+     "ariza": "L0419 (SUR-AS01 → TEK-DS01)",
+     "durum": "çevrimdışı",
+     "ap_kayip": 12,
+     "cihaz_kayip": 15,
+     "kampus_cevrimdisi": 1
+    },
+    "birincil_erisim_switchi": {
+     "ariza": "SUR-AS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 12,
+     "cihaz_kayip": 15,
+     "kampus_cevrimdisi": 1
+    },
+    "dagitim_switchi": {
+     "ariza": "TEK-DS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 12,
+     "cihaz_kayip": 15,
+     "kampus_cevrimdisi": 3
+    },
+    "cekirdek_CS01": {
+     "ariza": "BIDB-CS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "cekirdek_CS02": {
+     "ariza": "BIDB-CS02",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    }
+   },
+   "alternatif_yol": "yok"
+  },
+  {
+   "bina": "TEK",
+   "yedek_hat": true,
+   "sinif": "Hat + dağıtım + çekirdek yedekli",
+   "testler": {
+    "birincil_fiber": {
+     "ariza": "L0440 (TEK-AS01 → TEK-DS01)",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "birincil_erisim_switchi": {
+     "ariza": "TEK-AS01",
+     "durum": "kısmi",
+     "ap_kayip": 6,
+     "cihaz_kayip": 7,
+     "kampus_cevrimdisi": 0
+    },
+    "dagitim_switchi": {
+     "ariza": "TEK-DS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 3
+    },
+    "cekirdek_CS01": {
+     "ariza": "BIDB-CS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "cekirdek_CS02": {
+     "ariza": "BIDB-CS02",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    }
+   },
+   "alternatif_yol": "TEK-AS02 → REK-DS01"
+  },
+  {
+   "bina": "KUT",
+   "yedek_hat": true,
+   "sinif": "Hat + dağıtım + çekirdek yedekli",
+   "testler": {
+    "birincil_fiber": {
+     "ariza": "L0494 (KUT-AS01 → TEK-DS01)",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "birincil_erisim_switchi": {
+     "ariza": "KUT-AS01",
+     "durum": "kısmi",
+     "ap_kayip": 4,
+     "cihaz_kayip": 5,
+     "kampus_cevrimdisi": 0
+    },
+    "dagitim_switchi": {
+     "ariza": "TEK-DS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 3
+    },
+    "cekirdek_CS01": {
+     "ariza": "BIDB-CS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "cekirdek_CS02": {
+     "ariza": "BIDB-CS02",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    }
+   },
+   "alternatif_yol": "KUT-AS02 → REK-DS01"
+  },
+  {
+   "bina": "YEM",
+   "yedek_hat": true,
+   "sinif": "Hat + dağıtım + çekirdek yedekli",
+   "testler": {
+    "birincil_fiber": {
+     "ariza": "L0529 (YEM-AS01 → TEK-DS01)",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "birincil_erisim_switchi": {
+     "ariza": "YEM-AS01",
+     "durum": "kısmi",
+     "ap_kayip": 6,
+     "cihaz_kayip": 7,
+     "kampus_cevrimdisi": 0
+    },
+    "dagitim_switchi": {
+     "ariza": "TEK-DS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 3
+    },
+    "cekirdek_CS01": {
+     "ariza": "BIDB-CS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "cekirdek_CS02": {
+     "ariza": "BIDB-CS02",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    }
+   },
+   "alternatif_yol": "YEM-AS02 → REK-DS01"
+  },
+  {
+   "bina": "FEN",
+   "yedek_hat": false,
+   "sinif": "Yalnızca çekirdek yedekli (hat ve dağıtım tek nokta)",
+   "testler": {
+    "birincil_fiber": {
+     "ariza": "L0582 (FEN-AS01 → REK-DS01)",
+     "durum": "çevrimdışı",
+     "ap_kayip": 41,
+     "cihaz_kayip": 48,
+     "kampus_cevrimdisi": 1
+    },
+    "birincil_erisim_switchi": {
+     "ariza": "FEN-AS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 41,
+     "cihaz_kayip": 48,
+     "kampus_cevrimdisi": 1
+    },
+    "dagitim_switchi": {
+     "ariza": "REK-DS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 41,
+     "cihaz_kayip": 48,
+     "kampus_cevrimdisi": 3
+    },
+    "cekirdek_CS01": {
+     "ariza": "BIDB-CS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "cekirdek_CS02": {
+     "ariza": "BIDB-CS02",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    }
+   },
+   "alternatif_yol": "yok"
+  },
+  {
+   "bina": "VET",
+   "yedek_hat": false,
+   "sinif": "Yalnızca çekirdek yedekli (hat ve dağıtım tek nokta)",
+   "testler": {
+    "birincil_fiber": {
+     "ariza": "L0629 (VET-AS01 → REK-DS01)",
+     "durum": "çevrimdışı",
+     "ap_kayip": 26,
+     "cihaz_kayip": 31,
+     "kampus_cevrimdisi": 1
+    },
+    "birincil_erisim_switchi": {
+     "ariza": "VET-AS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 26,
+     "cihaz_kayip": 31,
+     "kampus_cevrimdisi": 1
+    },
+    "dagitim_switchi": {
+     "ariza": "REK-DS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 26,
+     "cihaz_kayip": 31,
+     "kampus_cevrimdisi": 3
+    },
+    "cekirdek_CS01": {
+     "ariza": "BIDB-CS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "cekirdek_CS02": {
+     "ariza": "BIDB-CS02",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    }
+   },
+   "alternatif_yol": "yok"
+  },
+  {
+   "bina": "ITB",
+   "yedek_hat": false,
+   "sinif": "Yalnızca çekirdek yedekli (hat ve dağıtım tek nokta)",
+   "testler": {
+    "birincil_fiber": {
+     "ariza": "L0662 (ITB-AS01 → REK-DS01)",
+     "durum": "çevrimdışı",
+     "ap_kayip": 38,
+     "cihaz_kayip": 44,
+     "kampus_cevrimdisi": 1
+    },
+    "birincil_erisim_switchi": {
+     "ariza": "ITB-AS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 38,
+     "cihaz_kayip": 44,
+     "kampus_cevrimdisi": 1
+    },
+    "dagitim_switchi": {
+     "ariza": "REK-DS01",
+     "durum": "çevrimdışı",
+     "ap_kayip": 38,
+     "cihaz_kayip": 44,
+     "kampus_cevrimdisi": 3
+    },
+    "cekirdek_CS01": {
+     "ariza": "BIDB-CS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "cekirdek_CS02": {
+     "ariza": "BIDB-CS02",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    }
+   },
+   "alternatif_yol": "yok"
+  },
+  {
+   "bina": "TIP",
+   "yedek_hat": true,
+   "sinif": "Hat + dağıtım + çekirdek yedekli",
+   "testler": {
+    "birincil_fiber": {
+     "ariza": "L0710 (TIP-AS01 → REK-DS01)",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "birincil_erisim_switchi": {
+     "ariza": "TIP-AS01",
+     "durum": "kısmi",
+     "ap_kayip": 5,
+     "cihaz_kayip": 6,
+     "kampus_cevrimdisi": 0
+    },
+    "dagitim_switchi": {
+     "ariza": "REK-DS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 3
+    },
+    "cekirdek_CS01": {
+     "ariza": "BIDB-CS01",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    },
+    "cekirdek_CS02": {
+     "ariza": "BIDB-CS02",
+     "durum": "ayakta",
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "kampus_cevrimdisi": 0
+    }
+   },
+   "alternatif_yol": "TIP-AS02 → TEK-DS01"
+  }
+ ],
+ "fiziksel": {
+  "olaylar": [
+   {
+    "olay": "BIDB binası tümüyle devre dışı (enerji, yangın, su baskını)",
+    "A": {
+     "ayrinti": "BIDB binası tümüyle devre dışı (enerji, yangın, su baskını)",
+     "cevrimdisi": [
+      "AKM",
+      "BIDB",
+      "ECZ",
+      "EGT",
+      "FEN",
+      "IIBF",
+      "ILH",
+      "ITB",
+      "KUT",
+      "MIM",
+      "MUH",
+      "MUZ",
+      "REK",
+      "SAG",
+      "SPB",
+      "SUR",
+      "TEK",
+      "TIP",
+      "VET",
+      "YEM"
+     ],
+     "ap_kayip": 617,
+     "cihaz_kayip": 728,
+     "sunucu_switch_kayip": 2,
+     "transit": []
+    },
+    "B": {
+     "ayrinti": "BIDB binası tümüyle devre dışı (enerji, yangın, su baskını)",
+     "cevrimdisi": [
+      "BIDB"
+     ],
+     "ap_kayip": 6,
+     "cihaz_kayip": 8,
+     "sunucu_switch_kayip": 2,
+     "transit": []
+    }
+   },
+   {
+    "olay": "KUT binası tümüyle devre dışı",
+    "A": {
+     "ayrinti": "KUT binası tümüyle devre dışı",
+     "cevrimdisi": [
+      "KUT"
+     ],
+     "ap_kayip": 26,
+     "cihaz_kayip": 31,
+     "sunucu_switch_kayip": 0,
+     "transit": []
+    },
+    "B": {
+     "ayrinti": "KUT binası tümüyle devre dışı",
+     "cevrimdisi": [
+      "KUT"
+     ],
+     "ap_kayip": 26,
+     "cihaz_kayip": 31,
+     "sunucu_switch_kayip": 0,
+     "transit": []
+    }
+   },
+   {
+    "olay": "CS01 ve CS02 aynı anda arızalı (cihaz arızası)",
+    "A": {
+     "ayrinti": "CS01 ve CS02 aynı anda arızalı (cihaz arızası)",
+     "cevrimdisi": [
+      "AKM",
+      "BIDB",
+      "ECZ",
+      "EGT",
+      "FEN",
+      "IIBF",
+      "ILH",
+      "ITB",
+      "KUT",
+      "MIM",
+      "MUH",
+      "MUZ",
+      "REK",
+      "SAG",
+      "SPB",
+      "SUR",
+      "TEK",
+      "TIP",
+      "VET",
+      "YEM"
+     ],
+     "ap_kayip": 617,
+     "cihaz_kayip": 728,
+     "sunucu_switch_kayip": 2,
+     "transit": []
+    },
+    "B": {
+     "ayrinti": "CS01 ve CS02 aynı anda arızalı (cihaz arızası)",
+     "cevrimdisi": [
+      "AKM",
+      "BIDB",
+      "ECZ",
+      "EGT",
+      "FEN",
+      "IIBF",
+      "ILH",
+      "ITB",
+      "KUT",
+      "MIM",
+      "MUH",
+      "MUZ",
+      "REK",
+      "SAG",
+      "SPB",
+      "SUR",
+      "TEK",
+      "TIP",
+      "VET",
+      "YEM"
+     ],
+     "ap_kayip": 617,
+     "cihaz_kayip": 728,
+     "sunucu_switch_kayip": 2,
+     "transit": []
+    }
+   },
+   {
+    "olay": "MUH–BIDB fiber güzergâhı kazıda kesildi",
+    "A": {
+     "ayrinti": "MUH–BIDB fiber güzergâhı kazıda kesildi (SRLG-MUH-BIDB, 2 hat)",
+     "cevrimdisi": [],
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "sunucu_switch_kayip": 0,
+     "transit": [
+      {
+       "dagitim": "MUH-DS01",
+       "transit_binalar": [
+        "MUH"
+       ],
+       "kapasite_gbps": 10,
+       "yuk_gbps": 12.04,
+       "kullanim": 120.4
+      }
+     ]
+    },
+    "B": {
+     "ayrinti": "MUH–BIDB fiber güzergâhı kazıda kesildi (SRLG-MUH-BIDB, 1 hat)",
+     "cevrimdisi": [],
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "sunucu_switch_kayip": 0,
+     "transit": []
+    }
+   },
+   {
+    "olay": "TEK–BIDB fiber güzergâhı kazıda kesildi",
+    "A": {
+     "ayrinti": "TEK–BIDB fiber güzergâhı kazıda kesildi (SRLG-TEK-BIDB, 2 hat)",
+     "cevrimdisi": [],
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "sunucu_switch_kayip": 0,
+     "transit": [
+      {
+       "dagitim": "TEK-DS01",
+       "transit_binalar": [
+        "EGT",
+        "IIBF",
+        "TEK",
+        "KUT",
+        "YEM"
+       ],
+       "kapasite_gbps": 50,
+       "yuk_gbps": 21.03,
+       "kullanim": 42.1
+      }
+     ]
+    },
+    "B": {
+     "ayrinti": "TEK–BIDB fiber güzergâhı kazıda kesildi (SRLG-TEK-BIDB, 1 hat)",
+     "cevrimdisi": [],
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "sunucu_switch_kayip": 0,
+     "transit": []
+    }
+   },
+   {
+    "olay": "REK–BIDB fiber güzergâhı kazıda kesildi",
+    "A": {
+     "ayrinti": "REK–BIDB fiber güzergâhı kazıda kesildi (SRLG-REK-BIDB, 2 hat)",
+     "cevrimdisi": [],
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "sunucu_switch_kayip": 0,
+     "transit": [
+      {
+       "dagitim": "REK-DS01",
+       "transit_binalar": [
+        "REK",
+        "TIP"
+       ],
+       "kapasite_gbps": 20,
+       "yuk_gbps": 12.71,
+       "kullanim": 63.5
+      }
+     ]
+    },
+    "B": {
+     "ayrinti": "REK–BIDB fiber güzergâhı kazıda kesildi (SRLG-REK-BIDB, 1 hat)",
+     "cevrimdisi": [],
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "sunucu_switch_kayip": 0,
+     "transit": []
+    }
+   },
+   {
+    "olay": "BIDB–KUT güzergâhı kesildi",
+    "A": {
+     "ayrinti": "bu senaryoda böyle bir güzergâh yok",
+     "cevrimdisi": [],
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "sunucu_switch_kayip": 0,
+     "transit": []
+    },
+    "B": {
+     "ayrinti": "BIDB–KUT güzergâhı kesildi (SRLG-BIDB-KUT, 3 hat)",
+     "cevrimdisi": [],
+     "ap_kayip": 0,
+     "cihaz_kayip": 0,
+     "sunucu_switch_kayip": 0,
+     "transit": []
+    }
+   }
+  ],
+  "paylasilan_srlg": {
+   "A": {
+    "SITE-BIDB": [
+     "L0001",
+     "L0008",
+     "L0009",
+     "L0010",
+     "L0011"
+    ],
+    "SRLG-MUH-BIDB": [
+     "L0002",
+     "L0003"
+    ],
+    "SRLG-TEK-BIDB": [
+     "L0004",
+     "L0005"
+    ],
+    "SRLG-REK-BIDB": [
+     "L0006",
+     "L0007"
+    ]
+   },
+   "B": {
+    "SRLG-BIDB-KUT": [
+     "L0001",
+     "L0009",
+     "L0011"
+    ],
+    "SITE-BIDB": [
+     "L0008",
+     "L0010"
+    ]
+   }
+  }
+ },
+ "kapasite": {
+  "binalar": [
+   {
+    "bina": "REK",
+    "yedek_hat": true,
+    "uc_port_gbps": 72,
+    "oran_aktif_pasif": 7.2,
+    "oran_aktif_aktif": 3.6,
+    "beklenen_gbps": 0.88,
+    "kullanim_aktif_pasif": 8.8,
+    "aa_hat1_gbps": 0.49,
+    "aa_hat2_gbps": 0.39,
+    "aa_hat1_kullanim": 4.9,
+    "aa_hat2_kullanim": 3.9,
+    "n1_kullanim": 8.8
+   },
+   {
+    "bina": "MUH",
+    "yedek_hat": true,
+    "uc_port_gbps": 394,
+    "oran_aktif_pasif": 39.4,
+    "oran_aktif_aktif": 19.7,
+    "beklenen_gbps": 4.82,
+    "kullanim_aktif_pasif": 48.2,
+    "aa_hat1_gbps": 2.69,
+    "aa_hat2_gbps": 2.12,
+    "aa_hat1_kullanim": 26.9,
+    "aa_hat2_kullanim": 21.2,
+    "n1_kullanim": 48.2
+   },
+   {
+    "bina": "ILH",
+    "yedek_hat": false,
+    "uc_port_gbps": 161,
+    "oran_aktif_pasif": 16.1,
+    "oran_aktif_aktif": 16.1,
+    "beklenen_gbps": 1.97,
+    "kullanim_aktif_pasif": 19.7,
+    "aa_hat1_gbps": null,
+    "aa_hat2_gbps": null,
+    "aa_hat1_kullanim": null,
+    "aa_hat2_kullanim": null,
+    "n1_kullanim": null
+   },
+   {
+    "bina": "ECZ",
+    "yedek_hat": false,
+    "uc_port_gbps": 90,
+    "oran_aktif_pasif": 9.0,
+    "oran_aktif_aktif": 9.0,
+    "beklenen_gbps": 1.09,
+    "kullanim_aktif_pasif": 10.9,
+    "aa_hat1_gbps": null,
+    "aa_hat2_gbps": null,
+    "aa_hat1_kullanim": null,
+    "aa_hat2_kullanim": null,
+    "n1_kullanim": null
+   },
+   {
+    "bina": "MIM",
+    "yedek_hat": false,
+    "uc_port_gbps": 126,
+    "oran_aktif_pasif": 12.6,
+    "oran_aktif_aktif": 12.6,
+    "beklenen_gbps": 1.53,
+    "kullanim_aktif_pasif": 15.3,
+    "aa_hat1_gbps": null,
+    "aa_hat2_gbps": null,
+    "aa_hat1_kullanim": null,
+    "aa_hat2_kullanim": null,
+    "n1_kullanim": null
+   },
+   {
+    "bina": "AKM",
+    "yedek_hat": false,
+    "uc_port_gbps": 179,
+    "oran_aktif_pasif": 17.9,
+    "oran_aktif_aktif": 17.9,
+    "beklenen_gbps": 2.19,
+    "kullanim_aktif_pasif": 21.9,
+    "aa_hat1_gbps": null,
+    "aa_hat2_gbps": null,
+    "aa_hat1_kullanim": null,
+    "aa_hat2_kullanim": null,
+    "n1_kullanim": null
+   },
+   {
+    "bina": "MUZ",
+    "yedek_hat": false,
+    "uc_port_gbps": 36,
+    "oran_aktif_pasif": 3.6,
+    "oran_aktif_aktif": 3.6,
+    "beklenen_gbps": 0.44,
+    "kullanim_aktif_pasif": 4.4,
+    "aa_hat1_gbps": null,
+    "aa_hat2_gbps": null,
+    "aa_hat1_kullanim": null,
+    "aa_hat2_kullanim": null,
+    "n1_kullanim": null
+   },
+   {
+    "bina": "SPB",
+    "yedek_hat": false,
+    "uc_port_gbps": 144,
+    "oran_aktif_pasif": 14.4,
+    "oran_aktif_aktif": 14.4,
+    "beklenen_gbps": 1.75,
+    "kullanim_aktif_pasif": 17.5,
+    "aa_hat1_gbps": null,
+    "aa_hat2_gbps": null,
+    "aa_hat1_kullanim": null,
+    "aa_hat2_kullanim": null,
+    "n1_kullanim": null
+   },
+   {
+    "bina": "EGT",
+    "yedek_hat": true,
+    "uc_port_gbps": 269,
+    "oran_aktif_pasif": 26.9,
+    "oran_aktif_aktif": 13.4,
+    "beklenen_gbps": 3.29,
+    "kullanim_aktif_pasif": 32.9,
+    "aa_hat1_gbps": 1.84,
+    "aa_hat2_gbps": 1.45,
+    "aa_hat1_kullanim": 18.4,
+    "aa_hat2_kullanim": 14.5,
+    "n1_kullanim": 32.9
+   },
+   {
+    "bina": "IIBF",
+    "yedek_hat": true,
+    "uc_port_gbps": 304,
+    "oran_aktif_pasif": 30.4,
+    "oran_aktif_aktif": 15.2,
+    "beklenen_gbps": 3.72,
+    "kullanim_aktif_pasif": 37.2,
+    "aa_hat1_gbps": 2.08,
+    "aa_hat2_gbps": 1.64,
+    "aa_hat1_kullanim": 20.8,
+    "aa_hat2_kullanim": 16.4,
+    "n1_kullanim": 37.2
+   },
+   {
+    "bina": "SAG",
+    "yedek_hat": false,
+    "uc_port_gbps": 215,
+    "oran_aktif_pasif": 21.5,
+    "oran_aktif_aktif": 21.5,
+    "beklenen_gbps": 2.63,
+    "kullanim_aktif_pasif": 26.3,
+    "aa_hat1_gbps": null,
+    "aa_hat2_gbps": null,
+    "aa_hat1_kullanim": null,
+    "aa_hat2_kullanim": null,
+    "n1_kullanim": null
+   },
+   {
+    "bina": "SUR",
+    "yedek_hat": false,
+    "uc_port_gbps": 72,
+    "oran_aktif_pasif": 7.2,
+    "oran_aktif_aktif": 7.2,
+    "beklenen_gbps": 0.88,
+    "kullanim_aktif_pasif": 8.8,
+    "aa_hat1_gbps": null,
+    "aa_hat2_gbps": null,
+    "aa_hat1_kullanim": null,
+    "aa_hat2_kullanim": null,
+    "n1_kullanim": null
+   },
+   {
+    "bina": "TEK",
+    "yedek_hat": true,
+    "uc_port_gbps": 287,
+    "oran_aktif_pasif": 28.7,
+    "oran_aktif_aktif": 14.3,
+    "beklenen_gbps": 3.5,
+    "kullanim_aktif_pasif": 35.0,
+    "aa_hat1_gbps": 1.96,
+    "aa_hat2_gbps": 1.54,
+    "aa_hat1_kullanim": 19.6,
+    "aa_hat2_kullanim": 15.4,
+    "n1_kullanim": 35.0
+   },
+   {
+    "bina": "KUT",
+    "yedek_hat": true,
+    "uc_port_gbps": 161,
+    "oran_aktif_pasif": 16.1,
+    "oran_aktif_aktif": 8.1,
+    "beklenen_gbps": 1.97,
+    "kullanim_aktif_pasif": 19.7,
+    "aa_hat1_gbps": 1.1,
+    "aa_hat2_gbps": 0.87,
+    "aa_hat1_kullanim": 11.0,
+    "aa_hat2_kullanim": 8.7,
+    "n1_kullanim": 19.7
+   },
+   {
+    "bina": "YEM",
+    "yedek_hat": true,
+    "uc_port_gbps": 269,
+    "oran_aktif_pasif": 26.9,
+    "oran_aktif_aktif": 13.4,
+    "beklenen_gbps": 3.29,
+    "kullanim_aktif_pasif": 32.9,
+    "aa_hat1_gbps": 1.84,
+    "aa_hat2_gbps": 1.45,
+    "aa_hat1_kullanim": 18.4,
+    "aa_hat2_kullanim": 14.5,
+    "n1_kullanim": 32.9
+   },
+   {
+    "bina": "FEN",
+    "yedek_hat": false,
+    "uc_port_gbps": 251,
+    "oran_aktif_pasif": 25.1,
+    "oran_aktif_aktif": 25.1,
+    "beklenen_gbps": 3.07,
+    "kullanim_aktif_pasif": 30.7,
+    "aa_hat1_gbps": null,
+    "aa_hat2_gbps": null,
+    "aa_hat1_kullanim": null,
+    "aa_hat2_kullanim": null,
+    "n1_kullanim": null
+   },
+   {
+    "bina": "VET",
+    "yedek_hat": false,
+    "uc_port_gbps": 161,
+    "oran_aktif_pasif": 16.1,
+    "oran_aktif_aktif": 16.1,
+    "beklenen_gbps": 1.97,
+    "kullanim_aktif_pasif": 19.7,
+    "aa_hat1_gbps": null,
+    "aa_hat2_gbps": null,
+    "aa_hat1_kullanim": null,
+    "aa_hat2_kullanim": null,
+    "n1_kullanim": null
+   },
+   {
+    "bina": "ITB",
+    "yedek_hat": false,
+    "uc_port_gbps": 233,
+    "oran_aktif_pasif": 23.3,
+    "oran_aktif_aktif": 23.3,
+    "beklenen_gbps": 2.85,
+    "kullanim_aktif_pasif": 28.5,
+    "aa_hat1_gbps": null,
+    "aa_hat2_gbps": null,
+    "aa_hat1_kullanim": null,
+    "aa_hat2_kullanim": null,
+    "n1_kullanim": null
+   },
+   {
+    "bina": "TIP",
+    "yedek_hat": true,
+    "uc_port_gbps": 322,
+    "oran_aktif_pasif": 32.2,
+    "oran_aktif_aktif": 16.1,
+    "beklenen_gbps": 3.94,
+    "kullanim_aktif_pasif": 39.4,
+    "aa_hat1_gbps": 2.2,
+    "aa_hat2_gbps": 1.74,
+    "aa_hat1_kullanim": 22.0,
+    "aa_hat2_kullanim": 17.4,
+    "n1_kullanim": 39.4
+   }
+  ],
+  "dagitim": [
+   {
+    "dagitim": "MUH-DS01",
+    "ap_gbps": 12.04,
+    "ap_kullanim": 30.1,
+    "aa_gbps": 9.92,
+    "aa_kullanim": 12.4
+   },
+   {
+    "dagitim": "REK-DS01",
+    "ap_gbps": 12.7,
+    "ap_kullanim": 31.8,
+    "aa_gbps": 17.53,
+    "aa_kullanim": 21.9
+   },
+   {
+    "dagitim": "TEK-DS01",
+    "ap_gbps": 21.02,
+    "ap_kullanim": 52.6,
+    "aa_gbps": 18.32,
+    "aa_kullanim": 22.9
+   }
+  ],
+  "dagitim_arizasi": [
+   {
+    "arizali": "MUH-DS01",
+    "kalan": "REK-DS01",
+    "yuk_gbps": 12.71,
+    "kullanim_tek_hat": 31.8,
+    "kullanim_ecmp": 15.9,
+    "servis_disi_bina": [
+     "ILH",
+     "ECZ",
+     "MIM",
+     "AKM",
+     "MUZ"
+    ]
+   },
+   {
+    "arizali": "MUH-DS01",
+    "kalan": "TEK-DS01",
+    "yuk_gbps": 25.85,
+    "kullanim_tek_hat": 64.6,
+    "kullanim_ecmp": 32.3,
+    "servis_disi_bina": [
+     "ILH",
+     "ECZ",
+     "MIM",
+     "AKM",
+     "MUZ"
+    ]
+   },
+   {
+    "arizali": "REK-DS01",
+    "kalan": "MUH-DS01",
+    "yuk_gbps": 12.04,
+    "kullanim_tek_hat": 30.1,
+    "kullanim_ecmp": 15.0,
+    "servis_disi_bina": [
+     "FEN",
+     "VET",
+     "ITB"
+    ]
+   },
+   {
+    "arizali": "REK-DS01",
+    "kalan": "TEK-DS01",
+    "yuk_gbps": 25.85,
+    "kullanim_tek_hat": 64.6,
+    "kullanim_ecmp": 32.3,
+    "servis_disi_bina": [
+     "FEN",
+     "VET",
+     "ITB"
+    ]
+   },
+   {
+    "arizali": "TEK-DS01",
+    "kalan": "MUH-DS01",
+    "yuk_gbps": 12.04,
+    "kullanim_tek_hat": 30.1,
+    "kullanim_ecmp": 15.0,
+    "servis_disi_bina": [
+     "SPB",
+     "SAG",
+     "SUR"
+    ]
+   },
+   {
+    "arizali": "TEK-DS01",
+    "kalan": "REK-DS01",
+    "yuk_gbps": 28.48,
+    "kullanim_tek_hat": 71.2,
+    "kullanim_ecmp": 35.6,
+    "servis_disi_bina": [
+     "SPB",
+     "SAG",
+     "SUR"
+    ]
+   }
+  ],
+  "kampus_toplam_gbps": 45.78,
+  "ihlal_20_1_aktif_pasif": [
+   "MUH",
+   "EGT",
+   "IIBF",
+   "SAG",
+   "TEK",
+   "YEM",
+   "FEN",
+   "ITB",
+   "TIP"
+  ],
+  "ihlal_20_1_aktif_aktif": [
+   "SAG",
+   "FEN",
+   "ITB"
+  ]
+ }
+}

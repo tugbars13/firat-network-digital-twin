@@ -23,4 +23,4 @@ React, Three.js, Docker Compose
 
 ## Proje bilgisi
 Yazılım Mühendisliği Bitirme Projesi · Fırat Üniversitesi · 2026
-Danışman: [hocanın unvanı ve adı]
+Danışman: Resul DAŞ
