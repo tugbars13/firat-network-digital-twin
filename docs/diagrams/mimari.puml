@@ -1,0 +1,60 @@
+@startuml
+!include <C4/C4_Container>
+skinparam defaultFontName Arial
+LAYOUT_TOP_DOWN()
+HIDE_STEREOTYPE()
+
+AddElementTag("planlanan", $bgColor="#FFFFFF", $fontColor="#555555", $borderColor="#888888", $borderStyle=DashedLine())
+AddElementTag("hazir", $bgColor="#5B8C5A", $fontColor="#FFFFFF", $borderColor="#3F6B3E")
+AddRelTag("planlanan", $lineStyle=DashedLine(), $textColor="#666666", $lineColor="#888888")
+
+title Kampüs Ağı Dijital İkizi — Mimari Diyagram (C4 Seviye 2: Kapsayıcılar)
+
+Person(tek, "Teknik personel", "İzler, inceler, uyarı onaylar")
+Person(yon, "Ağ yöneticisi", "Senaryo çalıştırır, topoloji içe aktarır")
+
+System_Ext(top, "Sentetik topoloji kaynağı", "scripts/: topoloji, ağ modeli ve adresleme üreticileri + doğrulayıcı (23 test). Çıktı: data/*.csv", $tags="hazir")
+System_Ext(sim, "Telemetri simülatörü", "Python. Senaryoya göre hat doluluğu, gecikme, cihaz durumu üretir")
+
+Boundary(dt, "Kampüs Ağı Dijital İkizi", "Docker Compose") {
+  Container(web, "Web arayüzü", "React, Three.js", "3B kampüs görünümü, cihaz/hat detayları, uyarılar, senaryo ekranları")
+  Container(api, "API ve analiz motoru", "Python, FastAPI, networkx", "Topolojiyi sunar, telemetriyi işler, uyarı üretir, arıza ve kapasite senaryosunun etkisini hesaplar")
+  Container(mq, "Mesaj aracısı", "MQTT, Mosquitto", "Telemetri mesajlarını konulara göre dağıtır")
+  ContainerDb(db, "Veritabanı", "PostgreSQL, TimescaleDB, PostGIS", "Topoloji, bina konumları, zaman serisi telemetri, uyarılar")
+}
+
+System_Ext(bf, "Batfish", "Yapılandırma analizi", $tags="planlanan")
+System_Ext(frr, "FRR emülasyonu", "Sanal yönlendiriciler (OSPF, VRRP)", $tags="planlanan")
+
+Rel(tek, web, "Kullanır", "HTTPS")
+Rel(yon, web, "Kullanır", "HTTPS")
+Rel(web, api, "Topoloji, senaryo istekleri", "REST/JSON")
+Rel(api, web, "Canlı telemetri ve uyarılar", "WebSocket")
+Rel(top, api, "Topoloji içe aktarma", "CSV")
+Rel(sim, mq, "Yayınlar", "MQTT")
+Rel(mq, api, "Abone olunan telemetri", "MQTT")
+Rel(api, db, "Okur / yazar", "SQL")
+Rel(api, bf, "Yapılandırma dosyaları", "", $tags="planlanan")
+Rel(api, frr, "Yapılandırma, arıza komutları", "", $tags="planlanan")
+
+Lay_R(tek, yon)
+Lay_R(web, api)
+Lay_R(mq, db)
+
+skinparam legend {
+  BackgroundColor #FFFFFF
+  BorderColor #BBBBBB
+  FontColor #333333
+  FontSize 11
+}
+legend right
+<color:#333333><b>Gösterim</b></color>
+<back:#08427B><color:#FFFFFF> Kişi </color></back><color:#333333> sistemi kullanan rol</color>
+<back:#438DD5><color:#FFFFFF> Kapsayıcı </color></back><color:#333333> ayrı çalışan yazılım parçası</color>
+<back:#999999><color:#FFFFFF> Dış sistem </color></back><color:#333333> sistemle veri alışverişi yapan</color>
+<back:#5B8C5A><color:#FFFFFF> Hazır </color></back><color:#333333> şu an çalışıyor</color>
+<color:#333333>Kesik çizgi: planlanan (henüz yapılmadı)</color>
+<color:#333333>Durum (10 Kasım 2026): yalnızca yeşil bileşen hazır;</color>
+<color:#333333>diğerleri 16 Kasım'dan itibaren geliştirilecek.</color>
+endlegend
+@enduml

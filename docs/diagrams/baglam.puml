@@ -1,0 +1,48 @@
+@startuml
+!include <C4/C4_Context>
+skinparam defaultFontName Arial
+LAYOUT_TOP_DOWN()
+HIDE_STEREOTYPE()
+
+AddElementTag("planlanan", $bgColor="#FFFFFF", $fontColor="#555555", $borderColor="#888888", $borderStyle=DashedLine(), $legendText="Planlanan (henüz yapılmadı)")
+AddElementTag("kapsamdisi", $bgColor="#EEEEEE", $fontColor="#777777", $borderColor="#AAAAAA", $borderStyle=DottedLine(), $legendText="Kapsam dışı (bağlantı yok)")
+AddRelTag("planlanan", $lineStyle=DashedLine(), $textColor="#666666", $lineColor="#888888", $legendText="Planlanan ilişki")
+
+title Kampüs Ağı Dijital İkizi — Bağlam Diyagramı (C4 Seviye 1)
+
+Person(tek, "Teknik personel", "Kampüs ağını izler, uyarıları görür ve onaylar, bina/cihaz/hat detayına bakar")
+Person(yon, "Ağ yöneticisi", "Teknik personelin yaptıklarına ek olarak arıza ve kapasite senaryosu çalıştırır, topolojiyi içe aktarır")
+
+System(dt, "Kampüs Ağı Dijital İkizi", "Sentetik kampüs ağını 3B gösterir, telemetriyi canlı izler, arıza ve kapasite senaryolarının etkisini hesaplar")
+
+System_Ext(top, "Sentetik topoloji kaynağı", "Kurallarla üretilmiş binalar, cihazlar, bağlantılar ve adresler (CSV)")
+System_Ext(sim, "Telemetri simülatörü", "Hat doluluğu, gecikme, cihaz durumu ve Wi-Fi istemci sayısı üretir")
+System_Ext(bf, "Batfish", "Ağ yapılandırmasının statik analizi", $tags="planlanan")
+System_Ext(frr, "FRR emülasyonu", "Sanal yönlendiricilerde OSPF ve VRRP davranışı", $tags="planlanan")
+System_Ext(real, "Fırat Üniversitesi gerçek ağı", "Kullanılmaz; hiçbir veri alınmaz", $tags="kapsamdisi")
+
+Rel(tek, dt, "İzler, inceler, uyarı onaylar", "Web tarayıcı")
+Rel(yon, dt, "Senaryo çalıştırır, topoloji içe aktarır", "Web tarayıcı")
+Rel(top, dt, "Topoloji verisi", "CSV")
+Rel(sim, dt, "Telemetri mesajları", "MQTT")
+Rel(dt, bf, "Üretilen yapılandırmalar", "Dosya", $tags="planlanan")
+Rel(dt, frr, "Yapılandırma ve arıza komutları", "", $tags="planlanan")
+
+Lay_R(tek, yon)
+Lay_D(dt, real)
+
+skinparam legend {
+  BackgroundColor #FFFFFF
+  BorderColor #BBBBBB
+  FontColor #333333
+  FontSize 11
+}
+legend right
+<color:#333333><b>Gösterim</b></color>
+<back:#08427B><color:#FFFFFF> Kişi </color></back><color:#333333> sistemi kullanan rol</color>
+<back:#1168BD><color:#FFFFFF> Sistem </color></back><color:#333333> geliştirilen yazılım</color>
+<back:#999999><color:#FFFFFF> Dış sistem </color></back><color:#333333> veri alışverişi yapan sistem</color>
+<color:#333333>Kesik çizgi: planlanan (henüz yapılmadı)</color>
+<color:#333333>Gri noktalı kutu: kapsam dışı</color>
+endlegend
+@enduml
