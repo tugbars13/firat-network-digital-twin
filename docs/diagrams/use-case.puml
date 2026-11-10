@@ -4,8 +4,12 @@ skinparam actorStyle awesome
 skinparam packageStyle rectangle
 skinparam shadowing false
 skinparam defaultFontName Arial
+skinparam usecase {
+  BackgroundColor #F7F7F7
+  BorderColor #555555
+}
 
-title Kampüs Ağı Dijital İkizi — Use Case Diyagramı
+title Kampüs Ağı Dijital İkizi — Use Case Diyagramı (v2)
 
 actor "Teknik personel" as Tek
 actor "Ağ yöneticisi" as Yon
@@ -14,17 +18,28 @@ actor "Telemetri simülatörü" as Sim <<sistem>>
 Yon -|> Tek
 
 rectangle "Kampüs Ağı Dijital İkizi" {
-  usecase "UC-01\nKampüs ağını\n3D görüntüle" as UC01
-  usecase "UC-02\nCanlı telemetriyi izle" as UC02
-  usecase "UC-03\nCihaz detayını incele" as UC03
-  usecase "UC-04\nHat detayını incele" as UC04
-  usecase "UC-05\nUyarıları görüntüle" as UC05
-  usecase "UC-06\nUyarıyı onayla" as UC06
-  usecase "UC-07\nGeçmişi tekrar oynat" as UC07
-  usecase "UC-08\nArıza senaryosu çalıştır" as UC08
-  usecase "UC-09\nKapasite senaryosu çalıştır" as UC09
-  usecase "UC-10\nTopolojiyi içe aktar" as UC10
-  usecase "UC-11\nTelemetri gönder" as UC11
+  package "Görüntüleme" {
+    usecase "UC-01\nKampüs ağını\n3D görüntüle" as UC01
+    usecase "UC-02\nBölgeye / yerleşkeye\ngöre filtrele" as UC02
+    usecase "UC-03\nBina detayını incele" as UC03
+    usecase "UC-04\nCihaz detayını incele" as UC04
+    usecase "UC-05\nHat detayını incele" as UC05
+  }
+  package "İzleme ve uyarı" {
+    usecase "UC-06\nCanlı telemetriyi izle" as UC06
+    usecase "UC-07\nUyarıları görüntüle" as UC07
+    usecase "UC-08\nUyarıyı onayla" as UC08
+  }
+  package "Analiz ve senaryo" {
+    usecase "UC-09\nGeçmişi tekrar oynat" as UC09
+    usecase "UC-10\nArıza senaryosu\nçalıştır" as UC10
+    usecase "UC-11\nYedeklilik analizini\ngörüntüle" as UC11
+    usecase "UC-12\nKapasite senaryosu\nçalıştır" as UC12
+  }
+  package "Veri yönetimi" {
+    usecase "UC-13\nTopolojiyi içe aktar" as UC13
+    usecase "UC-14\nTelemetri gönder" as UC14
+  }
 }
 
 Tek -- UC01
@@ -33,11 +48,14 @@ Tek -- UC03
 Tek -- UC04
 Tek -- UC05
 Tek -- UC06
+Tek -- UC07
+Tek -- UC08
 
-Yon -- UC07
-Yon -- UC08
 Yon -- UC09
 Yon -- UC10
+Yon -- UC11
+Yon -- UC12
+Yon -- UC13
 
-UC11 -- Sim
+UC14 -- Sim
 @enduml

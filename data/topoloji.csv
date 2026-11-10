@@ -1,0 +1,21 @@
+kod,ad,tur,kat,kullanici,eszamanli,ap,kablolu,port,sw,yerleske,bolge,birincil,birincil_m,yedek,yedek_m,kural_yedek,enlem,boylam,konum_kaynagi
+BIDB,Bilgi İşlem Daire Başkanlığı (veri merkezi),Veri merkezi,3,120,72,6,60,0,4,Rektörlük Yerleşkesi,Çekirdek,—,0,—,0,Çekirdek katmanı,38.67785,39.2029,Google Haritalar
+REK,Rektörlük,İdari,5,400,240,8,60,82,5,Rektörlük Yerleşkesi,Doğu,Kendi binası (dağıtım burada),0,TEK-DS01 (Orta),836,kritik hizmet,38.67776,39.20196,Google Haritalar
+MUH,Mühendislik Fakültesi,Fakülte,5,2200,1320,44,330,449,10,Mühendislik Yerleşkesi,Batı,Kendi binası (dağıtım burada),0,TEK-DS01 (Orta),1295,kullanıcı ≥ 1.500,38.6743,39.18888,Google Haritalar (dekanlık)
+ILH,İlahiyat Fakültesi,Fakülte,4,900,540,18,135,184,4,Mühendislik Yerleşkesi,Batı,MUH-DS01 (Batı),721,Yok,0,"kullanıcı < 1.500, kritik değil",38.67929,39.18885,Google Haritalar
+ECZ,Eczacılık Fakültesi,Fakülte,3,500,300,10,75,102,3,Mühendislik Yerleşkesi,Batı,MUH-DS01 (Batı),526,Yok,0,"kullanıcı < 1.500, kritik değil",38.67793,39.18856,Google Haritalar
+MIM,Mimarlık Fakültesi,Fakülte,4,700,420,14,105,143,4,Mühendislik Yerleşkesi,Batı,MUH-DS01 (Batı),468,Yok,0,"kullanıcı < 1.500, kritik değil",38.67698,39.1912,OpenStreetMap
+AKM,Atatürk Kültür Merkezi,Destek binası,2,1000,600,20,150,204,5,Mühendislik Yerleşkesi,Batı,MUH-DS01 (Batı),74,Yok,0,"kullanıcı < 1.500, kritik değil",38.67389,39.18927,Google Haritalar
+MUZ,Arkeoloji ve Etnografya Müzesi,Destek binası,2,200,120,4,30,41,2,Mühendislik Yerleşkesi,Batı,MUH-DS01 (Batı),261,Yok,0,"kullanıcı < 1.500, kritik değil",38.67306,39.19056,Wikipedia
+SPB,Spor Bilimleri Fakültesi,Fakülte,2,800,480,16,120,164,4,Rektörlük Yerleşkesi,Orta,TEK-DS01 (Orta),288,Yok,0,"kullanıcı < 1.500, kritik değil",38.68237,39.19394,Google Haritalar
+EGT,Eğitim Fakültesi,Fakülte,4,1500,900,30,225,306,7,Rektörlük Yerleşkesi,Orta,TEK-DS01 (Orta),186,REK-DS01 (Doğu),921,kullanıcı ≥ 1.500,38.68062,39.19467,Google Haritalar
+IIBF,İktisadi ve İdari Bilimler Fakültesi,Fakülte,4,1700,1020,34,255,347,8,Rektörlük Yerleşkesi,Orta,TEK-DS01 (Orta),521,REK-DS01 (Doğu),1316,kullanıcı ≥ 1.500,38.68459,39.19425,Google Haritalar
+SAG,Sağlık Bilimleri Fakültesi,Fakülte,4,1200,720,24,180,245,6,Rektörlük Yerleşkesi,Orta,TEK-DS01 (Orta),416,Yok,0,"kullanıcı < 1.500, kritik değil",38.68373,39.19415,Google Haritalar
+SUR,Su Ürünleri Fakültesi,Fakülte,3,400,240,8,60,82,3,Rektörlük Yerleşkesi,Orta,TEK-DS01 (Orta),486,Yok,0,"kullanıcı < 1.500, kritik değil",38.68422,39.19399,Google Haritalar
+TEK,Teknoloji Fakültesi,Fakülte,4,1600,960,32,240,327,7,Rektörlük Yerleşkesi,Orta,Kendi binası (dağıtım burada),0,REK-DS01 (Doğu),836,kullanıcı ≥ 1.500,38.68128,39.19608,Google Haritalar
+KUT,Merkez Kütüphane,Destek binası,4,900,540,18,135,184,4,Rektörlük Yerleşkesi,Orta,TEK-DS01 (Orta),168,REK-DS01 (Doğu),750,kritik hizmet,38.68012,39.19604,Google Haritalar
+YEM,Merkez Yemekhane,Destek binası,2,1500,900,30,225,306,7,Rektörlük Yerleşkesi,Orta,TEK-DS01 (Orta),287,REK-DS01 (Doğu),650,kullanıcı ≥ 1.500,38.67933,39.19656,Tahmin (konum doğrulanamadı)
+FEN,Fen Fakültesi,Fakülte,4,1400,840,28,210,286,6,Rektörlük Yerleşkesi,Doğu,REK-DS01 (Doğu),401,Yok,0,"kullanıcı < 1.500, kritik değil",38.6805,39.20143,OpenStreetMap
+VET,Veteriner Fakültesi,Fakülte,3,900,540,18,135,184,4,Rektörlük Yerleşkesi,Doğu,REK-DS01 (Doğu),228,Yok,0,"kullanıcı < 1.500, kritik değil",38.67905,39.20079,Google Haritalar
+ITB,İnsan ve Toplum Bilimleri Fakültesi,Fakülte,4,1300,780,26,195,266,6,Rektörlük Yerleşkesi,Doğu,REK-DS01 (Doğu),497,Yok,0,"kullanıcı < 1.500, kritik değil",38.68103,39.20332,Google Haritalar (İnsani ve Sosyal Bilimler adıyla)
+TIP,Tıp Fakültesi,Fakülte,6,1800,1080,36,270,368,8,Rektörlük Yerleşkesi,Doğu,REK-DS01 (Doğu),360,TEK-DS01 (Orta),1025,kullanıcı ≥ 1.500,38.67904,39.2047,Google Haritalar
